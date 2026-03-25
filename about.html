@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | SCGI – Sri Channegowda Group of Institutions</title>
+  <meta name="description" content="About SCGI, established in 2006. Premier institution for Nursing, Allied Health & Physiotherapy in Kolar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ───── INNER HEADER / BREADCRUMBS ───── */
+    .inner-hero {
+      background: linear-gradient(135deg, rgba(13,36,99,.92), rgba(26,58,140,.85)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80') center/cover;
+      padding: 100px 0 80px;
+      color: #fff;
+      text-align: center;
+    }
+    .inner-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 12px;
+    }
+    .breadcrumb {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 500;
+      color: rgba(255,255,255,.8);
+    }
+    .breadcrumb a { color: #fff; text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--gold-light); }
+    .breadcrumb i { font-size: 0.7rem; color: var(--gold); }
+
+    /* ───── ABOUT CONTENT ───── */
+    .about-overview { padding: 88px 0; background: #fff; }
+    .about-overview .sec-sub-large { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 24px; }
+    
+    /* ───── MISSION & VISION ───── */
+    .mv-section { padding: 40px 0 88px; background: #fff; }
+    .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .mv-card {
+      background: var(--off-white);
+      border-radius: 20px;
+      padding: 54px 44px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(26,58,140,.06);
+      transition: all 0.3s;
+      border-bottom: 4px solid transparent;
+      height: 100%;
+    }
+    .mv-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 44px rgba(26,58,140,.12);
+      border-bottom-color: var(--blue);
+    }
+    .mv-icon {
+      width: 86px; height: 86px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: #fff; font-size: 2.2rem; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px; box-shadow: 0 8px 24px rgba(26,58,140,.2);
+    }
+    .mv-card.vision .mv-icon {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--blue-dark);
+      box-shadow: 0 8px 24px rgba(201,162,39,.3);
+    }
+    .mv-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; color: var(--blue-dark); margin-bottom: 20px;
+    }
+    .mv-card p {
+      color: var(--text-light); font-size: 1.05rem; line-height: 1.75; margin: 0 auto; max-width: 440px;
+    }
+
+    @media (max-width: 768px) {
+      .mv-grid { grid-template-columns: 1fr; gap: 30px; }
+      .mv-card { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- FLOATING SIDEBAR -->
+<div class="sticky-float">
+  <a href="#enquire" class="sticky-admit">Admission 2025‑26</a>
+  <a href="tel:+919740205051" class="sfi ph"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/919740205051" class="sfi wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="mailto:info@scgi.in" class="sfi em"><i class="fas fa-envelope"></i></a>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container wrap">
+    <div class="tb-left">
+      <a href="tel:+919740205051"><i class="fas fa-phone-alt"></i>+91 97402 05051</a>
+      <span class="tb-divider">|</span>
+      <a href="mailto:info@scgi.in"><i class="fas fa-envelope"></i>info@scgi.in</a>
+    </div>
+    <div class="tb-right">
+      <span><i class="fas fa-map-marker-alt"></i>Kolar, Karnataka – 563102</span>
+      <span class="tb-divider">|</span>
+      <a href="#"><i class="fas fa-award"></i>RGUHS Affiliated</a>
+      <span class="tb-divider">|</span>
+      <a href="#"><i class="fas fa-star"></i>Govt. Recognised</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="container">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo-link">
+        <img src="SCGI-Logo.png" alt="SCGI – Sri Channegowda Group of Institutions Logo" />
+      </a>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="index.html#courses">Courses</a></li>
+          <li><a href="index.html#facilities">Facilities</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;align-items:center;gap:12px">
+        <a href="#enquire" class="btn-enq">Enquire Now</a>
+        <div class="hamburger" id="hbg"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- INNER HERO -->
+<section class="inner-hero">
+  <div class="container">
+    <h1>About Us</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>About Us</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT OVERVIEW -->
+<section class="about-overview" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80" alt="SCGI Doctors and Students" style="width: 100%; border-radius: 20px; box-shadow: 0 16px 48px rgba(26,58,140,.18);" />
+        <div class="estd-badge">
+          <div class="estd-num">2006</div>
+          <div class="estd-lbl">Established</div>
+        </div>
+      </div>
+      <div>
+        <div class="sec-label">Who We Are</div>
+        <h2 class="sec-title">About US</h2>
+        <p class="sec-sub-large">SCGI has scripted success stories in the field of education and was established in the year 2006. We are affiliated to Rajiv Gandhi University of Health Sciences. SCGI is nestled in KOLAR with own hospital, situated just beside the Chennai – Bangalore highway.</p>
+        <p class="sec-sub-large">At SCGI, we believe that education is not limited to just academics. We aim to teach the upcoming generations that learning and developing their individual skills are for providing quality care, responsibility and respect within the society.</p>
+        <a href="index.html#courses" class="btn-primary" style="margin-top:10px"><i class="fas fa-arrow-right"></i>Explore Our Courses</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="mv-section">
+  <div class="container">
+    <div class="mv-grid">
+      <div class="mv-card">
+        <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Mission</h3>
+        <p>We aim to deliver a nurturing ground and a positive learning environment which ensures student well-being &amp; academic success.</p>
+      </div>
+      <div class="mv-card vision">
+        <div class="mv-icon"><i class="fas fa-eye"></i></div>
+        <h3>Vision</h3>
+        <p>Promoting educational, cultural, social and charitable advancement for excellence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNSELLOR / CTA -->
+<section class="cta-band" id="enquire">
+  <div class="container">
+    <div class="sec-label">Contact Our Counsellor</div>
+    <h2>Clarify all you doubts about the course, fees, college and more</h2>
+    <div class="cta-actions" style="margin-top: 36px;">
+      <a href="tel:+919740205051" class="btn-gold"><i class="fas fa-phone-alt"></i>Enquire Now</a>
+      <a href="https://wa.me/919740205051" class="btn-outline-w" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="SCGI-Logo.png" alt="SCGI Logo" />
+        <p>SCGI was established in 2006 and is affiliated to Rajiv Gandhi University of Health Sciences (RGUHS). Nestled in Kolar beside the Chennai–Bangalore highway, SCGI is a premier healthcare education institution with its own on-campus hospital.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/919740205051" class="soc-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="fc">
+        <h5>Nursing Courses</h5>
+        <ul class="fl">
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>B.Sc Nursing</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>GNM</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>M.Sc Nursing</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>P.B B.Sc Nursing</a></li>
+        </ul>
+        <h5 style="margin-top:22px">Allied Health &amp; Physio</h5>
+        <ul class="fl">
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>B.Sc MLT</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>B.Sc AT &amp; OTT</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>Diploma in MLT</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>Diploma in OTT</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>Diploma in Health Inspector</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>BPT</a></li>
+        </ul>
+      </div>
+
+      <div class="fc">
+        <h5>Quick Links</h5>
+        <ul class="fl">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i>Home</a></li>
+          <li><a href="about.html"><i class="fas fa-chevron-right"></i>About Us</a></li>
+          <li><a href="index.html#courses"><i class="fas fa-chevron-right"></i>Courses</a></li>
+          <li><a href="index.html#facilities"><i class="fas fa-chevron-right"></i>Facilities</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Gallery</a></li>
+          <li><a href="#contact"><i class="fas fa-chevron-right"></i>Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="fc">
+        <h5>Contact Us</h5>
+        <div class="fci"><i class="fas fa-map-marker-alt"></i><span>NH4 Bypass, Near Railway Gate, Kogilahally Village, Dodda Hasala Gram Panchayath, Kolar, Karnataka – 563102</span></div>
+        <div class="fci"><i class="fas fa-phone-alt"></i><a href="tel:+919740205051" style="color:rgba(255,255,255,.65)">+91 97402 05051</a></div>
+        <div class="fci"><i class="fas fa-envelope"></i><a href="mailto:info@scgi.in" style="color:rgba(255,255,255,.65)">info@scgi.in</a></div>
+        <div style="margin-top:16px;border-radius:10px;overflow:hidden;line-height:0">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.847!2d77.9693!3d13.1358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA4JzA5LjAiTiA3N8KwNTgnMDkuNiJF!5e0!3m2!1sen!2sin!4v1" width="100%" height="148" style="border:0;filter:invert(.85) hue-rotate(180deg)" allowfullscreen="" loading="lazy" title="SCGI Location Map"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2025 Sri Channegowda Group of Institutions (SCGI), Kolar. All rights reserved.</div>
+      <div>RGUHS Affiliated &nbsp;|&nbsp; Govt. of Karnataka Recognised</div>
+    </div>
+  </div>
+</footer>
+
+<button id="st" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+  // Mobile nav toggle
+  document.getElementById('hbg').addEventListener('click', () => {
+    document.getElementById('navMenu').classList.toggle('open');
+  });
+
+  // Scroll-to-top
+  const st = document.getElementById('st');
+  window.addEventListener('scroll', () => {
+    st.classList.toggle('show', window.scrollY > 400);
+    document.getElementById('hdr').style.boxShadow =
+      window.scrollY > 50 ? '0 4px 28px rgba(26,58,140,.18)' : '0 2px 20px rgba(26,58,140,.1)';
+  });
+  st.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Smooth anchor scroll for nav links (only for on-page anchors)
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if(href === '#') return;
+      const t = document.querySelector(href);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
