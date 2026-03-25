@@ -518,7 +518,7 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   transition: all 0.4s ease;
 }
 .kmct-card:hover .kc-overlay {
-  background: rgba(105, 30, 95, 0.65); /* Magenta overlay - significantly reduced opacity */
+  background: rgba(13, 36, 99, 0.7); /* Theme Blue-Dark overlay */
 }
 .kc-content {
   position: absolute; inset: 0;
@@ -527,7 +527,7 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   color: #fff; z-index: 2;
 }
 .kc-badge {
-  background: #a11c81; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 5px 12px; border-radius: 6px; align-self: flex-start; margin-bottom: 14px; letter-spacing: 0.5px;
+  background: var(--gold); color: var(--blue-dark); font-size: 0.75rem; font-weight: 700; padding: 5px 12px; border-radius: 6px; align-self: flex-start; margin-bottom: 14px; letter-spacing: 0.5px;
 }
 .kc-title {
   font-size: 1.5rem; font-weight: 500; margin: 0; transition: transform 0.4s ease;
@@ -557,7 +557,7 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   font-size: 0.75rem; font-weight: 600; padding: 7px 14px; border-radius: 6px;
   text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px;
 }
-.kc-btn.primary { background: #fff; color: #a11c81; }
+.kc-btn.primary { background: var(--gold); color: var(--blue-dark); }
 .kc-btn.outline { border: 1px solid rgba(255,255,255,0.5); color: #fff; }
 .kc-btn.outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
 .kc-link {
