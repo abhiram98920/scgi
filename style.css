@@ -289,7 +289,7 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active, header.hdr-in
   padding: 10px 0;
 }
 .dropdown-content a {
-  color: #fff;
+  color: var(--blue-dark);
   padding: 14px 24px;
   text-decoration: none;
   font-size: 0.95rem;
