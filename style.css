@@ -53,7 +53,7 @@ header.sticky { position: fixed; top: 0; background: var(--blue-dark); box-shado
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
     /* ───── HERO ───── */
-    .hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; }
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
       background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1800&q=80') center/cover no-repeat;
