@@ -275,34 +275,51 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #fff;
-  min-width: 240px;
-  box-shadow: 0px 8px 24px 0px rgba(0,0,0,0.1);
+  background-color: var(--blue-dark);
+  min-width: 260px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   z-index: 1001;
-  border-radius: 8px;
-  overflow: hidden;
+  border-radius: 0;
+  border-left: 4px solid var(--gold);
   top: 100%;
   left: 0;
+  padding: 10px 0;
 }
 .dropdown-content a {
-  color: var(--text);
-  padding: 12px 20px;
+  color: #fff;
+  padding: 14px 24px;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   display: block;
-  border-bottom: 1px solid var(--border);
+  border-bottom: none;
   border-radius: 0;
   transition: all 0.2s;
 }
 .dropdown-content a::after { display: none !important; }
-.dropdown-content a:last-child { border-bottom: none; }
-.dropdown-content a:hover { background-color: var(--off-white); color: var(--blue); padding-left: 26px; }
-.dropdown:hover .dropdown-content { display: block; }
-@media (max-width: 640px) {
-  .dropdown-content { position: static; width: 100%; box-shadow: none; border-radius: 0; display: none; padding-left: 15px; background: transparent; }
-  .dropdown.open .dropdown-content { display: block; }
+.dropdown-content a:hover {
+  background-color: rgba(255,255,255,0.06);
+  color: var(--gold);
+  padding-left: 28px;
 }
+.dropdown:hover .dropdown-content { display: block; }
+
+@media (max-width: 640px) {
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    display: none;
+    padding: 10px 0 10px 15px;
+    background: transparent;
+    border-left: none;
+  }
+  .dropdown.open .dropdown-content { display: block; }
+  .dropdown-content a { color: var(--text); padding: 10px 15px; }
+  .dropdown-content a:hover { color: var(--blue); background-color: transparent; }
+}
+
 
 /* ───── PROGRAMS CARDS ───── */
 .program-card {
