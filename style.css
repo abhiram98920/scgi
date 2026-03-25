@@ -28,9 +28,9 @@
 
     /* ───── HEADER ───── */
     header { background: transparent; position: absolute; left: 0; right: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
-header.sticky { position: fixed; top: 0; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-bottom-color: transparent; }
-header.sticky nav ul li a { color: var(--blue-dark) !important; }
-header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(--gold) !important; }
+header.sticky, header.hdr-inner { position: fixed; top: 0; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-bottom-color: transparent; }
+header.sticky nav ul li a, header.hdr-inner nav ul li a { color: var(--blue-dark) !important; }
+header.sticky nav ul li a:hover, header.sticky nav ul li a.active, header.hdr-inner nav ul li a:hover, header.hdr-inner nav ul li a.active { color: var(--gold) !important; }
     .nav-wrap { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
     .logo-link img { height: 62px; width: auto; display: block;  }
     nav ul { list-style: none; display: flex; gap: 2px; }
@@ -496,3 +496,63 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   .metrics-flex { justify-content: space-evenly; gap: 30px; }
   .metrics-title { width: 100%; text-align: center; border-left: none; padding-left: 0; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
 }
+
+/* ───── KMCT-STYLE COURSE CARDS ───── */
+.kmct-card {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  background: #000;
+  height: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.kc-img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;
+}
+.kmct-card:hover .kc-img { transform: scale(1.05); }
+.kc-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  transition: all 0.4s ease;
+}
+.kmct-card:hover .kc-overlay {
+  background: rgba(105, 30, 95, 0.9); /* Magenta overlay */
+}
+.kc-content {
+  position: absolute; inset: 0;
+  padding: 30px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  color: #fff; z-index: 2;
+}
+.kc-badge {
+  background: #a11c81; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 5px 12px; border-radius: 6px; align-self: flex-start; margin-bottom: 14px; letter-spacing: 0.5px;
+}
+.kc-title {
+  font-size: 1.5rem; font-weight: 500; margin: 0; transition: transform 0.4s ease;
+}
+.kc-hidden {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease, margin 0.4s ease;
+}
+.kmct-card:hover .kc-hidden {
+  grid-template-rows: 1fr;
+  margin-top: 15px;
+}
+.kc-hidden-inner {
+  overflow: hidden;
+  display: flex; flex-direction: column; gap: 15px;
+}
+.kc-meta {
+  font-size: 0.9rem; line-height: 1.6; color: rgba(255,255,255,0.9);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.kc-meta i { color: var(--gold); width: 16px; margin-right: 4px; }
+.kc-link {
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 8px; color: #fff;
+}
+.kc-link i { font-size: 0.8em; transition: transform 0.3s; margin-top:2px; }
+.kmct-card:hover .kc-link i { transform: translateX(5px); }
