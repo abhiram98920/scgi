@@ -173,7 +173,7 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active, header.hdr-in
     .tab-btn.active, .tab-btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
-    .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 22px; }
+    .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
     .course-card { border-radius: 18px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.08); transition: all .35s; background: #fff; border: 1px solid var(--border); }
     .course-card:hover { transform: translateY(-8px); box-shadow: 0 16px 44px rgba(26,58,140,.16); border-color: transparent; }
     .cc-img { position: relative; height: 185px; overflow: hidden; }
@@ -514,11 +514,11 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 .kmct-card:hover .kc-img { transform: scale(1.05); }
 .kc-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
   transition: all 0.4s ease;
 }
 .kmct-card:hover .kc-overlay {
-  background: rgba(105, 30, 95, 0.75); /* Magenta overlay - reduced opacity */
+  background: rgba(105, 30, 95, 0.65); /* Magenta overlay - significantly reduced opacity */
 }
 .kc-content {
   position: absolute; inset: 0;
