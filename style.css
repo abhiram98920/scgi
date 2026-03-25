@@ -27,7 +27,7 @@
     .tb-divider { color: rgba(255,255,255,.25); }
 
     /* ───── HEADER ───── */
-    header { background: transparent; position: absolute; left: 0; right: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+    header { background: #fff; position: absolute; left: 0; right: 0; z-index: 1000; border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
 header.sticky, header.hdr-inner { position: fixed; top: 0; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-bottom-color: transparent; }
 header.sticky nav ul li a, header.hdr-inner nav ul li a { color: var(--blue-dark) !important; }
 header.sticky nav ul li a:hover, header.sticky nav ul li a.active, header.hdr-inner nav ul li a:hover, header.hdr-inner nav ul li a.active { color: var(--gold) !important; }
@@ -36,7 +36,7 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active, header.hdr-in
     nav ul { list-style: none; display: flex; gap: 2px; }
     nav ul li a {
       display: block; padding: 9px 15px; font-weight: 500; font-size: .88rem;
-      color: rgba(255,255,255,0.9); text-decoration: none; border-radius: 6px; transition: all .25s; position: relative;
+      color: var(--blue-dark); text-decoration: none; border-radius: 6px; transition: all .25s; position: relative;
     }
     nav ul li a::after { content: ''; position: absolute; bottom: 4px; left: 15px; right: 15px; height: 2px; background: var(--blue); border-radius: 2px; transform: scaleX(0); transition: transform .25s; }
     nav ul li a:hover, nav ul li a.active { color: var(--gold); }
@@ -129,7 +129,7 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active, header.hdr-in
 
     /* ───── ABOUT ───── */
     .about { padding: 88px 0; background: #fff; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: flex-start; }
     .about-img-wrap { position: relative; }
     .about-img-wrap img { width: 100%; border-radius: 20px; box-shadow: 0 16px 48px rgba(26,58,140,.18); display: block; }
     .estd-badge {
@@ -407,7 +407,7 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 .submenu-content a {
   padding: 12px 24px !important;
   font-size: 0.9rem !important;
-  color: var(--text) !important;
+  color: var(--blue-dark) !important;
   transition: all 0.2s;
   display: block;
   text-decoration: none;
@@ -430,7 +430,7 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
     display: block;
   }
   .submenu-content a {
-    color: var(--text) !important;
+    color: var(--blue-dark) !important;
   }
   .submenu-content a:hover {
     color: var(--blue) !important;

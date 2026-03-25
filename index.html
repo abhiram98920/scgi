@@ -513,7 +513,7 @@
           const counter = entry.target;
           const target = +counter.getAttribute('data-target');
           let count = 0;
-          const speed = 60; // Adjust for smoothness/speed
+          const speed = 140; // Adjust for smoothness/speed
           const inc = target / speed;
           
           const updateCount = () => {
@@ -529,7 +529,7 @@
           obs.unobserve(counter);
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.15 });
     counters.forEach(counter => observer.observe(counter));
   });
 </script>
