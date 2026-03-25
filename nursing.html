@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nursing Courses | SCGI – Sri Channegowda Group of Institutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .inner-hero {
+      position: relative; height: 380px;
+      background: linear-gradient(to top, rgba(13,36,99,0.85) 0%, transparent 50%), url('https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=1600&q=80') center / cover;
+      display: flex; align-items: flex-end; padding-bottom: 40px; color: #fff;
+    }
+    .inner-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 4vw, 3.5rem); margin: 0; font-weight: 500; }
+    .breadcrumb-bar { padding: 22px 0; border-bottom: 1px solid var(--border); }
+    .breadcrumb { display: flex; align-items: center; gap: 12px; font-size: 0.85rem; font-weight: 500; color: var(--text); }
+    .breadcrumb a { color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--blue); }
+    .breadcrumb i.fa-circle { font-size: 0.45rem; color: var(--gold); }
+    .breadcrumb span { color: var(--blue-dark); font-weight: 600; }
+    .course-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; background: rgba(26,58,140,0.06); color: var(--blue-dark);
+      border-radius: 30px; font-size: 0.82rem; font-weight: 700; border: 1px solid rgba(26,58,140,0.15);
+    }
+    .course-badge i { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container wrap">
+    <div class="tb-left">
+      <a href="tel:+919740205051"><i class="fas fa-phone-alt"></i>+91 97402 05051</a>
+      <span class="tb-divider">|</span>
+      <a href="mailto:info@scgi.in"><i class="fas fa-envelope"></i>info@scgi.in</a>
+    </div>
+    <div class="tb-right">
+      <span><i class="fas fa-map-marker-alt"></i>Kolar, Karnataka – 563102</span>
+      <span class="tb-divider">|</span>
+      <a href="#"><i class="fas fa-award"></i>RGUHS Affiliated</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="container">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo-link"><img src="SCGI-Logo.png" alt="SCGI Logo" /></a>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="active" onclick="this.parentElement.classList.toggle('open')">Courses <i class="fas fa-chevron-down" style="font-size:0.7em;margin-left:4px;"></i></a>
+            <div class="dropdown-content">
+              <a href="nursing.html">Nursing</a>
+              <a href="allied.html">Allied Health Science</a>
+              <a href="physiotherapy.html">Physiotherapy</a>
+            </div>
+          </li>
+          <li><a href="index.html#facilities">Facilities</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;align-items:center;gap:12px">
+        <a href="#enquire" class="btn-enq">Enquire Now</a>
+        <div class="hamburger" id="hbg"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- INNER HERO -->
+<section class="inner-hero">
+  <div class="container"><h1>Nursing Categories</h1></div>
+</section>
+
+<!-- BREADCRUMB BAR -->
+<div class="breadcrumb-bar">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <i class="fas fa-circle"></i> 
+      <span>Courses</span> <i class="fas fa-circle"></i> 
+      <span>Nursing Categories</span>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section style="padding: 70px 0 50px;">
+  <div class="container tc">
+    <div class="sec-label" style="justify-content: center;">Our Academic Programmes</div>
+    <h2 class="sec-title" style="margin-bottom: 20px;">Nursing Courses</h2>
+    <p class="sec-sub" style="margin: 0 auto 30px; font-size: 1.05rem; max-width: 800px;">Nursing is not just a job. Being a professional nurse means the patients in your care must be able to trust you, it means being up-to-date with best practice, treating your patients and colleagues with diginity, kindness, respect and compassion.</p>
+    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+      <span class="course-badge"><i class="fas fa-check-circle"></i>KA Govt-01</span>
+      <span class="course-badge"><i class="fas fa-check-circle"></i>RGHUS-01</span>
+      <span class="course-badge"><i class="fas fa-check-circle"></i>INC-01</span>
+      <span class="course-badge"><i class="fas fa-check-circle"></i>KSNC-01</span>
+      <span class="course-badge"><i class="fas fa-check-circle"></i>KSDNEB-01</span>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES GRID -->
+<section style="padding: 0 0 100px;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+      
+      <!-- Card 1 -->
+      <div class="program-card">
+        <div class="pc-img"><img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&q=80" alt="B.Sc Nursing" /></div>
+        <div class="pc-body">
+          <h3>B.Sc Nursing</h3>
+          <div class="pc-meta">
+            <div><i class="fas fa-clock"></i> <span><strong>Duration:</strong> 4 years</span></div>
+            <div><i class="fas fa-user-graduate"></i> <span><strong>Eligibility:</strong> 10+2 years</span></div>
+          </div>
+          <div class="pc-actions">
+            <a href="#" class="pc-btn outline"><i class="fas fa-download"></i> Brochure</a>
+            <a href="#enquire" class="pc-btn primary">View more</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="program-card">
+        <div class="pc-img"><img src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?w=600&q=80" alt="GNM" /></div>
+        <div class="pc-body">
+          <h3>GNM</h3>
+          <div class="pc-meta">
+            <div><i class="fas fa-clock"></i> <span><strong>Duration:</strong> 3.5 years</span></div>
+            <div><i class="fas fa-user-graduate"></i> <span><strong>Eligibility:</strong> 10+2 years</span></div>
+          </div>
+          <div class="pc-actions">
+            <a href="#" class="pc-btn outline"><i class="fas fa-download"></i> Brochure</a>
+            <a href="#enquire" class="pc-btn primary">View more</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="program-card">
+        <div class="pc-img"><img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600&q=80" alt="M.Sc Nursing" /></div>
+        <div class="pc-body">
+          <h3>M.Sc Nursing</h3>
+          <div class="pc-meta">
+            <div><i class="fas fa-clock"></i> <span><strong>Duration:</strong> 2 years</span></div>
+            <div><i class="fas fa-user-graduate"></i> <span><strong>Eligibility:</strong> B.Sc (N)</span></div>
+          </div>
+          <div class="pc-actions">
+            <a href="#" class="pc-btn outline"><i class="fas fa-download"></i> Brochure</a>
+            <a href="#enquire" class="pc-btn primary">View more</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="program-card">
+        <div class="pc-img"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="P.B B.Sc Nursing" /></div>
+        <div class="pc-body">
+          <h3>P.B B.Sc Nursing</h3>
+          <div class="pc-meta">
+            <div><i class="fas fa-clock"></i> <span><strong>Duration:</strong> 2 years</span></div>
+            <div><i class="fas fa-user-graduate"></i> <span><strong>Eligibility:</strong> GNM</span></div>
+          </div>
+          <div class="pc-actions">
+            <a href="#" class="pc-btn outline"><i class="fas fa-download"></i> Brochure</a>
+            <a href="#enquire" class="pc-btn primary">View more</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COUNSELLOR / CTA -->
+<section class="cta-band" id="enquire">
+  <div class="container">
+    <div class="sec-label" style="justify-content: center;">Contact Our Counsellor</div>
+    <h2 class="sec-title" style="color: #fff; text-align: center; margin-bottom: 14px;">Clarify all you doubts about the course, fees, college and more</h2>
+    <div class="cta-actions" style="margin-top: 36px;">
+      <a href="tel:+919740205051" class="btn-gold"><i class="fas fa-paper-plane"></i> Enquire Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="SCGI-Logo.png" alt="SCGI Logo" />
+        <p>SCGI was established in 2006 and is affiliated to Rajiv Gandhi University of Health Sciences (RGUHS). Nestled in Kolar beside the Chennai–Bangalore highway, SCGI is a premier healthcare education institution with its own on-campus hospital.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/919740205051" class="soc-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="fc">
+        <h5>Nursing Courses</h5>
+        <ul class="fl">
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>B.Sc Nursing</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>GNM</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>M.Sc Nursing</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>P.B B.Sc Nursing</a></li>
+        </ul>
+        <h5 style="margin-top:22px">Allied Health &amp; Physio</h5>
+        <ul class="fl">
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>B.Sc MLT</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>B.Sc AT &amp; OTT</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>Diploma in MLT</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>Diploma in OTT</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>Diploma in Health Inspector</a></li>
+          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>BPT</a></li>
+        </ul>
+      </div>
+
+      <div class="fc">
+        <h5>Quick Links</h5>
+        <ul class="fl">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i>Home</a></li>
+          <li><a href="about.html"><i class="fas fa-chevron-right"></i>About Us</a></li>
+          <li><a href="index.html#courses"><i class="fas fa-chevron-right"></i>Courses</a></li>
+          <li><a href="index.html#facilities"><i class="fas fa-chevron-right"></i>Facilities</a></li>
+          <li><a href="#contact"><i class="fas fa-chevron-right"></i>Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="fc">
+        <h5>Contact Us</h5>
+        <div class="fci"><i class="fas fa-map-marker-alt"></i><span>NH4 Bypass, Near Railway Gate, Kogilahally Village, Dodda Hasala Gram Panchayath, Kolar, Karnataka – 563102</span></div>
+        <div class="fci"><i class="fas fa-phone-alt"></i><a href="tel:+919740205051" style="color:rgba(255,255,255,.65)">+91 97402 05051</a></div>
+        <div class="fci"><i class="fas fa-envelope"></i><a href="mailto:info@scgi.in" style="color:rgba(255,255,255,.65)">info@scgi.in</a></div>
+        <div style="margin-top:16px;border-radius:10px;overflow:hidden;line-height:0">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.847!2d77.9693!3d13.1358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA4JzA5LjAiTiA3N8KwNTgnMDkuNiJF!5e0!3m2!1sen!2sin!4v1" width="100%" height="148" style="border:0;filter:invert(.85) hue-rotate(180deg)" allowfullscreen="" loading="lazy" title="SCGI Location Map"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2025 Sri Channegowda Group of Institutions (SCGI), Kolar. All rights reserved.</div>
+      <div>RGUHS Affiliated &nbsp;|&nbsp; Govt. of Karnataka Recognised</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hbg').addEventListener('click', () => {
+    document.getElementById('navMenu').classList.toggle('open');
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if(href === '#') return;
+      const t = document.querySelector(href);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
