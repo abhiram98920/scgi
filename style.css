@@ -27,16 +27,17 @@
     .tb-divider { color: rgba(255,255,255,.25); }
 
     /* ───── HEADER ───── */
-    header { background: #fff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(26,58,140,.1); }
+    header { background: transparent; position: absolute; left: 0; right: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+header.sticky { position: fixed; top: 0; background: var(--blue-dark); box-shadow: 0 4px 24px rgba(0,0,0,0.4); border-bottom-color: transparent; }
     .nav-wrap { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
-    .logo-link img { height: 62px; width: auto; display: block; }
+    .logo-link img { height: 62px; width: auto; display: block; filter: brightness(0) invert(1); }
     nav ul { list-style: none; display: flex; gap: 2px; }
     nav ul li a {
       display: block; padding: 9px 15px; font-weight: 500; font-size: .88rem;
-      color: var(--text); text-decoration: none; border-radius: 6px; transition: all .25s; position: relative;
+      color: rgba(255,255,255,0.9); text-decoration: none; border-radius: 6px; transition: all .25s; position: relative;
     }
     nav ul li a::after { content: ''; position: absolute; bottom: 4px; left: 15px; right: 15px; height: 2px; background: var(--blue); border-radius: 2px; transform: scaleX(0); transition: transform .25s; }
-    nav ul li a:hover, nav ul li a.active { color: var(--blue); }
+    nav ul li a:hover, nav ul li a.active { color: var(--gold); }
     nav ul li a:hover::after, nav ul li a.active::after { transform: scaleX(1); }
     .btn-enq {
       background: linear-gradient(135deg, var(--blue), var(--blue-light));
@@ -358,3 +359,19 @@ p, .sec-sub, .cc-body p, .fac-card p, .about-text-col p, .mv-content p {
 h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   font-weight: 500 !important;
 }
+
+.tb-gold-btn {
+  background: var(--gold);
+  color: #1a1a1a !important;
+  font-weight: 700;
+  padding: 8px 24px;
+  margin: -8px 0 -8px 18px; /* offset top-bar padding */
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.tb-gold-btn:hover { background: var(--gold-light); color: #000 !important; }

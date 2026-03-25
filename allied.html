@@ -62,7 +62,7 @@
         </ul>
       </nav>
       <div style="display:flex;align-items:center;gap:12px">
-        <a href="#enquire" class="btn-enq">Enquire Now</a>
+        
         <div class="hamburger" id="hbg"><span></span><span></span><span></span></div>
       </div>
     </div>
@@ -267,5 +267,17 @@
     });
   });
 </script>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const hdr = document.getElementById('hdr');
+    if(window.scrollY > 40) {
+      hdr.classList.add('sticky');
+    } else {
+      hdr.classList.remove('sticky');
+    }
+  });
+</script>
 </body>
+
 </html>
