@@ -140,13 +140,13 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active, header.hdr-in
     }
     .estd-num { font-size: 2rem; font-weight: 500; line-height: 1; }
     .estd-lbl { font-size: .73rem; opacity: .82; margin-top: 4px; letter-spacing: .3px; }
-    .about-points { margin: 24px 0; display: flex; flex-direction: column; gap: 12px; }
+    .about-points { display: flex; flex-wrap: wrap; gap: 15px; margin: 30px 0; }
     .ap {
-      display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px;
-      background: var(--off-white); border-radius: 10px; border-left: 3px solid var(--blue);
-      font-size: .88rem; color: var(--text); line-height: 1.6;
+      display: flex; align-items: center; gap: 10px; padding: 12px 18px;
+      background: #f8faff; border-radius: 8px; border: 1px solid rgba(26,58,140,0.06);
+      font-size: 0.82rem; color: var(--blue-dark); font-weight: 500; flex: 1; min-width: 240px;
     }
-    .ap i { color: var(--blue); margin-top: 2px; flex-shrink: 0; }
+    .ap i { color: var(--gold); font-size: 1rem; flex-shrink: 0; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
       background: linear-gradient(135deg, var(--blue), var(--blue-light));
@@ -438,6 +438,77 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   }
 }
 
+
+/* ───── ACCREDITATION BAR ───── */
+.accreditation-bar {
+  background: #fff;
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.acc-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.acc-title-side {
+  flex-shrink: 0;
+  max-width: 300px;
+}
+.acc-label {
+  color: #a11c81; /* Institutional magenta/purple label */
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.acc-heading {
+  font-family: 'GT Super Ds', 'Lora', serif;
+  font-size: 2rem;
+  color: var(--blue-dark);
+  line-height: 1.1;
+  margin: 0;
+}
+.acc-divider {
+  width: 1px;
+  height: 80px;
+  background: #e0e0e0;
+  margin: 0 10px;
+}
+.acc-logos {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 30px;
+}
+.acc-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  flex: 1;
+}
+.acc-logo-item i {
+  font-size: 2.2rem;
+  color: var(--blue);
+  opacity: 0.9;
+}
+.acc-logo-item span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 991px) {
+  .acc-flex { flex-direction: column; text-align: center; gap: 30px; }
+  .acc-divider { display: none; }
+  .acc-logos { flex-wrap: wrap; justify-content: center; }
+  .acc-logo-item { min-width: 140px; }
+}
 
 /* ───── METRICS ROW ───── */
 .metrics-row {
