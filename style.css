@@ -857,24 +857,57 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 .info-content p, .info-content a { font-size: 0.95rem; color: var(--text-light); text-decoration: none; line-height: 1.6; }
 
 
-/* Accreditation Badges */
-.hero-badges-wrap { margin-bottom: 24px;
+/* Accreditation Badges in Hero */
+.hero-badges-wrap {
   display: flex;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-top: 20px;
   flex-wrap: wrap;
+  align-items: center;
 }
 .hero-badge-img {
-  height: 58px;
+  height: 54px;
   width: auto;
   border-radius: 6px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.18);
-  background: #fff;
-  padding: 5px;
+  background: rgba(255,255,255,0.95);
+  padding: 5px 8px;
   transition: transform 0.3s ease;
 }
 .hero-badge-img:hover {
   transform: translateY(-3px);
+}
+
+/* Accreditation Marquee */
+.acc-marquee-wrap {
+  flex-grow: 1;
+  overflow: hidden;
+}
+.acc-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  animation: acc-scroll 14s linear infinite;
+  width: max-content;
+}
+.acc-marquee-wrap:hover .acc-marquee-track {
+  animation-play-state: paused;
+}
+.acc-marquee-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #fff;
+  padding: 8px 10px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+.acc-marquee-img:hover { transform: scale(1.08); }
+@keyframes acc-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @media (max-width: 640px) {
