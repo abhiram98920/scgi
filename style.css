@@ -641,19 +641,108 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 /* ───── INNER HERO / BREADCRUMBS ───── */
 .inner-hero {
   position: relative;
-  height: clamp(350px, 40vh, 450px);
-  background: linear-gradient(to top, rgba(13,36,99,0.85) 0%, rgba(13,36,99,0.2) 60%, transparent 100%), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80') center / cover;
+  min-height: clamp(420px, 52vh, 560px);
+  background: linear-gradient(to top, rgba(13,36,99,0.92) 0%, rgba(13,36,99,0.3) 60%, transparent 100%), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80') center / cover;
   display: flex;
   align-items: flex-end;
-  padding-bottom: 50px;
+  padding-bottom: 54px;
   color: #fff;
+}
+.inner-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 .inner-hero h1 {
   font-family: 'GT Super Ds', 'Lora', serif;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  margin: 0;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  margin: 0 0 16px;
   font-weight: 500;
   text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.inner-hero-desc {
+  font-size: 0.97rem;
+  color: rgba(255,255,255,0.84);
+  line-height: 1.75;
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+.inner-hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-hero-enq {
+  background: var(--blue-dark);
+  border: 2px solid var(--blue-dark);
+  color: #fff;
+  padding: 11px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+.btn-hero-enq:hover { background: rgba(13,36,99,0.7); border-color: #fff; }
+.btn-hero-brochure {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.65);
+  color: #fff;
+  padding: 11px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+.btn-hero-brochure:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+
+/* ───── INNER COUNTER BAR (below hero on course detail pages) ───── */
+.inner-counter-bar {
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(13,36,99,0.1);
+  border-radius: 16px;
+  margin: -32px auto 0;
+  max-width: 1100px;
+  position: relative;
+  z-index: 5;
+  padding: 0;
+  overflow: hidden;
+}
+.inner-counter-bar .container { padding: 0 40px; }
+.inner-counter-wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.inner-counter-item {
+  flex: 1;
+  text-align: center;
+  padding: 28px 20px;
+  border-right: 1px solid var(--border);
+}
+.inner-counter-item:last-child { border-right: none; }
+.inner-counter-num {
+  font-family: 'GT Super Ds', 'Lora', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.inner-counter-lbl {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
 }
 .breadcrumb-bar {
   padding: 18px 0;
@@ -724,19 +813,24 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 /* Accreditation Badges */
 .hero-badges-wrap {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   margin-bottom: 24px;
   flex-wrap: wrap;
 }
 .hero-badge-img {
-  height: 52px;
+  height: 58px;
   width: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
   background: #fff;
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+.hero-badge-img:hover {
+  transform: translateY(-3px);
 }
 
 @media (max-width: 640px) {
-  .hero-badges-wrap { justify-content: flex-start; gap: 8px; }
-  .hero-badge-img { height: 44px; }
+  .hero-badges-wrap { justify-content: flex-start; gap: 10px; }
+  .hero-badge-img { height: 48px; padding: 4px; }
 }
