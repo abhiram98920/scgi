@@ -3,50 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Physiotherapy (BPT) | SCGI – Sri Channegowda Group of Institutions</title>
+  <title>GNM | Course Details | SCGI – Sri Channegowda Group of Institutions</title>
+  <meta name="description" content="Study GNM at SCGI Kolar. 4-year degree program affiliated with RGUHS. Expert faculty and clinical training at our own hospital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css?v=11.0" />
-  <style>
-    .inner-hero {
-      position: relative; height: 380px;
-      background: linear-gradient(to top, rgba(13,36,99,0.85) 0%, transparent 50%), url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1600&q=80') center / cover;
-      display: flex; align-items: flex-end; padding-bottom: 40px; color: #fff;
-    }
-    .inner-hero h1 { font-family: 'GT Super Ds', 'Lora', serif; font-size: clamp(2.5rem, 4vw, 3.5rem); margin: 0; font-weight: 500; }
-    .breadcrumb-bar { padding: 22px 0; border-bottom: 1px solid var(--border); }
-    .breadcrumb { display: flex; align-items: center; gap: 12px; font-size: 0.85rem; font-weight: 500; color: var(--text); }
-    .breadcrumb a { color: var(--text-light); text-decoration: none; transition: color 0.2s; }
-    .breadcrumb a:hover { color: var(--blue); }
-    .breadcrumb i.fa-circle { font-size: 0.45rem; color: var(--gold); }
-    .breadcrumb span { color: var(--blue-dark); font-weight: 600; }
-    
-    .stats-bar { background: linear-gradient(120deg, var(--blue-dark) 0%, var(--blue-mid) 100%); }
-    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); }
-    .stat-item { padding: 34px 20px; text-align: center; color: #fff; border-right: 1px solid rgba(255,255,255,.12); }
-    .stat-item:last-child { border-right: none; }
-    .stat-num { font-size: 2.2rem; font-weight: 500; line-height: 1; margin-bottom: 5px; color: var(--gold-light); }
-    .stat-lbl { font-size: 0.85rem; color: rgba(255,255,255,.8); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
-    
-    .reason-list { list-style: none; padding: 0; margin-top: 20px; }
-    .reason-list li { margin-bottom: 12px; font-size: 1.05rem; display: flex; align-items: center; gap: 12px; color: var(--text); font-weight: 500; }
-    .reason-list li i { color: var(--blue); font-size: 1.2rem; }
-    
-    .info-card { background: var(--off-white); border-radius: 16px; padding: 40px 34px; margin-top: 30px; border-left: 4px solid var(--blue); }
-    .info-card h3 { font-family: 'GT Super Ds', 'Lora', serif; font-size: 1.8rem; color: var(--blue-dark); margin-bottom: 16px; }
-    .info-card p { font-size: 0.95rem; line-height: 1.8; color: var(--text-light); }
-    
-    @media (max-width: 900px) {
-      .stats-grid { grid-template-columns: repeat(2,1fr); }
-      .stat-item:nth-child(2) { border-right: none; }
-      .stat-item:nth-child(3) { border-right: 1px solid rgba(255,255,255,.12); border-top: 1px solid rgba(255,255,255,.12); }
-      .stat-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,.12); }
-    }
-    
-
-  </style>
 </head>
 <body>
+
+<!-- FLOATING SIDEBAR -->
+<div class="sticky-float">
+  <a href="contact.html#enquire" class="sticky-admit">Admission 2025‑26</a>
+  <a href="tel:+919740205051" class="sfi ph"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/919740205051" class="sfi wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="mailto:info@scgi.in" class="sfi em"><i class="fas fa-envelope"></i></a>
+</div>
 
 <!-- TOP BAR -->
 <div class="top-bar">
@@ -60,6 +33,9 @@
       <span><i class="fas fa-map-marker-alt"></i>Kolar, Karnataka – 563102</span>
       <span class="tb-divider">|</span>
       <a href="#"><i class="fas fa-award"></i>RGUHS Affiliated</a>
+      <span class="tb-divider">|</span>
+      <a href="#"><i class="fas fa-star"></i>Govt. Recognised</a>
+      <a href="contact.html#enquire" class="tb-gold-btn">Enquire Now</a>
     </div>
   </div>
 </div>
@@ -68,7 +44,9 @@
 <header id="hdr">
   <div class="container">
     <div class="nav-wrap">
-      <a href="index.html" class="logo-link"><img src="SCGI-Logo.png" alt="SCGI Logo" /></a>
+      <a href="index.html" class="logo-link">
+        <img src="SCGI-Logo.png" alt="SCGI Logo" />
+      </a>
       <nav>
         <ul id="navMenu">
           <li><a href="index.html">Home</a></li>
@@ -77,10 +55,10 @@
             <a href="javascript:void(0)" class="active" onclick="this.parentElement.classList.toggle('open')">Courses <i class="fas fa-chevron-down" style="font-size:0.7em;margin-left:4px;"></i></a>
             <div class="dropdown-content">
               <div class="dropdown-submenu">
-                <a href="nursing.html" onclick="this.parentElement.classList.toggle('open')">Nursing <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
+                <a href="nursing.html" class="active" onclick="this.parentElement.classList.toggle('open')">Nursing <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
                 <div class="submenu-content">
                   <a href="nursing-bsc.html">B.Sc Nursing</a>
-                  <a href="nursing-gnm.html">GNM</a>
+                  <a href="nursing-gnm.html" class="active">GNM</a>
                   <a href="nursing-msc.html">M.Sc Nursing</a>
                   <a href="nursing-pbbsc.html">P.B B.Sc Nursing</a>
                 </div>
@@ -96,7 +74,7 @@
                 </div>
               </div>
               <div class="dropdown-submenu">
-                <a href="physiotherapy.html" class="active" onclick="this.parentElement.classList.toggle('open')">Physiotherapy <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
+                <a href="physiotherapy.html" onclick="this.parentElement.classList.toggle('open')">Physiotherapy <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
                 <div class="submenu-content">
                   <a href="physiotherapy-bpt.html">Bachelor of Physiotherapy (BPT)</a>
                 </div>
@@ -115,91 +93,106 @@
 </header>
 
 <!-- INNER HERO -->
-<section class="inner-hero">
-  <div class="container"><h1>Bachelor of Physiotherapy (BPT)</h1></div>
+<section class="inner-hero" style="background-image: linear-gradient(to top, rgba(13,36,99,0.9) 0%, rgba(13,36,99,0.3) 60%, transparent 100%), url('https://images.unsplash.com/photo-1576091160550-217359f4ecf8?w=1600&q=80');">
+  <div class="container">
+    <div class="inner-hero-content">
+      <h1>GNM</h1>
+    </div>
+  </div>
 </section>
 
 <!-- BREADCRUMB BAR -->
 <div class="breadcrumb-bar">
   <div class="container">
     <div class="breadcrumb">
-      <a href="index.html">Home</a> <i class="fas fa-circle"></i> 
-      <span>Courses</span> <i class="fas fa-circle"></i> 
-      <span>Physiotherapy</span>
+      <a href="index.html">Home</a> 
+      <i class="fas fa-circle"></i> 
+      <a href="nursing.html">Nursing</a>
+      <i class="fas fa-circle"></i> 
+      <span>GNM</span>
     </div>
   </div>
 </div>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
+<!-- COURSE DETAIL CONTENT -->
+<section class="detail-section">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-num">4.5<span style="font-size:1.2rem;font-weight:600">ys</span></div>
-        <div class="stat-lbl">Duration</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">10+2</div>
-        <div class="stat-lbl">Eligibility</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">16<span style="font-size:1.2rem;font-weight:600">ys</span></div>
-        <div class="stat-lbl">Excellence</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">5+</div>
-        <div class="stat-lbl">Acre Campus</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CONTENT SECTION -->
-<section style="padding: 80px 0;">
-  <div class="container">
-    <div class="sec-label">Course Overview</div>
-    <h2 class="sec-title" style="margin-bottom: 24px;">Bachelor of Physiotherapy (BPT)</h2>
-    <p class="sec-sub" style="font-size: 1.05rem; max-width: 900px; margin-bottom: 30px;">Bachelor of Physiotherapy (BPT) is an undergraduate professional program that focuses on the science of physical movement and channels it to prevent disability and ailments of movement.</p>
-    
-    <div style="display: flex; gap: 14px; margin-bottom: 60px;">
-      <a href="physiotherapy-bpt.html" class="pc-btn primary" style="padding: 12px 30px; border-radius:30px; text-decoration:none; background:var(--blue); color:#fff; font-weight:600;"><i class="fas fa-paper-plane"></i> Know More</a>
-      <a href="#" class="pc-btn outline" style="padding: 12px 30px; border-radius:30px; text-decoration:none; border:2px solid var(--blue); color:var(--blue); font-weight:600;"><i class="fas fa-download"></i> Download Brochure</a>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-      <div>
-        <h3 style="font-family:'Playfair Display',serif; font-size:2rem; color:var(--blue-dark); margin-bottom:20px;">Why Bachelor of Physiotherapy?</h3>
-        <p class="sec-sub">BPT course is for those who have always aspired to work in the field of human services. They can also help you incorporate complementary and alternative medicine into your practice. A student can learn about human anatomy while working with their hands in physiotherapy.</p>
-        <p class="sec-sub" style="margin-top:12px">In India, there is a high demand for physiotherapists, with various types of patients requiring their services, including those recovering from surgery and accidents, as well as those suffering from chronic conditions such as arthritis.</p>
-        <p class="sec-sub" style="margin-top:12px">As people become more concerned about their health and fitness, the incidence of sports injuries is predicted to rise, resulting in a higher need for physiotherapy services. Students who graduate with a Bachelor of Physiotherapy can work as sports physiotherapists, physiotherapists, osteopaths, or consultants.</p>
+    <div class="detail-grid">
+      <div class="detail-text">
+        <h2 class="sec-title" style="margin-bottom: 24px;">GNM</h2>
+        <p class="sec-sub" style="margin-bottom: 30px; line-height: 1.8;">The purpose of the Basic GNM course is to prepare a qualified general nurse and midwife who will function as a member of a Health team, beginning with consultancy for the first level position in the hospital, community health services especially in rural areas and in education spectrum as a Lecturer.</p>
         
-        <h4 style="margin-top:30px; color:var(--text); font-size:1.1rem;">To convince you further, here are some more reasons why you should consider this course:</h4>
-        <ul class="reason-list">
-          <li><i class="fas fa-check-circle"></i> Rewarding Career</li>
-          <li><i class="fas fa-check-circle"></i> Job Stability and Security</li>
-          <li><i class="fas fa-check-circle"></i> Global Opportunities</li>
-          <li><i class="fas fa-check-circle"></i> Everlasting Career</li>
-        </ul>
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-num">4 Years</span>
+            <span class="stat-lbl">Duration</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">10+2 Years</span>
+            <span class="stat-lbl">Eligibility</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">16 Years</span>
+            <span class="stat-lbl">Excellence</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">5+ Acre</span>
+            <span class="stat-lbl">Campus</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 15px;">
+          <a href="contact.html#enquire" class="btn-primary">Enquire Now</a>
+          <a href="#" class="btn-outline">Download Brochure</a>
+        </div>
+      </div>
+      <div class="detail-img">
+        <img src="https://images.unsplash.com/photo-1551076805-e1869043f59b?w=800&q=80" alt="BSc Nursing Students" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SECTION -->
+<section class="why-section">
+  <div class="container">
+    <div class="tc" style="margin-bottom: 50px;">
+      <h2 class="sec-title">Answer for Why GNM</h2>
+      <p class="sec-sub">A BSc Nursing course will train you to perform to the best of your abilities under different circumstances. It will also train you to nurse people of all age groups. But why should you choose a career in this field?</p>
+    </div>
+    <div style="max-width: 900px; margin: 0 auto; line-height: 1.8; color: var(--text);">
+      <p>As per studies carried out in 2018, the value of the global healthcare industry was 8 trillion that year. In other words, healthcare alone forms 10% of GDP in some developed countries. It is estimated to be one of the fastest developing industries globally and holds limitless opportunities for medical aspirants.</p>
+      
+      <p style="margin-top: 20px; font-weight: 600; color: var(--blue-dark);">To convince you further, here are some more reasons why you should consider this course:</p>
+      <ul style="list-style: none; padding: 0; margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Rewarding Career</li>
+        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Job Stability and Security</li>
+        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Global Opportunities</li>
+        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Everlasting Career</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY SECTION -->
+<section class="detail-section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+      <div>
+        <h3 style="font-family: 'GT Super Ds', serif; font-size: 1.8rem; color: var(--blue-dark); margin-bottom: 20px;">Eligibility</h3>
+        <p style="line-height: 1.8;">10+2 class or its equivalent passed with aggregate of 45% marks in Science which consist of subjects Physics, Chemistry and Biology conducted by the department of pre-university education in anywhere in India. English Mandatory</p>
       </div>
       <div>
-        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="Physiotherapy Practice" style="width:100%; border-radius:20px; box-shadow:0 20px 50px rgba(0,0,0,0.1);" />
+        <h3 style="font-family: 'GT Super Ds', serif; font-size: 1.8rem; color: var(--blue-dark); margin-bottom: 20px;">Eligibility for Examination</h3>
+        <p style="line-height: 1.7; font-size: 0.95rem;">Students should have 80% attendance each in theory and practical. The student should complete 11 months duration of that particular academic year before appearing for the examination.</p>
+        <p style="line-height: 1.7; font-size: 0.95rem; margin-top: 15px;">The principal should certify that the candidate’s performance and conduct are satisfactory. If a student fails in one theory paper or practical examination, she/he may sit for a supplementary examination in the failed subjects or practical held subsequently.</p>
       </div>
-    </div>
-
-    <div class="info-card">
-      <h3>Eligibility</h3>
-      <p>10+2 class or its equivalent passed with aggregate of 40% marks in Science which consist of subjects Physics, Chemistry and Biology conducted by the department of pre-university education in anywhere in India. English Mandatory.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>Eligibility for Examination</h3>
-      <p>Students should have 80% attendance each in theory and practical. The student should complete 11 months duration of that particular academic year before appearing for the examination. <br><br>The principal should certify that the candidate’s performance and conduct are satisfactory. If a student fails in one theory paper or practical examination, she/he may sit for a supplementary examination in the failed subjects or practical held subsequently.</p>
     </div>
   </div>
 </section>
 
 <!-- GALLERY SECTION -->
-<section class="gallery" id="gallery">
+<section class="gallery" id="gallery" style="background: #fff; border-top: 1px solid var(--border); padding: 80px 0;">
   <div class="container">
     <div class="tc">
       <div class="sec-label">Campus Life</div>
@@ -250,13 +243,13 @@
   </div>
 </section>
 
-<!-- COUNSELLOR / CTA -->
-<section class="cta-band" id="enquire">
+<!-- CTA BAND -->
+<section class="cta-band" style="background: var(--blue-dark); padding: 80px 0;">
   <div class="container">
-    <div class="sec-label" style="justify-content: center;">Contact Our Counsellor</div>
-    <h2 class="sec-title" style="color: #fff; text-align: center; margin-bottom: 14px;">Clarify all you doubts about the course, fees, college and more</h2>
-    <div class="cta-actions" style="margin-top: 36px;">
-      <a href="tel:+919740205051" class="btn-gold"><i class="fas fa-paper-plane"></i> Enquire Now</a>
+    <div class="tc">
+      <div class="sec-label" style="justify-content: center; color: var(--gold-pale);">Contact our Counsellor</div>
+      <h2 class="sec-title" style="color: #fff; text-align: center; margin-bottom: 14px;">Clarify all you doubts about the course, fees, college and more</h2>
+      <a href="contact.html#enquire" class="btn-gold" style="margin-top: 30px;"><i class="fas fa-phone-alt"></i> Enquire Now</a>
     </div>
   </div>
 </section>
@@ -348,16 +341,6 @@
     st.classList.toggle('show', window.scrollY > 400);
   });
   st.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // Smooth anchor scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const href = a.getAttribute('href');
-      if(href === '#') return;
-      const t = document.querySelector(href);
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
-    });
-  });
 </script>
 </body>
 </html>

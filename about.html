@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css?v=8.0" />
+  <link rel="stylesheet" href="style.css?v=11.0" />
   <style>
     /* ───── INNER HEADER / BREADCRUMBS ───── */
     .inner-hero {
@@ -158,7 +158,7 @@
 </div>
 
 <!-- HEADER -->
-<header id="hdr" class="hdr-inner">
+<header id="hdr">
   <div class="container">
     <div class="nav-wrap">
       <a href="index.html" class="logo-link">
@@ -167,39 +167,39 @@
       <nav>
         <ul id="navMenu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About Us <i class="fas fa-chevron-down" style="font-size:0.7em;margin-left:4px;"></i></a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
           <li class="dropdown">
             <a href="javascript:void(0)" onclick="this.parentElement.classList.toggle('open')">Courses <i class="fas fa-chevron-down" style="font-size:0.7em;margin-left:4px;"></i></a>
             <div class="dropdown-content">
               <div class="dropdown-submenu">
-                <a href="nursing.html">Nursing <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
+                <a href="nursing.html" onclick="this.parentElement.classList.toggle('open')">Nursing <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
                 <div class="submenu-content">
-                  <a href="nursing.html#bsc">B.Sc Nursing</a>
-                  <a href="nursing.html#gnm">GNM</a>
-                  <a href="nursing.html#msc">M.Sc Nursing</a>
-                  <a href="nursing.html#pbbsc">P.B B.Sc Nursing</a>
+                  <a href="nursing-bsc.html">B.Sc Nursing</a>
+                  <a href="nursing-gnm.html">GNM</a>
+                  <a href="nursing-msc.html">M.Sc Nursing</a>
+                  <a href="nursing-pbbsc.html">P.B B.Sc Nursing</a>
                 </div>
               </div>
               <div class="dropdown-submenu">
-                <a href="allied.html">Allied Health Science <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
+                <a href="allied.html" onclick="this.parentElement.classList.toggle('open')">Allied Health Science <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
                 <div class="submenu-content">
-                  <a href="allied.html#bmlt">B.Sc MLT</a>
-                  <a href="allied.html#atott">B.Sc AT & OTT</a>
-                  <a href="allied.html#dmlt">DMLT</a>
-                  <a href="allied.html#dott">DOTT</a>
-                  <a href="allied.html#dhi">DHI</a>
+                  <a href="allied-bmlt.html">B.Sc MLT</a>
+                  <a href="allied-atott.html">B.Sc AT & OTT</a>
+                  <a href="allied-dmlt.html">DMLT</a>
+                  <a href="allied-dott.html">DOTT</a>
+                  <a href="allied-dhi.html">DHI</a>
                 </div>
               </div>
               <div class="dropdown-submenu">
-                <a href="physiotherapy.html">Physiotherapy <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
+                <a href="physiotherapy.html" onclick="this.parentElement.classList.toggle('open')">Physiotherapy <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
                 <div class="submenu-content">
-                  <a href="physiotherapy.html#bpt">Bachelor of Physiotherapy (BPT)</a>
+                  <a href="physiotherapy-bpt.html">Bachelor of Physiotherapy (BPT)</a>
                 </div>
               </div>
             </div>
           </li>
-          <li><a href="index.html#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <div style="display:flex;align-items:center;gap:12px">
@@ -301,19 +301,19 @@
       <div class="fc">
         <h5>Nursing Courses</h5>
         <ul class="fl">
-          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>B.Sc Nursing</a></li>
-          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>GNM</a></li>
-          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>M.Sc Nursing</a></li>
-          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>P.B B.Sc Nursing</a></li>
+          <li><a href="nursing-bsc.html"><i class="fas fa-chevron-right"></i>B.Sc Nursing</a></li>
+          <li><a href="nursing-gnm.html"><i class="fas fa-chevron-right"></i>GNM</a></li>
+          <li><a href="nursing-msc.html"><i class="fas fa-chevron-right"></i>M.Sc Nursing</a></li>
+          <li><a href="nursing-pbbsc.html"><i class="fas fa-chevron-right"></i>P.B B.Sc Nursing</a></li>
         </ul>
         <h5 style="margin-top:22px">Allied Health &amp; Physio</h5>
         <ul class="fl">
-          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>B.Sc MLT</a></li>
-          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>B.Sc AT &amp; OTT</a></li>
-          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>Diploma in MLT</a></li>
-          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>Diploma in OTT</a></li>
-          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>Diploma in Health Inspector</a></li>
-          <li><a href="#enquire"><i class="fas fa-chevron-right"></i>BPT</a></li>
+          <li><a href="allied-bmlt.html"><i class="fas fa-chevron-right"></i>B.Sc MLT</a></li>
+          <li><a href="allied-atott.html"><i class="fas fa-chevron-right"></i>B.Sc AT &amp; OTT</a></li>
+          <li><a href="allied-dmlt.html"><i class="fas fa-chevron-right"></i>Diploma in MLT</a></li>
+          <li><a href="allied-dott.html"><i class="fas fa-chevron-right"></i>Diploma in OTT</a></li>
+          <li><a href="allied-dhi.html"><i class="fas fa-chevron-right"></i>Diploma in Health Inspector</a></li>
+          <li><a href="physiotherapy-bpt.html"><i class="fas fa-chevron-right"></i>BPT</a></li>
         </ul>
       </div>
 
@@ -322,10 +322,9 @@
         <ul class="fl">
           <li><a href="index.html"><i class="fas fa-chevron-right"></i>Home</a></li>
           <li><a href="about.html"><i class="fas fa-chevron-right"></i>About Us</a></li>
-          <li><a href="index.html#courses"><i class="fas fa-chevron-right"></i>Courses</a></li>
-          <li><a href="index.html#gallery"><i class="fas fa-chevron-right"></i>Gallery</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i>Gallery</a></li>
-          <li><a href="#contact"><i class="fas fa-chevron-right"></i>Contact</a></li>
+          <li><a href="nursing.html"><i class="fas fa-chevron-right"></i>Courses</a></li>
+          <li><a href="gallery.html"><i class="fas fa-chevron-right"></i>Gallery</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i>Contact</a></li>
         </ul>
       </div>
 
