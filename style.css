@@ -683,7 +683,7 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 .inner-hero {
   position: relative;
   min-height: clamp(480px, 60vh, 650px);
-  background: linear-gradient(to top, rgba(13,36,99,0.92) 0%, rgba(13,36,99,0.3) 60%, transparent 100%), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80') center / cover;
+  background: linear-gradient(to top, rgba(13,36,99,0.92) 0%, rgba(13,36,99,0.3) 60%, transparent 100%), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=80') center / cover;
   display: flex;
   align-items: flex-end;
   padding-bottom: 70px;
