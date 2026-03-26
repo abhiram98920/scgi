@@ -195,6 +195,47 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     @media (max-width: 991px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 640px) { .gallery-grid { grid-template-columns: 1fr; } }
 
+    /* ───── OUR FACILITIES (icon grid) ───── */
+    .fac-section {
+      background: #e8eef8;
+      padding: 80px 0;
+    }
+    .fac-section .tc { margin-bottom: 56px; }
+    .fac-section .sec-title em { font-style: italic; font-family: 'Lora', serif; }
+    .fac-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 36px 24px;
+    }
+    .fac-item {
+      text-align: center;
+    }
+    .fac-icon {
+      width: 68px; height: 68px;
+      background: var(--blue-dark);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    .fac-item h4 {
+      font-family: 'Lora', 'GT Super Ds', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--blue-dark);
+      margin-bottom: 10px;
+    }
+    .fac-item p {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.7;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+    @media (max-width: 991px) { .fac-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .fac-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; } }
+
     /* ───── COUNSELLOR / CTA BAND ───── */
     .cta-band {
       background: linear-gradient(115deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
@@ -718,11 +759,13 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 .inner-counter-bar .container { padding: 0 40px; }
 .inner-counter-wrap {
   display: flex;
-  align-items: stretch;
-  gap: 0;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* allow wrapping on small devices */
 }
 .inner-counter-item {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 150px;
   text-align: center;
   padding: 28px 20px;
   border-right: 1px solid var(--border);
