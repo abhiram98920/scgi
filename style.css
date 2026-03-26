@@ -720,3 +720,23 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 .info-content h4 { font-size: 1rem; color: var(--blue-dark); margin-bottom: 6px; font-weight: 700; }
 .info-content p, .info-content a { font-size: 0.95rem; color: var(--text-light); text-decoration: none; line-height: 1.6; }
 
+
+/* Accreditation Badges */
+.hero-badges-wrap {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.hero-badge-img {
+  height: 52px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  background: #fff;
+}
+
+@media (max-width: 640px) {
+  .hero-badges-wrap { justify-content: flex-start; gap: 8px; }
+  .hero-badge-img { height: 44px; }
+}
