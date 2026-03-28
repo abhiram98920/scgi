@@ -1317,19 +1317,19 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   .m-num { font-size: 1.7rem; }
 
   /* Courses section - Final Fix */
-  .courses-tabs { gap: 6px; justify-content: space-around; }
-  .tab-btn { padding: 8px 16px; font-size: 0.75rem; flex: 1; text-align: center; }
+  .courses-tabs { gap: 6px; justify-content: space-around; margin: 20px 0 30px !important; }
+  .tab-btn { padding: 8px 12px; font-size: 0.72rem; flex: 1; text-align: center; white-space: nowrap; }
   
   .courses-slider-container { overflow: visible; display: block; margin-right: 0; position: relative; padding: 0; }
-  .courses-slider-track { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 15px; scroll-snap-type: x mandatory; display: flex; scrollbar-width: none; }
+  .courses-slider-track { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 0 15px 15px; scroll-snap-type: x mandatory; display: flex; scrollbar-width: none; }
   .courses-slider-track::-webkit-scrollbar { display: none; }
-  .courses-grid { display: flex; gap: 12px; margin: 0; width: max-content; }
-  .course-card, .kmct-card { flex: 0 0 88vw !important; scroll-snap-align: center; display: flex; flex-direction: column; background: #0a1a4a; height: 420px; min-width: 280px !important; margin: 0; }
+  .courses-grid { display: flex; gap: 15px; margin: 0; flex-wrap: nowrap; }
+  .course-card, .kmct-card { flex: 0 0 calc(90vw - 30px) !important; scroll-snap-align: center; display: flex; flex-direction: column; background: #0a1a4a; height: 400px; min-width: 260px !important; margin: 0; }
   
   /* Arror visibility & Hitbox Fix */
-  .slider-arrow { display: flex !important; z-index: 1000 !important; width: 40px; height: 40px; background: rgba(255,255,255,0.95); opacity: 1 !important; transform: translateY(-50%); }
-  .slider-arrow.prev { left: 10px !important; }
-  .slider-arrow.next { right: 10px !important; }
+  .slider-arrow { display: flex !important; z-index: 1000 !important; width: 44px; height: 44px; background: #fff !important; color: var(--blue-dark) !important; opacity: 1 !important; transform: translateY(-50%); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .slider-arrow.prev { left: 5px !important; }
+  .slider-arrow.next { right: 5px !important; }
   
   .kc-img { height: 100%; width: 100%; border-radius: 12px; overflow: hidden; position: relative; }
   .kc-img img { object-fit: cover; width: 100%; height: 100%; opacity: 0.9; }
