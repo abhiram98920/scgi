@@ -911,22 +911,29 @@
       const grid = document.getElementById('grid-' + category);
       if(!grid) return;
       
-      const cardContainer = grid.parentElement;
+      const track = grid.parentElement;
       const card = grid.children[0];
       if(!card) return;
       
-      const cardWidth = card.offsetWidth + 30; // card + gap
-      const totalCards = grid.children.length;
-      const visibleCount = Math.floor(cardContainer.offsetWidth / cardWidth) || 1;
-      const maxPos = Math.max(0, totalCards - visibleCount);
+      const gap = window.innerWidth <= 768 ? 12 : 30;
+      const cardWidth = card.offsetWidth + gap; 
       
-      sliderPos[category] += direction;
-      
-      // Bounds
-      if (sliderPos[category] < 0) sliderPos[category] = 0;
-      if (sliderPos[category] > maxPos) sliderPos[category] = maxPos;
-      
-      grid.style.transform = `translateX(-${sliderPos[category] * cardWidth}px)`;
+      if (window.innerWidth <= 768) {
+        // Mobile: use native scroll sync
+        track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+      } else {
+        // Desktop: use translateX
+        const containerWidth = track.offsetWidth;
+        const totalCards = grid.children.length;
+        const visibleCount = Math.floor(containerWidth / cardWidth) || 1;
+        const maxPos = Math.max(0, totalCards - visibleCount);
+        
+        sliderPos[category] += direction;
+        if (sliderPos[category] < 0) sliderPos[category] = 0;
+        if (sliderPos[category] > maxPos) sliderPos[category] = maxPos;
+        
+        grid.style.transform = `translateX(-${sliderPos[category] * cardWidth}px)`;
+      }
     }
   });
 </script>

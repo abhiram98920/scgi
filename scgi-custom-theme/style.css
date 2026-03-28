@@ -319,10 +319,12 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     .slider-arrow.prev { left: -25px; }
     .slider-arrow.next { right: -25px; }
     
+    @media (max-width: 1024px) {
+      .courses-grid > * { flex: 0 0 45%; min-width: 0; }
+    }
     @media (max-width: 768px) {
       .courses-grid > * { flex: 0 0 280px; min-width: 280px; }
-      .slider-arrow { display: none; }
-      .courses-slider-container { overflow-x: auto; padding-bottom: 20px; }
+      .courses-slider-container { overflow: visible; }
     }
     .course-card { border-radius: 18px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.08); transition: all .35s; background: #fff; border: 1px solid var(--border); }
     .course-card:hover { transform: translateY(-8px); box-shadow: 0 16px 44px rgba(26,58,140,.16); border-color: transparent; }
@@ -1320,24 +1322,33 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   .metrics-title div { display: inline-block; font-size: 1.3rem !important; white-space: nowrap; font-weight: 700; color: var(--blue-dark); }
   .m-num { font-size: 1.7rem; }
 
-  /* Courses section - Native Carousel */
-  .courses-slider-container { overflow: visible; display: block; margin-right: -24px; position: relative; }
-  .courses-slider-track { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 15px; padding-right: 24px; scroll-snap-type: x mandatory; display: flex; }
-  .courses-grid { display: flex; gap: 15px; margin: 0; width: max-content; }
-  .course-card, .kmct-card { flex: 0 0 82%; scroll-snap-align: center; display: flex; flex-direction: column; background: #0a1a4a; height: 380px; }
+  /* Courses section - Final Fix */
+  .courses-tabs { gap: 6px; justify-content: space-around; }
+  .tab-btn { padding: 8px 16px; font-size: 0.75rem; flex: 1; text-align: center; }
+  
+  .courses-slider-container { overflow: visible; display: block; margin-right: 0; position: relative; padding: 0; }
+  .courses-slider-track { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 15px; scroll-snap-type: x mandatory; display: flex; scrollbar-width: none; }
+  .courses-slider-track::-webkit-scrollbar { display: none; }
+  .courses-grid { display: flex; gap: 12px; margin: 0; width: max-content; }
+  .course-card, .kmct-card { flex: 0 0 88vw !important; scroll-snap-align: center; display: flex; flex-direction: column; background: #0a1a4a; height: 420px; min-width: 280px !important; margin: 0; }
+  
+  /* Arror visibility & Hitbox Fix */
+  .slider-arrow { display: flex !important; z-index: 1000 !important; width: 40px; height: 40px; background: rgba(255,255,255,0.95); opacity: 1 !important; transform: translateY(-50%); }
+  .slider-arrow.prev { left: 10px !important; }
+  .slider-arrow.next { right: 10px !important; }
+  
   .kc-img { height: 100%; width: 100%; border-radius: 12px; overflow: hidden; position: relative; }
-  .kc-img img { object-fit: cover; width: 100%; height: 100%; transition: transform 0.8s; opacity: 0.85; }
+  .kc-img img { object-fit: cover; width: 100%; height: 100%; opacity: 0.9; }
   .kc-overlay { background: linear-gradient(to top, rgba(13,36,99,0.95) 10%, rgba(13,36,99,0.4) 50%, rgba(13,36,99,0.1) 100%); }
   
-  /* Mobile Scroll Icon Indicator */
+  /* Mobile Pulse Indicator (Lowered Z-Index to stay below arrows) */
   .courses-slider-container::after {
     content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
-    position: absolute; right: 30px; top: 50%; transform: translateY(-50%);
-    width: 32px; height: 32px; background: rgba(255,255,255,0.9); border-radius: 50%;
+    position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+    width: 32px; height: 32px; background: rgba(255,255,255,0.7); border-radius: 50%;
     display: flex; align-items: center; justify-content: center; color: var(--blue);
-    font-size: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); animation: pulseArrow 2s infinite; pointer-events: none; z-index: 5;
+    font-size: 1rem; animation: pulseArrow 2s infinite; pointer-events: none; z-index: 50;
   }
-  @keyframes pulseArrow { 0% { right: 30px; opacity: 0.8; } 50% { right: 20px; opacity: 1; } 100% { right: 30px; opacity: 0.8; } }
 
   /* Fac grid - single column on mobile */
   .fac-grid { grid-template-columns: 1fr; gap: 18px; }
