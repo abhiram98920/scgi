@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css?v=15.0" />
+  <link rel="stylesheet" href="style.css?v=13.0" />
 </head>
 <body>
 
@@ -47,23 +47,29 @@
         <img src="SCGI-Logo.png" alt="SCGI – Sri Channegowda Group of Institutions Logo" />
       </a>
       <nav>
-                <ul id="navMenu">
-          <li><a href="index.html">Home</a></li>
+        <ul id="navMenu">
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li class="dropdown">
             <a href="javascript:void(0)" onclick="this.parentElement.classList.toggle('open')">Courses <i class="fas fa-chevron-down" style="font-size:0.7em;margin-left:4px;"></i></a>
             <div class="dropdown-content">
               <div class="dropdown-submenu">
-                <a href="nursing.html" onclick="this.parentElement.classList.toggle('open')">Nursing <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
+                <a href="nursing.html">Nursing <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
                 <div class="submenu-content">
-                  <a href="nursing-bsc.html">B.Sc Nursing</a>
                   <a href="nursing-gnm.html">GNM</a>
-                  <a href="nursing-msc.html">M.Sc Nursing</a>
+                  <a href="nursing-bsc.html">B.Sc Nursing</a>
                   <a href="nursing-pbbsc.html">P.B B.Sc Nursing</a>
+                  <a href="nursing-msc.html">M.Sc Nursing</a>
                 </div>
               </div>
               <div class="dropdown-submenu">
-                <a href="allied.html" onclick="this.parentElement.classList.toggle('open')">Allied Health Science <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
+                <a href="physiotherapy.html">Physiotherapy <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
+                <div class="submenu-content">
+                  <a href="physiotherapy-bpt.html">Bachelor of Physiotherapy (BPT)</a>
+                </div>
+              </div>
+              <div class="dropdown-submenu">
+                <a href="allied.html">Allied Health Science <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
                 <div class="submenu-content">
                   <a href="allied-bmlt.html">B.Sc MLT</a>
                   <a href="allied-atott.html">B.Sc AT & OTT</a>
@@ -71,12 +77,6 @@
                   <a href="allied-dmlt.html">DMLT</a>
                   <a href="allied-dott.html">DOTT</a>
                   <a href="allied-dhi.html">DHI</a>
-                </div>
-              </div>
-              <div class="dropdown-submenu">
-                <a href="physiotherapy.html" onclick="this.parentElement.classList.toggle('open')">Physiotherapy <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
-                <div class="submenu-content">
-                  <a href="physiotherapy-bpt.html">Bachelor of Physiotherapy (BPT)</a>
                 </div>
               </div>
             </div>
@@ -112,14 +112,14 @@
         <p class="hero-desc">Ignite your healthcare passion with expert training. Your future starts now!</p>
       <div class="hero-btns">
         <a href="#courses" class="btn-gold"><i class="fas fa-graduation-cap"></i>Explore Courses</a>
-        <a href="#enquire" class="btn-ghost-white btn-hero-enq-mb"><i class="fas fa-paper-plane"></i>Enquire Now</a>
+        <a href="#enquire" class="btn-ghost-white"><i class="fas fa-paper-plane"></i>Enquire Now</a>
       </div>
       <div class="hero-pills">
         <a href="nursing.html" class="hero-pill"><i class="fas fa-heartbeat"></i>Nursing</a>
         <a href="allied.html" class="hero-pill"><i class="fas fa-microscope"></i>Allied Health Science</a>
         <a href="physiotherapy.html" class="hero-pill"><i class="fas fa-running"></i>Physiotherapy</a>
       </div>
-            <div class="hero-badges-wrap">
+      <div class="hero-badges-wrap">
         <div class="hero-badge-item">
           <img src="KA-Govt-01.jpg" alt="Govt-Recognised" class="hero-badge-img">
           <span>Recognised by<br>Govt of Karnataka</span>
@@ -137,14 +137,13 @@
           <span>Karnataka State<br>Nursing Council</span>
         </div>
         <div class="hero-badge-item">
-          <img src="Logo of Karnataka paramedical board.webp" alt="KPMB Icon" class="hero-badge-img">
+          <img src="Logo%20of%20Karnataka%20paramedical%20board.webp" alt="KPMB Icon" class="hero-badge-img">
           <span>Karnataka Paramedical<br>Board</span>
         </div>
         <div class="hero-badge-item">
-          <img src="Karnataka state diploma in nursing examination board.png" alt="KSDNEB Icon" class="hero-badge-img">
+          <img src="Karnataka%20state%20diploma%20in%20nursing%20examination%20board.png" alt="KSDNEB Icon" class="hero-badge-img">
           <span>Karnataka State<br>Diploma in Nursing Board</span>
         </div>
-      </div>
       </div>
     </div>
     <div class="hero-stats-panel hero-enquiry-form">
@@ -931,21 +930,6 @@
     }
   });
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  var cards = document.querySelectorAll("a.kmct-card, a.course-card");
-  cards.forEach(function(card) {
-    card.addEventListener("touchstart", function(e) {
-      if (!card.classList.contains("hover-active")) {
-        e.preventDefault();
-        cards.forEach(function(c) { c.classList.remove("hover-active"); });
-        card.classList.add("hover-active");
-      }
-    });
-  });
-});
-</script>
-
 </body>
 
 
