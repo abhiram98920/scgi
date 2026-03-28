@@ -283,6 +283,7 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
       background: var(--blue); color: #fff; padding: 12px 30px; border-radius: 30px; font-weight: 600; font-size: .92rem;
       text-decoration: none; transition: all .4s; box-shadow: 0 5px 18px rgba(26,58,140,.25);
       display: inline-flex; align-items: center; gap: 8px; position: relative; overflow: hidden; z-index: 1;
+      white-space: nowrap;
     }
     .btn-primary::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--blue-mid); transition: all .4s cubic-bezier(0.19, 1, 0.22, 1); z-index: -1; }
     .btn-primary:hover::before { left: 0; }
@@ -414,6 +415,7 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     .btn-outline { 
       border: 2px solid var(--blue); color: var(--blue); padding: 12px 28px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: all .4s; 
       display: inline-flex; align-items: center; gap: 8px; font-size: .92rem; position: relative; overflow: hidden; z-index: 1;
+      white-space: nowrap;
     }
     .btn-outline::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--blue); transition: all .4s cubic-bezier(0.19, 1, 0.22, 1); z-index: -1; }
     .btn-outline:hover::before { left: 0; }
@@ -1293,14 +1295,16 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   .hero-stats-panel { display: none !important; }
   .btn-hero-enq-mb { display: inline-flex !important; }
 
-  /* Hero */
+  /* Hero Fixes for All Screen Sizes */
   .hero { min-height: auto; padding: 100px 15px 50px; }
-  .hero h1 { font-size: 1.55rem; margin-bottom: 12px; line-height: 1.25; }
-  .hero h1 span { font-size: 1.85rem; margin-top: 2px; }
+  .hero h1 { font-size: clamp(1.4rem, 5vw, 1.55rem); margin-bottom: 12px; line-height: 1.25; }
+  .hero h1 span { font-size: clamp(1.6rem, 6vw, 1.85rem); margin-top: 2px; }
   .hero-desc { font-size: 0.82rem; margin-bottom: 20px; color: rgba(255,255,255,0.75); }
-  .hero-btns { gap: 10px; flex-wrap: wrap; justify-content: flex-start; }
+  .hero-btns { gap: 12px; flex-direction: column; align-items: stretch; justify-content: flex-start; }
+  .hero-btns .btn-gold, .hero-btns .btn-ghost-white { width: 100%; justify-content: center; }
   .hero-pills { gap: 8px; flex-wrap: wrap; margin-top: 10px; }
   .hero-pill { font-size: 0.72rem; padding: 6px 12px; }
+  .hero-badges-wrap { justify-content: flex-start; }
   
   /* Hero Logos Marquee (Mobile) */
   .hero, .page-hero, .inner-hero { overflow-x: hidden; }
@@ -1359,12 +1363,18 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   .acc-heading { font-size: 1.6rem; }
   .acc-marquee-img { height: 56px; }
 
-  /* Inner hero */
-  .inner-hero { min-height: 380px; padding-top: 80px; padding-bottom: 40px; }
-  .inner-hero-content { padding: 0 4px; }
-  .inner-hero-content h1 { font-size: 1.6rem; line-height: 1.2; }
-  .inner-hero-desc { font-size: 0.87rem; }
-  .inner-hero-btns { flex-wrap: wrap; gap: 10px; }
+  /* Inner hero Responsive Fix */
+  .inner-hero { min-height: auto; padding: 100px 15px 60px !important; }
+  .inner-hero-content { padding: 0 !important; }
+  .inner-hero-content h1 { font-size: clamp(1.2rem, 5vw, 1.4rem) !important; line-height: 1.25; margin-bottom: 15px; }
+  .inner-hero-desc { font-size: 0.82rem; line-height: 1.5; margin-bottom: 25px; color: rgba(255,255,255,0.8); }
+  .inner-hero-btns { flex-direction: column !important; align-items: stretch !important; gap: 12px !important; display: flex !important; }
+  .inner-hero-btns .btn-gold, .inner-hero-btns .btn-ghost-white { width: 100% !important; justify-content: center; }
+  
+  /* Detail section buttons wrap */
+  .detail-text div[style*="display: flex"] { flex-direction: column !important; align-items: stretch !important; gap: 12px !important; }
+  .detail-text div[style*="display: flex"] .btn-primary, 
+  .detail-text div[style*="display: flex"] .btn-outline { width: 100% !important; justify-content: center; margin: 0 !important; }
 
   /* Counter bar - wraps on mobile */
   .inner-counter-bar { margin: -18px 16px 0; }
@@ -1408,9 +1418,10 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 
 /* VERY SMALL MOBILE (≤ 380px) */
 @media (max-width: 380px) {
-  .hero h1 { font-size: 1.55rem; }
-  .inner-hero-content h1 { font-size: 1.4rem; }
-  .acc-heading { font-size: 1.4rem; }
+  .hero h1 { font-size: 1.35rem; }
+  .hero h1 span { font-size: 1.55rem; }
+  .inner-hero-content h1 { font-size: 1.2rem !important; }
+  .acc-heading { font-size: 1.3rem; }
   .hero-badge-img { height: 36px; }
   .inner-counter-item { padding: 14px 8px; }
   .inner-counter-num { font-size: 1.1rem; }
