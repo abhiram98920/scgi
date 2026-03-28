@@ -135,14 +135,14 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     
     /* hero dots */
     .hero-dots {
-      position: absolute; left: 40px; top: 50%; transform: translateY(-50%);
-      display: flex; flex-direction: column; gap: 12px; z-index: 10;
+      position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%);
+      display: flex; gap: 12px; z-index: 10;
     }
     .hero-dot {
-      width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.3);
-      cursor: pointer; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.5);
+      width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.3);
+      cursor: pointer; transition: all 0.3s; border: 1.5px solid rgba(255,255,255,0.5);
     }
-    .hero-dot.active { background: var(--gold); border-color: var(--gold); transform: scale(1.3); }
+    .hero-dot.active { background: var(--gold); border-color: var(--gold); transform: scale(1.25); }
     
     /* floating stats panel */
     .hero-stats-panel {
@@ -456,7 +456,7 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
       .hero .container { grid-template-columns: 1fr; padding-top: 40px; }
       .hero-stats-panel { display: none !important; }
       .btn-hero-enq-mb { display: inline-flex !important; }
-      .hero-dots { top: auto; bottom: 40px; left: 50%; transform: translateX(-50%); flex-direction: row; gap: 10px; z-index: 10; width: 100%; justify-content: center; }
+      .hero-dots { bottom: 30px; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 34px; }
       .stats-grid { grid-template-columns: repeat(2,1fr); }
@@ -1333,7 +1333,7 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   .courses { padding: 50px 0; }
   .courses-slider-container { overflow: visible; display: block; margin-right: -24px; }
   .courses-slider-track { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 25px; padding-right: 24px; scroll-snap-type: x mandatory; display: flex; }
-  .courses-grid { display: flex; gap: 20px; margin: 0; width: auto; }
+  .courses-grid { display: flex; gap: 20px; padding: 0; width: max-content; }
   .course-card, .kmct-card { flex: 0 0 85%; scroll-snap-align: center; display: flex; flex-direction: column; }
   .course-card .cc-img img { object-fit: cover; object-position: center; width: 100%; height: 100%; }
   .kmct-card { height: 400px; }
