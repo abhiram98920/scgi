@@ -16,8 +16,8 @@
 <!-- FLOATING SIDEBAR -->
 <div class="sticky-float">
   <a href="contact.html#enquire" class="sticky-admit">Admission 2025‑26</a>
-  <a href="tel:+919740205051" class="sfi ph"><i class="fas fa-phone"></i></a>
-  <a href="https://wa.me/919740205051" class="sfi wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+919947915916" class="sfi ph"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/919769002277" class="sfi wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
   <a href="mailto:info@scgi.in" class="sfi em"><i class="fas fa-envelope"></i></a>
 </div>
 
@@ -25,7 +25,7 @@
 <div class="top-bar">
   <div class="container wrap">
     <div class="tb-left">
-      <a href="tel:+919740205051"><i class="fas fa-phone-alt"></i>+91 97402 05051</a>
+      <a href="tel:+919947915916"><i class="fas fa-phone-alt"></i>+91 99479 15916 / 97690 02277</a>
       <span class="tb-divider">|</span>
       <a href="mailto:info@scgi.in"><i class="fas fa-envelope"></i>info@scgi.in</a>
     </div>
@@ -111,7 +111,7 @@
 </div>
 
 <!-- GALLERY CONTENT -->
-<section class="gallery" style="padding: 80px 0;">
+<section class="gallery sec-bg-blue bg-pattern" style="padding: 80px 0;">
   <div class="container">
     <div class="tc" style="margin-bottom: 50px;">
       <h2 class="sec-title" style="margin-bottom: 20px;">Institutional Gallery</h2>
@@ -171,6 +171,17 @@
   </div>
 </section>
 
+<!-- BANNER CTA -->
+<section class="banner-cta">
+  <div class="container flex-cta">
+    <div class="cta-text">
+      <h3>Guiding You Towards a Bright Career</h3>
+      <p>Reach Out for Admissions, Queries & More</p>
+    </div>
+    <a href="contact.html" class="btn-gold"><i class="fas fa-paper-plane"></i>Contact Us</a>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer id="contact">
   <div class="container">
@@ -179,7 +190,7 @@
         <img src="SCGI-Logo.png" alt="SCGI Logo" />
         <p>SCGI was established in 2006 and is affiliated to Rajiv Gandhi University of Health Sciences (RGUHS). Nestled in Kolar beside the Chennai–Bangalore highway, SCGI is a premier healthcare education institution with its own on-campus hospital.</p>
         <div class="footer-social">
-          <a href="https://wa.me/919740205051" class="soc-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/919769002277" class="soc-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
           <a href="#" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="soc-btn"><i class="fab fa-instagram"></i></a>
           <a href="#" class="soc-btn"><i class="fab fa-youtube"></i></a>
@@ -219,7 +230,7 @@
       <div class="fc">
         <h5>Contact Us</h5>
         <div class="fci"><i class="fas fa-map-marker-alt"></i><span>NH4 Bypass, Near Railway Gate, Kogilahally Village, Dodda Hasala Gram Panchayath, Kolar, Karnataka – 563102</span></div>
-        <div class="fci"><i class="fas fa-phone-alt"></i><a href="tel:+919740205051" style="color:rgba(255,255,255,.65)">+91 97402 05051</a></div>
+        <div class="fci"><i class="fas fa-phone-alt"></i><a href="tel:+919947915916" style="color:rgba(255,255,255,.65)">+91 99479 15916 / 97690 02277</a></div>
         <div class="fci"><i class="fas fa-envelope"></i><a href="mailto:info@scgi.in" style="color:rgba(255,255,255,.65)">info@scgi.in</a></div>
         <div style="margin-top:16px;border-radius:10px;overflow:hidden;line-height:0">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.847!2d77.9693!3d13.1358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA4JzA5LjAiTiA3N8KwNTgnMDkuNiJF!5e0!3m2!1sen!2sin!4v1" width="100%" height="148" style="border:0;filter:invert(.85) hue-rotate(180deg)" allowfullscreen="" loading="lazy" title="SCGI Location Map"></iframe>
@@ -269,5 +280,124 @@
     });
   });
 </script>
+
+<!-- Enquiry Modal -->
+<div id="enquiryModal" class="modal-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center; padding:20px;">
+  <div class="modal-box" style="background:#fff; width:100%; max-width:500px; border-radius:12px; padding:30px; position:relative; box-shadow:0 10px 40px rgba(0,0,0,0.2);">
+    <button onclick="document.getElementById('enquiryModal').style.display='none'" style="position:absolute; top:15px; right:20px; background:transparent; border:none; font-size:1.5rem; cursor:pointer; color:#555;">&times;</button>
+    <h3 style="margin-bottom:20px; font-family:'GT Super Ds', serif; color:#0d2463;">Course Enquiry</h3>
+        <form id="modalForm">
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--blue-dark); margin-bottom:6px;">Select Category</label>
+        <select id="modalCategory" class="modal-input" required>
+          <option value="">Select Course Category</option>
+          <option value="Nursing">Nursing</option>
+          <option value="Physiotherapy">Physiotherapy</option>
+          <option value="Allied Health Science">Allied Health Science</option>
+        </select>
+      </div>
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--blue-dark); margin-bottom:6px;">Select Course</label>
+        <select id="modalCourse" class="modal-input" required>
+          <option value="">Select Course Details</option>
+        </select>
+      </div>
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--blue-dark); margin-bottom:6px;">Select State</label>
+        <select id="modalState" class="modal-input" required>
+          <option value="">Select State</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div style="margin-bottom:20px;">
+        <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--blue-dark); margin-bottom:6px;">Enter City</label>
+        <input type="text" id="modalCity" class="hero-input" placeholder="Enter City" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px; background:#f9f9f9; outline:none;" required>
+      </div>
+      <button type="submit" class="btn-gold hero-submit">Submit Enquiry</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const enqButtons = document.querySelectorAll('a[href="#enquire"], .btn-enq, .btn-hero-enq');
+    enqButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // if index page and clicking header enquire now, don't popup if we want scroll. But we want popup everywhere.
+        e.preventDefault();
+        document.getElementById('enquiryModal').style.display = 'flex';
+        autoPopulateModal();
+      });
+    });
+
+    const coursesMap = {
+      "Nursing": ["GNM", "B.Sc Nursing", "P.B B.Sc Nursing", "M.Sc Nursing"],
+      "Physiotherapy": ["Bachelor of Physiotherapy (BPT)"],
+      "Allied Health Science": ["B.Sc MLT", "B.Sc AT & OTT", "DMLT", "DOTT", "DHI"]
+    };
+
+    function populateCourses(catDropdown, courseDropdown, selectedCourse = "") {
+      const cat = catDropdown.value;
+      courseDropdown.innerHTML = '<option value="">Select Course Details</option>';
+      if(coursesMap[cat]) {
+        coursesMap[cat].forEach(c => {
+          let opt = document.createElement('option');
+          opt.value = c;
+          opt.textContent = c;
+          if (c === selectedCourse) opt.selected = true;
+          courseDropdown.appendChild(opt);
+        });
+      }
+    }
+
+    function autoPopulateModal() {
+      const path = window.location.pathname;
+      const modalCat = document.getElementById('modalCategory');
+      const modalCourse = document.getElementById('modalCourse');
+      
+      let preCat = "";
+      let preCourse = "";
+
+      if(path.includes('nursing-gnm')) { preCat = "Nursing"; preCourse = "GNM"; }
+      else if(path.includes('nursing-bsc')) { preCat = "Nursing"; preCourse = "B.Sc Nursing"; }
+      else if(path.includes('nursing-pbbsc')) { preCat = "Nursing"; preCourse = "P.B B.Sc Nursing"; }
+      else if(path.includes('nursing-msc')) { preCat = "Nursing"; preCourse = "M.Sc Nursing"; }
+      else if(path.includes('nursing')) { preCat = "Nursing"; }
+      else if(path.includes('physiotherapy-bpt')) { preCat = "Physiotherapy"; preCourse = "Bachelor of Physiotherapy (BPT)"; }
+      else if(path.includes('physiotherapy')) { preCat = "Physiotherapy"; }
+      else if(path.includes('allied-bmlt')) { preCat = "Allied Health Science"; preCourse = "B.Sc MLT"; }
+      else if(path.includes('allied-atott')) { preCat = "Allied Health Science"; preCourse = "B.Sc AT & OTT"; }
+      else if(path.includes('allied-dmlt')) { preCat = "Allied Health Science"; preCourse = "DMLT"; }
+      else if(path.includes('allied-dott')) { preCat = "Allied Health Science"; preCourse = "DOTT"; }
+      else if(path.includes('allied-dhi')) { preCat = "Allied Health Science"; preCourse = "DHI"; }
+      else if(path.includes('allied')) { preCat = "Allied Health Science"; }
+
+      if(preCat) {
+        modalCat.value = preCat;
+        populateCourses(modalCat, modalCourse, preCourse);
+      }
+    }
+
+    const modalCat = document.getElementById('modalCategory');
+    if(modalCat) {
+      modalCat.addEventListener('change', () => {
+        populateCourses(modalCat, document.getElementById('modalCourse'));
+      });
+    }
+
+    const heroCat = document.getElementById('heroCategory');
+    if(heroCat) {
+      heroCat.addEventListener('change', () => {
+        populateCourses(heroCat, document.getElementById('heroCourse'));
+      });
+    }
+  });
+</script>
 </body>
+
 </html>
