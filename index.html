@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css?v=13.0" />
+  <link rel="stylesheet" href="style.css?v=14.0" />
 </head>
 <body>
 
@@ -112,7 +112,7 @@
         <p class="hero-desc">Ignite your healthcare passion with expert training. Your future starts now!</p>
       <div class="hero-btns">
         <a href="#courses" class="btn-gold"><i class="fas fa-graduation-cap"></i>Explore Courses</a>
-        <a href="#enquire" class="btn-ghost-white"><i class="fas fa-paper-plane"></i>Enquire Now</a>
+        <a href="#enquire" class="btn-ghost-white btn-hero-enq-mb"><i class="fas fa-paper-plane"></i>Enquire Now</a>
       </div>
       <div class="hero-pills">
         <a href="nursing.html" class="hero-pill"><i class="fas fa-heartbeat"></i>Nursing</a>
@@ -930,6 +930,21 @@
     }
   });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var cards = document.querySelectorAll("a.kmct-card, a.course-card");
+  cards.forEach(function(card) {
+    card.addEventListener("touchstart", function(e) {
+      if (!card.classList.contains("hover-active")) {
+        e.preventDefault();
+        cards.forEach(function(c) { c.classList.remove("hover-active"); });
+        card.classList.add("hover-active");
+      }
+    });
+  });
+});
+</script>
+
 </body>
 
 
