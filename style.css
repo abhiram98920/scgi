@@ -112,6 +112,25 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     .hero-pill i { color: var(--gold-light); }
     .hero-pill:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
     
+    /* hero badges (white pills) */
+    .hero-badges-wrap {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; margin-bottom: 25px;
+    }
+    .hero-badge-item {
+      background: #fff; padding: 6px 14px; border-radius: 8px;
+      display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,.1); transition: transform 0.3s;
+    }
+    .hero-badge-item:hover { transform: translateY(-3px); }
+    .hero-badge-item img.hero-badge-img {
+      max-width: 44px; max-height: 44px; object-fit: contain; flex-shrink: 0;
+    }
+    .hero-badge-item span {
+      font-size: 0.72rem; font-weight: 700; color: var(--blue-dark);
+      line-height: 1.35; font-family: 'Albert Sans', sans-serif;
+      letter-spacing: 0.1px;
+    }
+    
     /* hero dots */
     .hero-dots {
       position: absolute; left: 40px; top: 50%; transform: translateY(-50%);
