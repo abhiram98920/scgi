@@ -30,7 +30,7 @@
                 <p class="hero-desc"><?php echo esc_html($subtitle); ?></p>
                 <div class="hero-btns">
                     <a href="#courses" class="btn-gold"><i class="fas fa-graduation-cap"></i>Explore Courses</a>
-                    <a href="#enquire" class="btn-ghost-white btn-hero-enq-mb"><i class="fas fa-paper-plane"></i>Enquire Now</a>
+                    <a href="javascript:void(0)" class="btn-ghost-white btn-hero-enq-mb" id="mobileEnqBtn"><i class="fas fa-paper-plane"></i>Enquire Now</a>
                 </div>
             <?php wp_reset_postdata(); endif; ?>
 
@@ -64,8 +64,8 @@
             </div>
         </div>
 
-        <div class="hero-stats-panel hero-enquiry-form">
-            <div class="hsp-title" style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 20px; color: var(--blue-dark); font-family: 'GT Super Ds', serif;">Begin Your <span style="color:var(--gold);">Success Story</span></div>
+        <div class="hero-stats-panel hero-enquiry-form" id="heroFormPanel">
+            <div class="hsp-title" style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 20px; color: #fff; font-family: 'GT Super Ds', serif;">Begin Your <span style="color:var(--gold);">Success Story</span></div>
             <p class="hsp-subtitle">Select your preferred course & get expert guidance</p>
             <form id="heroForm" class="hero-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
                 <input type="hidden" name="action" value="scgi_course_enquiry">

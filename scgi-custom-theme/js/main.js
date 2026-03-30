@@ -58,6 +58,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }, revealOptions);
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    
+    // COUNTER ANIMATION
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target'));
+                let current = 0;
+                const duration = 2000; // 2 seconds
+                const increment = Math.ceil(target / (duration / 16)); // ~60fps
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        el.innerText = target;
+                        clearInterval(timer);
+                    } else {
+                        el.innerText = current;
+                    }
+                }, 16);
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.3, rootMargin: '0px 0px -20px 0px' });
+
+    document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
 
     // Enquiry Modal Logic
     const enqButtons = document.querySelectorAll('a[href="#enquire"], .btn-enq, .btn-hero-enq');
