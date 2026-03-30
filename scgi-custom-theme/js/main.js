@@ -12,6 +12,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ── AUTO ACTIVE NAV ──
+    (function setActiveNav() {
+        const page = window.location.pathname.split('/').pop() || 'index.html';
+        const coursePages = [
+            'nursing.html','allied.html','physiotherapy.html',
+            'nursing-gnm.html','nursing-bsc.html','nursing-pbbsc.html','nursing-msc.html',
+            'allied-atott.html','allied-bmlt.html','allied-dmlt.html','allied-dott.html','allied-dhi.html',
+            'physiotherapy-bpt.html'
+        ];
+
+        // Remove active from all nav links
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+
+        if (coursePages.includes(page)) {
+            // Highlight the "Courses" dropdown trigger
+            document.querySelectorAll('nav a').forEach(a => {
+                if (a.textContent.trim().startsWith('Courses')) a.classList.add('active');
+            });
+        } else {
+            // Match by checking if the link's href filename matches current page
+            document.querySelectorAll('nav a').forEach(a => {
+                const href = (a.getAttribute('href') || '').split('/').pop().split('#')[0];
+                if (href && href === page) a.classList.add('active');
+            });
+        }
+    })();
+
     // Scroll Logic (Sticky Header & Back to top)
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset > 50;
