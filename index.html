@@ -71,8 +71,8 @@
               <div class="dropdown-submenu">
                 <a href="allied.html">Allied Health Science <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
                 <div class="submenu-content">
-                  <a href="allied-bmlt.html">B.Sc MLT</a>
                   <a href="allied-atott.html">B.Sc AT & OTT</a>
+                  <a href="allied-bmlt.html">B.Sc MLT</a>
                   <div class="menu-category-label">Paramedical Courses</div>
                   <a href="allied-dmlt.html">DMLT</a>
                   <a href="allied-dott.html">DOTT</a>
@@ -119,7 +119,7 @@
         <a href="allied.html" class="hero-pill"><i class="fas fa-microscope"></i>Allied Health Science</a>
         <a href="physiotherapy.html" class="hero-pill"><i class="fas fa-running"></i>Physiotherapy</a>
       </div>
-      <div class="hero-badges-wrap">
+      <div class="hero-badges-wrap reveal">
         <div class="hero-badge-item">
           <img src="KA-Govt-01.jpg" alt="Govt-Recognised" class="hero-badge-img">
           <span>Recognised by<br>Govt of Karnataka</span>
@@ -128,36 +128,20 @@
           <img src="RGHUS-01.jpg" alt="RGUHS-Affiliated" class="hero-badge-img">
           <span>Affiliated to<br>RGUHS</span>
         </div>
-                <div class="hero-badges-wrap mb-show">
-                    <div class="hero-badge-item reveal">
-                        <img src="INC-01.jpg" alt="INC" class="hero-badge-img">
-                        <span>Recognized by INC Delhi</span>
-                    </div>
-                    <div class="hero-badge-item reveal">
-                        <img src="KSNC-01.jpg" alt="KSNC" class="hero-badge-img">
-                        <span>Recognized by KSNC</span>
-                    </div>
-                    <div class="hero-badge-item reveal">
-                        <img src="KA-Govt-01.jpg" alt="KA GOVT" class="hero-badge-img">
-                        <span>Approved by Karnataka Govt</span>
-                    </div>
-                    <div class="hero-badge-item reveal">
-                        <img src="RGHUS-01.jpg" alt="RGUHS" class="hero-badge-img">
-                        <span>Affiliated to RGUHS Bangalore</span>
-                    </div>
-                </div>
-        <span>Indian Nursing<br>Council</span>
+        <div class="hero-badge-item">
+          <img src="INC-01.jpg" alt="INC-Approved" class="hero-badge-img">
+          <span>Indian Nursing<br>Council</span>
         </div>
         <div class="hero-badge-item">
           <img src="KSNC-01.jpg" alt="KSNC-Approved" class="hero-badge-img">
           <span>Karnataka State<br>Nursing Council</span>
         </div>
         <div class="hero-badge-item">
-          <img src="Logo%20of%20Karnataka%20paramedical%20board.webp" alt="KPMB Icon" class="hero-badge-img">
+          <img src="Logo of Karnataka paramedical board.webp" alt="KPMB Icon" class="hero-badge-img">
           <span>Karnataka Paramedical<br>Board</span>
         </div>
         <div class="hero-badge-item">
-          <img src="Karnataka%20state%20diploma%20in%20nursing%20examination%20board.png" alt="KSDNEB Icon" class="hero-badge-img">
+          <img src="Karnataka state diploma in nursing examination board.png" alt="KSDNEB Icon" class="hero-badge-img">
           <span>Karnataka State<br>Diploma in Nursing Board</span>
         </div>
       </div>
@@ -832,7 +816,7 @@
     const coursesMap = {
       "Nursing": ["GNM", "B.Sc Nursing", "P.B B.Sc Nursing", "M.Sc Nursing"],
       "Physiotherapy": ["Bachelor of Physiotherapy (BPT)"],
-      "Allied Health Science": ["B.Sc MLT", "B.Sc AT & OTT", "DMLT", "DOTT", "DHI"]
+      "Allied Health Science": ["B.Sc AT & OTT", "B.Sc MLT", "DMLT", "DOTT", "DHI"]
     };
 
     function populateCourses(catDropdown, courseDropdown, selectedCourse = "") {
