@@ -27,15 +27,16 @@
 
     /* ── Mobile topbar: stack phone & email ── */
     @media (max-width: 991px) {
-      .top-bar { padding: 6px 0; }
+      .top-bar { padding: 8px 0; }
       .top-bar .wrap { justify-content: center; }
       .tb-left {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
+        align-items: center;
+        text-align: center;
+        gap: 8px; /* Increased gap */
       }
-      .tb-left .tb-divider { display: none; }
-      .top-bar a { font-size: 0.75rem; }
+      .tb-left .tb-divider { display: none !important; }
+      .top-bar a { font-size: 0.8rem; }
       .tb-right { display: none; }
     }
 
@@ -612,8 +613,30 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     }
     @media (max-width: 991px) {
       .tb-left span:last-child, .tb-right { display: none; }
-      nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.1); padding: 10px 0; z-index: 1000; }
-      nav ul.open { display: flex; }
+      
+      /* Base Mobile Nav layout properties */
+      nav ul { 
+        display: flex; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 100%; left: 0; right: 0; 
+        background: #fff; 
+        box-shadow: 0 8px 24px rgba(0,0,0,.1); 
+        padding: 10px 0; 
+        z-index: 1000; 
+        /* Animation states */
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), opacity 0.3s, visibility 0.3s;
+      }
+      nav ul.open { 
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
       nav ul li a { padding: 12px 24px; color: var(--blue-dark) !important; }
       .hamburger { display: flex; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 34px; }
@@ -1715,11 +1738,7 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
    ██  VISUAL UI ENHANCEMENTS  (all pages · all breakpoints)
    ═══════════════════════════════════════════════════════════════ */
 
-/* 1 · Custom scrollbar */
-::-webkit-scrollbar { width: 7px; }
-::-webkit-scrollbar-track { background: var(--off-white); }
-::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--blue-mid), var(--blue-dark)); border-radius: 6px; }
-::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+/* 1 · Native scrollbar restored (removed custom CSS) */
 
 /* 2 · Text selection */
 ::selection { background: rgba(201,162,39,0.28); color: var(--blue-dark); }
@@ -1815,11 +1834,7 @@ nav ul li a::after {
 .footer-links li a { transition: color 0.25s, padding-left 0.25s; }
 .footer-links li a:hover { padding-left: 6px !important; color: var(--gold-light) !important; }
 
-/* 21 · Mobile nav slide-in animation */
-@media (max-width: 991px) {
-  nav ul { transform: translateY(-8px); opacity: 0; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), opacity 0.3s; pointer-events: none; }
-  nav ul.open { transform: translateY(0); opacity: 1; pointer-events: all; }
-}
+/* 21 · Mobile nav slide-in animation removed from here (moved to main block above) */
 
 /* 22 · Estd badge pulse ring */
 @keyframes pulse-ring {
