@@ -1710,3 +1710,154 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   background: var(--gold-light);
   box-shadow: 0 0 0 15px rgba(234,185,55,0.35);
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   ██  VISUAL UI ENHANCEMENTS  (all pages · all breakpoints)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1 · Custom scrollbar */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: var(--off-white); }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--blue-mid), var(--blue-dark)); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* 2 · Text selection */
+::selection { background: rgba(201,162,39,0.28); color: var(--blue-dark); }
+
+/* 3 · Smoother, staggered reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+.reveal:nth-child(4) { transition-delay: 0.3s; }
+
+/* 4 · Section label gold bar glow */
+.sec-label::before {
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  box-shadow: 0 0 8px rgba(201,162,39,0.5);
+}
+
+/* 5 · Nav link underline – gold gradient */
+nav ul li a::after {
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  height: 2.5px;
+  border-radius: 3px;
+}
+
+/* 6 · Top bar gold accent border */
+.top-bar { border-bottom: 1px solid rgba(201,162,39,0.2); }
+
+/* 7 · Header enquire button glow */
+.btn-enq:hover { box-shadow: 0 4px 20px rgba(26,58,140,0.45), 0 0 0 3px rgba(26,58,140,0.12); }
+
+/* 8 · Gold button shimmer sweep */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+  background-size: 200% auto;
+  transition: background-position 0.6s ease, transform 0.3s, box-shadow 0.3s;
+}
+.btn-gold:hover { background-position: right center; }
+
+/* 9 · Hero badge lift + glow */
+.hero-badge-item { transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s; }
+.hero-badge-item:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 12px 32px rgba(13,36,99,0.25), 0 0 0 2px rgba(201,162,39,0.3); }
+
+/* 10 · Course card hover depth + image zoom */
+.kmct-card { transition: transform 0.38s cubic-bezier(0.22,1,0.36,1), box-shadow 0.38s; border-radius: 16px; }
+.kmct-card:hover { transform: translateY(-8px); box-shadow: 0 24px 56px rgba(13,36,99,0.28); }
+.kmct-card .kc-img img { transition: transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+.kmct-card:hover .kc-img img { transform: scale(1.07); }
+
+/* 11 · Metrics row subtle top gradient border */
+.metrics-row { border-top: 3px solid; border-image: linear-gradient(90deg, var(--blue-dark), var(--gold), var(--blue-dark)) 1; }
+.m-num { background: linear-gradient(135deg, var(--blue-dark), var(--blue-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* 12 · About image smooth zoom on hover */
+.about-img-wrap { overflow: hidden; border-radius: 20px; }
+.about-img-wrap img { transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+.about-img-wrap:hover img { transform: scale(1.03); }
+
+/* 13 · Marquee pill hover lift */
+.acc-v2-item { transition: transform 0.3s, box-shadow 0.3s; }
+.acc-v2-item:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+
+/* 14 · Accreditation logo hover */
+.acc-marquee-img { transition: transform 0.3s, filter 0.3s; filter: grayscale(15%); }
+.acc-marquee-img:hover { transform: scale(1.12); filter: grayscale(0%); }
+
+/* 15 · Gallery image zoom on hover */
+.gallery-item { transition: transform 0.38s cubic-bezier(0.22,1,0.36,1), box-shadow 0.38s; overflow: hidden; border-radius: 12px; }
+.gallery-item:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(13,36,99,0.22); }
+.gallery-item img { transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+.gallery-item:hover img { transform: scale(1.08); }
+
+/* 16 · Tab buttons active gradient + lift on hover */
+.tab-btn { transition: all 0.3s cubic-bezier(0.22,1,0.36,1); }
+.tab-btn.active { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%); box-shadow: 0 4px 20px rgba(26,58,140,0.35); border-color: transparent; }
+.tab-btn:hover:not(.active) { box-shadow: 0 2px 12px rgba(26,58,140,0.15); transform: translateY(-1px); }
+
+/* 17 · Slider arrows gradient hover */
+.slider-arrow { transition: all 0.35s cubic-bezier(0.22,1,0.36,1); }
+.slider-arrow:hover { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: #fff; box-shadow: 0 8px 24px rgba(13,36,99,0.35); transform: translateY(-50%) scale(1.15); }
+
+/* 18 · Form inputs gold focus ring */
+.modal-input:focus, .hero-input:focus { box-shadow: 0 0 0 3px rgba(201,162,39,0.25), 0 2px 8px rgba(0,0,0,0.05); border-color: var(--gold); }
+
+/* 19 · Scroll-to-top gradient + gold hover */
+#st { background: linear-gradient(135deg, var(--blue-mid), var(--blue-dark)); box-shadow: 0 4px 18px rgba(26,58,140,0.4); transition: all 0.35s cubic-bezier(0.22,1,0.36,1); }
+#st:hover { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--blue-dark); box-shadow: 0 8px 28px rgba(201,162,39,0.45); transform: translateY(-4px); }
+
+/* 20 · Footer link slide indent on hover */
+.footer-links li a { transition: color 0.25s, padding-left 0.25s; }
+.footer-links li a:hover { padding-left: 6px !important; color: var(--gold-light) !important; }
+
+/* 21 · Mobile nav slide-in animation */
+@media (max-width: 991px) {
+  nav ul { transform: translateY(-8px); opacity: 0; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), opacity 0.3s; pointer-events: none; }
+  nav ul.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+}
+
+/* 22 · Estd badge pulse ring */
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 8px 28px rgba(26,58,140,.35), 0 0 0 0 rgba(201,162,39,0.4); }
+  70%  { box-shadow: 0 8px 28px rgba(26,58,140,.35), 0 0 0 12px rgba(201,162,39,0); }
+  100% { box-shadow: 0 8px 28px rgba(26,58,140,.35), 0 0 0 0 rgba(201,162,39,0); }
+}
+.estd-badge { animation: pulse-ring 2.8s ease-in-out infinite; }
+
+/* 23 · Hero pill border glow on hover */
+.hero-pill:hover { background: rgba(255,255,255,0.18); border-color: rgba(201,162,39,0.55); box-shadow: 0 0 12px rgba(201,162,39,0.2); }
+
+/* 24 · Sticky sidebar icon scale */
+.sfi { transition: transform 0.3s, filter 0.3s; }
+.sfi:hover { transform: scale(1.15); filter: brightness(1.15); }
+
+/* 25 · btn-primary gradient */
+.btn-primary { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%); }
+.btn-primary:hover { box-shadow: 0 10px 30px rgba(26,58,140,0.4), 0 0 0 3px rgba(26,58,140,0.12); }
+
+/* 26 · Facilities card hover */
+.fac-card { transition: transform 0.38s cubic-bezier(0.22,1,0.36,1), box-shadow 0.38s, border-color 0.3s; }
+.fac-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(13,36,99,0.16); border-color: rgba(201,162,39,0.4) !important; }
+
+/* 27 · Mission/Vision card gold left border on hover */
+.mv-card { transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s, border-left-color 0.3s; border-left: 3px solid transparent; }
+.mv-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(13,36,99,0.14); border-left-color: var(--gold); }
+
+/* 28 · CSD dropdown trigger refined focus ring */
+.csd.open .csd-trigger { box-shadow: 0 0 0 3px rgba(201,162,39,0.2), 0 4px 16px rgba(13,36,99,0.12); }
+
+/* 29 · Smooth scroll margin for anchor targets */
+section[id], div[id] { scroll-margin-top: 90px; }
+
+/* 30 · Small screen refinements */
+@media (max-width: 640px) {
+  .sec-title { font-size: clamp(1.4rem, 5.5vw, 2rem); }
+  .btn-gold, .btn-primary, .btn-ghost-white { padding: 11px 20px; font-size: 0.87rem; }
+  .hero-btns { flex-direction: column; align-items: center; width: 100%; }
+  .hero-btns a, .hero-btns button { width: 100%; max-width: 280px; justify-content: center; }
+}
