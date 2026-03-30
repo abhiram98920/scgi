@@ -867,13 +867,20 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 .acc-v2-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   white-space: nowrap;
-  font-size: 0.95rem;
-  color: var(--text-light);
-  font-weight: 500;
+  font-size: 0.88rem;
+  color: var(--blue-dark);
+  font-weight: 600;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+  border: 1.5px solid rgba(255,255,255,0.9);
+  transition: transform 0.3s;
 }
-.acc-v2-item i { color: var(--gold); font-size: 1.1rem; }
+.acc-v2-item:hover { transform: translateY(-2px); }
+.acc-v2-item i { color: var(--gold); font-size: 1rem; flex-shrink: 0; }
 
 @keyframes marquee-h {
   0% { transform: translateX(0); }
