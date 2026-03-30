@@ -1,0 +1,65 @@
+      slides[currentSlideIndex].classList.remove('active');
+      if(dots.length > 0) dots[currentSlideIndex].classList.remove('active');
+      currentSlideIndex = (index + slides.length) % slides.length;
+      slides[currentSlideIndex].classList.add('active');
+      if(dots.length > 0) dots[currentSlideIndex].classList.add('active');
+    }
+
+    function startSlideTimer() {
+      slideInterval = setInterval(() => {
+        showHeroSlide(currentSlideIndex + 1);
+      }, 4000); // 4 seconds transition
+    }
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        showHeroSlide(idx);
+        startSlideTimer();
+      });
+    });
+
+    if(slides.length > 0) startSlideTimer();
+
+    // Course Slider Logic - Robust Final Logic
+    const sliderPos = { nursing: 0, allied: 0, physio: 0 };
+    window.moveSlider = function(category, direction) {
+      const grid = document.getElementById('grid-' + category);
+      if(!grid) return;
+      const track = grid.parentElement;
+      const card = grid.children[0];
+      if(!card) return;
+      
+      const gap = window.innerWidth <= 768 ? 15 : 30;
+      const cardWidth = card.offsetWidth + gap; 
+      
+      if (window.innerWidth <= 768) {
+        // Mobile: Sync based on current scroll position to avoid 'jumping'
+        const currentScroll = track.scrollLeft;
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        let newScroll = currentScroll + (direction * cardWidth);
+        
+        // Boundaries
+        if (newScroll < 0) newScroll = 0;
+        if (newScroll > maxScroll) newScroll = maxScroll;
+        
+        track.scrollTo({ left: newScroll, behavior: 'smooth' });
+      } else {
+        // Desktop: Index-based TranslateX
+        const containerWidth = track.offsetWidth;
+        const totalCards = grid.children.length;
+        const visibleCount = Math.floor(containerWidth / cardWidth) || 1;
+        const maxPos = Math.max(0, totalCards - visibleCount);
+        
+        sliderPos[category] += direction;
+        if (sliderPos[category] < 0) sliderPos[category] = 0;
+        if (sliderPos[category] > maxPos) sliderPos[category] = maxPos;
+        
+        grid.style.transform = `translateX(-${sliderPos[category] * cardWidth}px)`;
+      }
+    }
+  });
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

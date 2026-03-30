@@ -41,25 +41,26 @@
             </div>
             
             <div class="hero-badges-wrap reveal">
-                <?php
-                $logos = new WP_Query( array( 'post_type' => 'scgi_logo', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
-                if ( $logos->have_posts() ) : while ( $logos->have_posts() ) : $logos->the_post();
-                    if ( has_post_thumbnail() ) : ?>
-                        <div class="hero-badge-item">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>" class="hero-badge-img">
-                            <span><?php 
-                                $t = get_the_title();
-                                $map = array(
-                                    'INC' => 'Approved by Indian Nursing Council',
-                                    'KSNC' => 'Approved by Karnataka State Nursing Council',
-                                    'KSDNEB' => 'Karnataka State Diploma in Nursing Examination Board (KSDNEB)',
-                                    'KPMB' => 'Approved by Karnataka Paramedical Board'
-                                );
-                                echo isset($map[$t]) ? $map[$t] : $t;
-                            ?></span>
-                        </div>
-                    <?php endif; ?>
-                <?php endwhile; wp_reset_postdata(); endif; ?>
+                <div class="hero-badge-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/INC-01.jpg" alt="INC-Approved" class="hero-badge-img">
+                    <span>Approved by<br>Indian Nursing Council</span>
+                </div>
+                <div class="hero-badge-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/KSNC-01.jpg" alt="KSNC-Approved" class="hero-badge-img">
+                    <span>Approved by<br>Karnataka State Nursing Council</span>
+                </div>
+                <div class="hero-badge-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Karnataka state diploma in nursing examination board.png" alt="KSDNEB" class="hero-badge-img">
+                    <span>Karnataka State Diploma in Nursing Examination Board (KSDNEB)</span>
+                </div>
+                <div class="hero-badge-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Logo of Karnataka paramedical board.webp" alt="Paramedical-Board" class="hero-badge-img">
+                    <span>Approved by<br>Karnataka Paramedical Board</span>
+                </div>
+                <div class="hero-badge-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/KA-Govt-01.jpg" alt="Govt-Recognised" class="hero-badge-img">
+                    <span>Recognised by<br>Govt of Karnataka</span>
+                </div>
             </div>
         </div>
 
@@ -180,28 +181,38 @@
 
         <?php foreach ( $cats as $idx => $cat ) : ?>
             <div class="tab-panel <?php echo $idx == 0 ? 'active' : ''; ?>" id="tab-<?php echo esc_attr($cat->slug); ?>">
-                <div class="courses-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-                    <?php
-                    $courses = new WP_Query( array(
-                        'post_type'      => 'scgi_course',
-                        'tax_query'      => array( array( 'taxonomy' => 'course_category', 'field' => 'slug', 'terms' => $cat->slug ) ),
-                        'orderby'        => 'menu_order',
-                        'order'          => 'ASC'
-                    ) );
-                    if ( $courses->have_posts() ) : while ( $courses->have_posts() ) : $courses->the_post();
-                        $slug = $post->post_name;
-                        $is_paramed = in_array($slug, array('dmlt', 'dott', 'dhi', 'diploma-in-medical-laboratory-technology', 'diploma-in-operation-theatre-technology', 'diploma-in-health-inspector'));
-                    ?>
-                        <a href="<?php the_permalink(); ?>" class="kmct-card">
-                            <div class="kc-img"><?php the_post_thumbnail('medium'); ?></div>
-                            <div class="kc-overlay"></div>
-                            <div class="kc-content">
-                                <?php if ($is_paramed) : ?><div class="paramed-badge">Paramedical</div><?php endif; ?>
-                                <h3><?php the_title(); ?></h3>
-                                <div class="kc-hidden"><div class="kc-hidden-inner"><div class="kc-btn primary">Know More</div></div></div>
-                            </div>
-                        </a>
-                    <?php endwhile; wp_reset_postdata(); endif; ?>
+                <div class="courses-slider-container">
+                    <div class="slider-arrow prev" onclick="moveSlider('<?php echo esc_attr($cat->slug); ?>', -1)"><i class="fas fa-chevron-left"></i></div>
+                    <div class="slider-arrow next" onclick="moveSlider('<?php echo esc_attr($cat->slug); ?>', 1)"><i class="fas fa-chevron-right"></i></div>
+                    <div class="courses-slider-track">
+                        <div class="courses-grid" id="grid-<?php echo esc_attr($cat->slug); ?>" style="display: grid; grid-template-columns: repeat(<?php echo $courses->found_posts; ?>, 320px); gap: 30px;">
+                            <?php
+                            $courses = new WP_Query( array(
+                                'post_type'      => 'scgi_course',
+                                'tax_query'      => array( array( 'taxonomy' => 'course_category', 'field' => 'slug', 'terms' => $cat->slug ) ),
+                                'orderby'        => 'menu_order',
+                                'order'          => 'ASC'
+                            ) );
+                            if ( $courses->have_posts() ) : while ( $courses->have_posts() ) : $courses->the_post();
+                                $slug = $post->post_name;
+                                $is_paramed = in_array($slug, array('dmlt', 'dott', 'dhi', 'diploma-in-medical-laboratory-technology', 'diploma-in-operation-theatre-technology', 'diploma-in-health-inspector'));
+                            ?>
+                                <a href="<?php the_permalink(); ?>" class="kmct-card">
+                                    <div class="kc-img"><?php the_post_thumbnail('medium'); ?></div>
+                                    <div class="kc-overlay"></div>
+                                    <div class="kc-content">
+                                        <?php if ($is_paramed) : ?><div class="paramed-badge">Paramedical</div><?php endif; ?>
+                                        <div class="kc-title"><?php the_title(); ?></div>
+                                        <div class="kc-hidden">
+                                            <div class="kc-hidden-inner">
+                                                <div class="kc-actions"><div class="kc-btn primary">Know More</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            <?php endwhile; wp_reset_postdata(); endif; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         <?php endforeach; ?>

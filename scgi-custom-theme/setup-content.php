@@ -210,8 +210,8 @@ function scgi_auto_populate_content() {
             'RGUHS' => 'RGHUS-01.jpg',
             'Approved by Indian Nursing Council' => 'INC-01.jpg',
             'Approved by Karnataka State Nursing Council' => 'KSNC-01.jpg',
-            'Approved by Karnataka Paramedical Board' => 'KPB-01.jpg',
-            'Karnataka State Diploma in Nursing Examination Board (KSDNEB)' => 'KSDNEB-01.jpg'
+            'Approved by Karnataka Paramedical Board' => 'Logo of Karnataka paramedical board.webp',
+            'Karnataka State Diploma in Nursing Examination Board (KSDNEB)' => 'Karnataka state diploma in nursing examination board.png'
         );
         foreach($logos as $title => $file) {
             $lid = wp_insert_post(array('post_title' => $title, 'post_status' => 'publish', 'post_type' => 'scgi_logo'));

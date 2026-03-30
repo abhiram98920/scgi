@@ -68,7 +68,7 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     }
     .slide.active { opacity: 1; }
     .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(115deg, rgba(13,36,99,.92) 20%, rgba(26,58,140,.55) 100%); }
-    .hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 420px; align-items: center; gap: 40px; padding-top: 60px; padding-bottom: 60px; }
+    .hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 420px; align-items: center; gap: 40px; padding-top: 140px; padding-bottom: 70px; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(201,162,39,.18); border: 1px solid rgba(201,162,39,.45);
@@ -165,15 +165,15 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
      .hsp-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 3px; background: var(--gold); border-radius: 2px; }
      
      .hero-input { 
-       width: 100%; padding: 14px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,.2); 
-       background: rgba(13,36,99,0.4); color: #fff; outline: none; margin-bottom: 15px; 
-       font-family: inherit; font-size: 0.95rem; transition: all 0.3s; 
-       appearance: none; -webkit-appearance: none;
-       background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-       background-repeat: no-repeat; background-position: right 1.2rem center; background-size: 1.1em;
-     }
-     .hero-input:focus { background: rgba(13,36,99,0.6); border-color: var(--gold); box-shadow: 0 0 15px rgba(212,175,55,0.2); }
-     select.hero-input option { background: #0d2463; color: #fff; }
+        width: 100%; padding: 14px 18px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,.3); 
+        background: #fff; color: var(--blue-dark); outline: none; margin-bottom: 15px; 
+        font-family: inherit; font-size: 0.95rem; font-weight: 500; transition: all 0.3s; 
+        appearance: none; -webkit-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d2463' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat; background-position: right 1.2rem center; background-size: 1.1em;
+      }
+     .hero-input:focus { background: #fff; border-color: var(--gold); box-shadow: 0 0 15px rgba(212,175,55,0.3); }
+     select.hero-input option { background: #fff; color: var(--blue-dark); }
      .hero-submit { 
        cursor: pointer; border: none; font-size: 1rem; font-weight: 700; color: #1a1a1a;
        display: flex; align-items: center; justify-content: center; width: 100%; 
@@ -805,6 +805,60 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   .metrics-title { width: 100%; text-align: center; border-left: none; padding-left: 0; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
 }
 
+/* ───── COURSES SLIDER REFINEMENTS ───── */
+.courses-slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Standard clipping */
+  padding: 0 10px;
+}
+.courses-slider-track {
+  overflow: hidden;
+  position: relative;
+}
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 10;
+  color: var(--blue-dark);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(13,36,99,0.05);
+}
+.slider-arrow:hover {
+  background: var(--gold);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(197,160,89,0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+.slider-arrow.prev { left: -24px; }
+.slider-arrow.next { right: -24px; }
+
+@media (max-width: 1100px) {
+  .slider-arrow.prev { left: 5px; }
+  .slider-arrow.next { right: 5px; }
+}
+
+@media (max-width: 768px) {
+  .slider-arrow {
+    display: none !important; /* Prioritize native swipe on mobile */
+  }
+  .courses-slider-track {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 0 20px;
+  }
+}
+
 /* ───── KMCT-STYLE COURSE CARDS ───── */
 .kmct-card {
   position: relative;
@@ -1268,26 +1322,29 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   .hero-dot { width: 12px; height: 12px; }
   .hero-stats-panel { display: none !important; }
   .btn-hero-enq-mb { display: inline-flex !important; }
-  .hero { min-height: auto; padding: 100px 15px 50px !important; }
+  .hero { min-height: auto; padding: 120px 0 60px !important; }
+  .hero .container { grid-template-columns: 1fr; gap: 30px; padding-top: 0; }
+  .hero-content { order: 1; text-align: center; }
+  .hero-stats-panel { order: 2; margin-top: 20px; width: 100% !important; max-width: none !important; }
   .hero h1 { font-size: clamp(1.4rem, 5vw, 1.55rem) !important; margin-bottom: 12px; line-height: 1.25; }
   .hero h1 span { font-size: clamp(1.6rem, 6vw, 1.85rem) !important; margin-top: 2px; }
-  .hero-desc { font-size: 0.82rem; margin-bottom: 22px; color: rgba(255,255,255,0.85) !important; line-height: 1.6; }
+  .hero-desc { font-size: 0.82rem; margin-bottom: 22px; color: rgba(255,255,255,0.85) !important; line-height: 1.6; margin: 0 auto 20px; }
   .hero-btns { gap: 14px; flex-direction: column; align-items: stretch; margin-bottom: 25px; }
-  .hero-pills { gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+  .hero-pills { gap: 10px; flex-wrap: wrap; margin-top: 15px; justify-content: center; }
   .hero-pill { font-size: 0.72rem; padding: 8px 14px; flex: 1 1 calc(50% - 10px); justify-content: center; }
-  .hero-badges-wrap { display: flex !important; flex-direction: row !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; gap: 12px !important; padding: 10px 0 !important; scrollbar-width: none; }
-  .hero-badges-wrap::-webkit-scrollbar { display: none; }
-  .hero-badge-item { flex: 0 0 auto; width: 200px !important; background: rgba(255,255,255,0.95); padding: 12px; border-radius: 10px; display: flex; align-items: center; gap: 12px; }
-  .hero-badge-img { height: 40px !important; width: auto; }
-  .hero-badge-item span { font-size: 0.75rem; color: var(--blue-dark); line-height: 1.2; font-weight: 600; }
+  .hero-badges-wrap { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; margin-top: 25px !important; }
+  .hero-badge-item { background: #fff; padding: 12px 10px !important; border-radius: 10px; display: flex; flex-direction: column !important; align-items: center; text-align: center; gap: 8px !important; width: 100% !important; box-sizing: border-box !important; }
+  .hero-badge-img { height: 40px !important; width: auto; margin-right: 0 !important; }
+  .hero-badge-item span { font-size: 0.65rem !important; color: var(--blue-dark); line-height: 1.2; font-weight: 700; width: 100%; display: block; }
   .metrics-title { display: flex; flex-direction: row; gap: 6px; justify-content: center; align-items: center; margin-bottom: 5px; }
   .metrics-title div { font-size: 1.3rem !important; font-weight: 700; color: var(--blue-dark); }
   .m-num { font-size: 1.7rem; }
   .courses-tabs { gap: 6px; justify-content: space-around; margin: 20px 0 30px !important; }
   .tab-btn { padding: 8px 12px; font-size: 0.72rem; flex: 1; text-align: center; }
-  .courses-slider-track { overflow-x: auto; padding: 0 15px 15px; display: flex; scrollbar-width: none; }
+  .courses-slider-track { overflow-x: auto; padding: 0 15px 15px; display: flex; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .courses-grid { display: flex; gap: 15px; margin: 0; }
   .kmct-card { flex: 0 0 calc(90vw - 30px) !important; background: #0a1a4a; height: 380px; }
+  .slider-arrow { display: none !important; } /* Hide arrows on mobile to prevent over-margin leakage */
 }
 
 /* ───── REVEAL ANIMATIONS ───── */
