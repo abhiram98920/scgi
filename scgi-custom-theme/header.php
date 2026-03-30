@@ -55,8 +55,7 @@
                 wp_nav_menu( array(
                     'theme_location' => 'primary',
                     'container'      => false,
-                    'menu_id'        => 'navMenu',
-                    'fallback_cb'    => '__return_false',
+                    'menu_id'        => 'navMenu'
                 ) );
                 ?>
             </nav>
