@@ -160,4 +160,25 @@ document.addEventListener('DOMContentLoaded', () => {
             grid.style.transform = `translateX(-${sliderPos[category] * cardWidth}px)`;
         }
     }
+
+    // Toggle sub-submenus on mobile
+    document.querySelectorAll('.dropdown-submenu > a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 991) {
+                e.preventDefault();
+                e.stopPropagation();
+                link.parentElement.classList.toggle('open');
+            }
+        });
+    });
+
+    // Fix for 1st level dropdown on mobile
+    document.querySelectorAll('.dropdown > a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 991) {
+                e.preventDefault();
+                link.parentElement.classList.toggle('open');
+            }
+        });
+    });
 });
