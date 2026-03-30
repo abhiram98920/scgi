@@ -119,9 +119,10 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     .hero-pill:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
     
     /* hero badges (white pills) */
-    .hero-badges-wrap {
-      display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; margin-bottom: 25px;
-    }
+     .hero-badges-wrap {
+       display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; margin-bottom: 25px;
+       justify-content: center;
+     }
     .hero-badge-item {
       background: #fff; padding: 6px 14px; border-radius: 8px;
       display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.22);
@@ -156,9 +157,23 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
        box-shadow: 0 20px 50px rgba(0,0,0,0.3);
        z-index: 10;
      }
-     .hsp-title { color: var(--gold); font-size: 1.1rem; font-weight: 600; font-family: 'GT Super Ds', serif; margin-bottom: 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
-     .hero-input { width: 100%; padding: 14px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.1); color: #fff; outline: none; margin-bottom: 15px; font-family: inherit; font-size: 0.95rem; transition: all 0.3s; }
-     .hero-input:focus { background: rgba(255,255,255,.15); border-color: var(--gold); }
+     .hsp-title { 
+       color: #fff; font-size: 1.75rem; font-weight: 700; font-family: 'GT Super Ds', 'Playfair Display', serif; 
+       margin-bottom: 22px; text-align: center; position: relative; padding-bottom: 15px; 
+       letter-spacing: 0.5px;
+     }
+     .hsp-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 3px; background: var(--gold); border-radius: 2px; }
+     
+     .hero-input { 
+       width: 100%; padding: 14px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,.2); 
+       background: rgba(13,36,99,0.4); color: #fff; outline: none; margin-bottom: 15px; 
+       font-family: inherit; font-size: 0.95rem; transition: all 0.3s; 
+       appearance: none; -webkit-appearance: none;
+       background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+       background-repeat: no-repeat; background-position: right 1.2rem center; background-size: 1.1em;
+     }
+     .hero-input:focus { background: rgba(13,36,99,0.6); border-color: var(--gold); box-shadow: 0 0 15px rgba(212,175,55,0.2); }
+     select.hero-input option { background: #0d2463; color: #fff; }
      .hero-submit { 
        cursor: pointer; border: none; font-size: 1rem; font-weight: 700; color: #1a1a1a;
        display: flex; align-items: center; justify-content: center; width: 100%; 
@@ -348,7 +363,7 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     }
     .gallery-item:hover img { transform: scale(1.08); }
     .gallery-item:hover .gi-overlay { background: rgba(13, 36, 99, 0.3); }
-    .gi-title { color: #fff; font-size: 1.1rem; font-weight: 500; font-family: 'GT Super Ds', serif; letter-spacing: 0.5px; }
+    .gi-title { color: #fff; font-size: 1.1rem; font-weight: 500; font-family: 'GT Super Ds', serif; letter-spacing: 0.5px; display: none !important; }
 
     @media (max-width: 991px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 640px) { .gallery-grid { grid-template-columns: 1fr; } }
