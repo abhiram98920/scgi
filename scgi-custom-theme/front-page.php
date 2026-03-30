@@ -70,29 +70,51 @@
             <form id="heroForm" class="hero-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
                 <input type="hidden" name="action" value="scgi_course_enquiry">
                 <?php wp_nonce_field( 'scgi_form_submit', 'enquiry_nonce' ); ?>
-                <select id="heroCategory" name="category" class="hero-input" required>
-                    <option value="">Select Course Category</option>
-                    <?php
-                    $terms = get_terms( array('taxonomy' => 'course_category', 'hide_empty' => false) );
-                    foreach($terms as $term) {
-                        echo '<option value="'.esc_attr($term->name).'">'.esc_html($term->name).'</option>';
-                    }
-                    ?>
-                </select>
-                <select id="heroCourse" name="course" class="hero-input" required>
-                    <option value="">Select Course Details</option>
-                </select>
-                <select id="heroState" name="state" class="hero-input" required>
-                    <option value="">Select State</option>
-                    <option value="Karnataka">Karnataka</option>
-                    <option value="Kerala">Kerala</option>
-                    <option value="Tamil Nadu">Tamil Nadu</option>
-                    <option value="Andhra Pradesh">Andhra Pradesh</option>
-                    <option value="Maharashtra">Maharashtra</option>
-                    <option value="Other">Other</option>
-                </select>
+
+                <!-- Category Custom Dropdown -->
+                <div class="csd-wrap" style="margin-bottom:12px;">
+                  <div class="csd" id="csd-category" data-value="">
+                    <div class="csd-trigger"><span class="csd-label">Select Course Category</span><i class="fas fa-chevron-down csd-arrow"></i></div>
+                    <ul class="csd-list">
+                      <li data-value="Nursing">Nursing</li>
+                      <li data-value="Physiotherapy">Physiotherapy</li>
+                      <li data-value="Allied Health Science">Allied Health Science</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Course Custom Dropdown -->
+                <div class="csd-wrap" style="margin-bottom:12px;">
+                  <div class="csd" id="csd-course" data-value="">
+                    <div class="csd-trigger"><span class="csd-label">Select Course Details</span><i class="fas fa-chevron-down csd-arrow"></i></div>
+                    <ul class="csd-list" id="csd-course-list"></ul>
+                  </div>
+                </div>
+
+                <!-- State Custom Dropdown -->
+                <div class="csd-wrap" style="margin-bottom:12px;">
+                  <div class="csd" id="csd-state" data-value="">
+                    <div class="csd-trigger"><span class="csd-label">Select State</span><i class="fas fa-chevron-down csd-arrow"></i></div>
+                    <ul class="csd-list">
+                      <li data-value="Karnataka">Karnataka</li>
+                      <li data-value="Kerala">Kerala</li>
+                      <li data-value="Tamil Nadu">Tamil Nadu</li>
+                      <li data-value="Andhra Pradesh">Andhra Pradesh</li>
+                      <li data-value="Maharashtra">Maharashtra</li>
+                      <li data-value="Other">Other</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- City -->
                 <input type="text" id="heroCity" name="city" class="hero-input" placeholder="Enter City" required>
-                <button type="submit" class="btn-gold hero-submit" style="width: 100%; justify-content: center; margin-top: 10px;"><i class="fas fa-paper-plane"></i>Submit</button>
+
+                <!-- Hidden POST fields -->
+                <input type="hidden" id="heroCategory" name="category">
+                <input type="hidden" id="heroCourse" name="course">
+                <input type="hidden" id="heroState" name="state">
+
+                <button type="submit" class="btn-gold hero-submit" style="width: 100%; justify-content: center; margin-top: 10px;"><i class="fas fa-paper-plane"></i>Submit Details</button>
             </form>
         </div>
     </div>

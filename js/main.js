@@ -99,11 +99,85 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ═══ CUSTOM DROPDOWN (csd) LOGIC ═══
     const coursesMap = {
         "Nursing": ["General Nursing and Midwifery (GNM)", "Basic B.Sc Nursing", "Post Basic B.Sc Nursing (P.B B.Sc Nursing)", "M.Sc Nursing"],
         "Physiotherapy": ["Bachelor of Physiotherapy (BPT)"],
         "Allied Health Science": ["Anaesthesia & Operation Theatre Technology (B.Sc AT & OTT)", "Medical Laboratory Technology (B.Sc MLT)", "Medical Laboratory Technology (DMLT)", "Operation Theatre Technology (DOTT)", "Health Inspector (DHI)"]
     };
+
+    function initCsd(csdEl, hiddenInputId, onSelect) {
+        if (!csdEl) return;
+        const trigger = csdEl.querySelector('.csd-trigger');
+        const list    = csdEl.querySelector('.csd-list');
+        const label   = csdEl.querySelector('.csd-label');
+        const hidden  = hiddenInputId ? document.getElementById(hiddenInputId) : null;
+
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Close all other open csds
+            document.querySelectorAll('.csd.open').forEach(el => { if (el !== csdEl) el.classList.remove('open'); });
+            csdEl.classList.toggle('open');
+        });
+
+        if (list) {
+            list.querySelectorAll('li').forEach(li => {
+                li.addEventListener('click', () => {
+                    const val  = li.getAttribute('data-value');
+                    const text = li.textContent;
+                    label.textContent = text;
+                    csdEl.setAttribute('data-value', val);
+                    csdEl.classList.add('has-value');
+                    csdEl.classList.remove('open');
+                    if (hidden) hidden.value = val;
+                    list.querySelectorAll('li').forEach(l => l.classList.remove('selected'));
+                    li.classList.add('selected');
+                    if (onSelect) onSelect(val);
+                });
+            });
+        }
+    }
+
+    // Populate course list dynamically
+    function populateHeroCourseList(category) {
+        const courseList = document.getElementById('csd-course-list');
+        const courseCsd  = document.getElementById('csd-course');
+        const courseLbl  = courseCsd ? courseCsd.querySelector('.csd-label') : null;
+        const hidCourse  = document.getElementById('heroCourse');
+        if (!courseList) return;
+        courseList.innerHTML = '';
+        if (coursesMap[category]) {
+            coursesMap[category].forEach(c => {
+                const li = document.createElement('li');
+                li.setAttribute('data-value', c);
+                li.textContent = c;
+                li.addEventListener('click', () => {
+                    if (courseLbl) courseLbl.textContent = c;
+                    courseCsd.setAttribute('data-value', c);
+                    courseCsd.classList.add('has-value');
+                    courseCsd.classList.remove('open');
+                    if (hidCourse) hidCourse.value = c;
+                    courseList.querySelectorAll('li').forEach(l => l.classList.remove('selected'));
+                    li.classList.add('selected');
+                });
+                courseList.appendChild(li);
+            });
+        }
+        // Reset course selection
+        if (courseLbl) courseLbl.textContent = 'Select Course Details';
+        if (courseCsd) { courseCsd.removeAttribute('data-value'); courseCsd.classList.remove('has-value'); }
+        if (hidCourse) hidCourse.value = '';
+    }
+
+    // Init all hero form csds
+    initCsd(document.getElementById('csd-category'), 'heroCategory', (val) => { populateHeroCourseList(val); });
+    initCsd(document.getElementById('csd-course'), 'heroCourse', null);
+    initCsd(document.getElementById('csd-state'), 'heroState', null);
+
+    // Close on outside click
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.csd.open').forEach(el => el.classList.remove('open'));
+    });
 
     function populateCourses(catDropdown, courseDropdown, selectedCourse = "") {
         const cat = catDropdown.value;

@@ -113,7 +113,7 @@
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <h1>Choose Your Career at SCGI <span style="color:var(--gold);">– Heal, Lead, Excel!</span></h1>
+        <h1>Choose Your Career at SCGI <span style="color:var(--gold);">Heal, Lead, Excel!</span></h1>
         <p class="hero-desc">Ignite your healthcare passion with expert training. Your future starts now!</p>
         <div class="hero-btns">
           <a href="#courses" class="btn-gold"><i class="fas fa-graduation-cap"></i>Explore Courses</a>
@@ -157,33 +157,52 @@
         <div class="hsp-title" style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 20px; color: #fff; font-family: 'GT Super Ds', serif;">Begin Your <span style="color:var(--gold);">Success Story</span></div>
         <p class="hsp-subtitle">Select your preferred course & get expert guidance</p>
         <form id="heroForm" class="hero-form">
-          <div style="margin-bottom:12px;">
-            <select id="heroCategory" class="hero-input" required>
-              <option value="">Select Course Category</option>
-              <option value="Nursing">Nursing</option>
-              <option value="Physiotherapy">Physiotherapy</option>
-              <option value="Allied Health Science">Allied Health Science</option>
-            </select>
+
+          <!-- Category Custom Dropdown -->
+          <div class="csd-wrap" style="margin-bottom:12px;">
+            <div class="csd" id="csd-category" data-value="">
+              <div class="csd-trigger"><span class="csd-label">Select Course Category</span><i class="fas fa-chevron-down csd-arrow"></i></div>
+              <ul class="csd-list">
+                <li data-value="Nursing">Nursing</li>
+                <li data-value="Physiotherapy">Physiotherapy</li>
+                <li data-value="Allied Health Science">Allied Health Science</li>
+              </ul>
+            </div>
           </div>
-          <div style="margin-bottom:12px;">
-            <select id="heroCourse" class="hero-input" required>
-              <option value="">Select Course Details</option>
-            </select>
+
+          <!-- Course Custom Dropdown -->
+          <div class="csd-wrap" style="margin-bottom:12px;">
+            <div class="csd" id="csd-course" data-value="">
+              <div class="csd-trigger"><span class="csd-label">Select Course Details</span><i class="fas fa-chevron-down csd-arrow"></i></div>
+              <ul class="csd-list" id="csd-course-list"></ul>
+            </div>
           </div>
-          <div style="margin-bottom:12px;">
-            <select id="heroState" class="hero-input" required>
-              <option value="">Select State</option>
-              <option value="Karnataka">Karnataka</option>
-              <option value="Kerala">Kerala</option>
-              <option value="Tamil Nadu">Tamil Nadu</option>
-              <option value="Andhra Pradesh">Andhra Pradesh</option>
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Other">Other</option>
-            </select>
+
+          <!-- State Custom Dropdown -->
+          <div class="csd-wrap" style="margin-bottom:12px;">
+            <div class="csd" id="csd-state" data-value="">
+              <div class="csd-trigger"><span class="csd-label">Select State</span><i class="fas fa-chevron-down csd-arrow"></i></div>
+              <ul class="csd-list">
+                <li data-value="Karnataka">Karnataka</li>
+                <li data-value="Kerala">Kerala</li>
+                <li data-value="Tamil Nadu">Tamil Nadu</li>
+                <li data-value="Andhra Pradesh">Andhra Pradesh</li>
+                <li data-value="Maharashtra">Maharashtra</li>
+                <li data-value="Other">Other</li>
+              </ul>
+            </div>
           </div>
+
+          <!-- City Input -->
           <div style="margin-bottom:15px;">
             <input type="text" id="heroCity" class="hero-input" placeholder="Enter City" required>
           </div>
+
+          <!-- Hidden inputs for form value capture -->
+          <input type="hidden" id="heroCategory" name="category">
+          <input type="hidden" id="heroCourse" name="course">
+          <input type="hidden" id="heroState" name="state">
+
           <button type="submit" class="btn-gold hero-submit" style="width:100%; justify-content:center; margin-top:10px;"><i class="fas fa-paper-plane"></i> Submit Details</button>
         </form>
       </div>

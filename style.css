@@ -201,13 +201,94 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
        box-shadow: 0 8px 25px rgba(212,175,55,0.3);
      }
      .hero-submit:hover { transform: translateY(-3px) scale(1.02); background: var(--gold-light); box-shadow: 0 12px 30px rgba(212,175,55,0.5); }
-    
+
+    /* ═══ CUSTOM SELECT DROPDOWN (csd) ═══ */
+    .csd-wrap { position: relative; }
+    .csd {
+      position: relative;
+      width: 100%;
+      font-family: 'Albert Sans', sans-serif;
+      user-select: none;
+      z-index: 10;
+    }
+    .csd-trigger {
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.95);
+      color: var(--blue-dark);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      transition: all 0.3s;
+      box-sizing: border-box;
+    }
+    .csd-trigger:hover { background: #fff; border-color: var(--gold); }
+    .csd.open .csd-trigger {
+      border-color: var(--gold);
+      background: #fff;
+      box-shadow: 0 0 15px rgba(212,175,55,0.3);
+      border-radius: 10px 10px 0 0;
+    }
+    .csd-label { flex: 1; text-align: left; color: rgba(13,36,99,0.7); font-weight: 500; }
+    .csd.has-value .csd-label { color: var(--blue-dark); font-weight: 600; }
+    .csd-arrow {
+      color: var(--blue-dark);
+      font-size: 0.75rem;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .csd.open .csd-arrow { transform: rotate(180deg); color: var(--gold); }
+    .csd-list {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: #fff;
+      border: 1.5px solid var(--gold);
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+      list-style: none;
+      padding: 4px 0;
+      margin: 0;
+      z-index: 300;
+      box-shadow: 0 12px 30px rgba(13,36,99,0.18);
+      max-height: 220px;
+      overflow-y: auto;
+    }
+    .csd-list::-webkit-scrollbar { width: 4px; }
+    .csd-list::-webkit-scrollbar-track { background: #f0f0f0; }
+    .csd-list::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+    .csd.open .csd-list { display: block; animation: csd-open 0.2s ease; }
+    @keyframes csd-open {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .csd-list li {
+      padding: 11px 18px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--blue-dark);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .csd-list li:last-child { border-bottom: none; }
+    .csd-list li:hover { background: var(--gold-pale); color: var(--blue-dark); }
+    .csd-list li.selected { background: rgba(201,162,39,0.12); color: var(--blue-dark); font-weight: 700; }
+
     /* MODAL FORM INPUT STYLING */
     .modal-input { width: 100%; padding: 14px 16px; border-radius: 8px; border: 1px solid var(--border); background: #fdfdfd; color: var(--blue-dark); outline: none; margin-bottom: 16px; font-family: inherit; font-size: 0.95rem; transition: all 0.3s; box-shadow: inset 0 2px 5px rgba(0,0,0,0.02); }
     .modal-input::placeholder { color: #8892a0; }
     .modal-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26,58,140,0.1); background: #fff; }
     .modal-input option { color: var(--blue-dark); background: #fff; }
     select.modal-input { appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a3a8c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em; padding-right: 2.5rem; }
+
 
     /* ───── STATS BAR ───── */
     .stats-bar { background: linear-gradient(120deg, var(--blue-dark) 0%, var(--blue-mid) 100%); }
