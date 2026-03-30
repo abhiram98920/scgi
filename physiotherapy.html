@@ -10,7 +10,7 @@
   <style>
     .inner-hero {
       position: relative; height: 380px;
-      background: linear-gradient(to top, rgba(13,36,99,0.85) 0%, transparent 50%), url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1600&q=80') center / cover;
+      background: linear-gradient(to top, rgba(13,36,99,0.85) 0%, transparent 50%), url('img/banner-physiotherapy.png') center / cover;
       display: flex; align-items: flex-end; padding-bottom: 40px; color: #fff;
     }
     .inner-hero h1 { font-family: 'GT Super Ds', 'Lora', serif; font-size: clamp(2.5rem, 4vw, 3.5rem); margin: 0; font-weight: 500; }
@@ -98,16 +98,16 @@
               </div>
               <div class="dropdown-submenu">
                 <a href="physiotherapy.html" onclick="this.parentElement.classList.toggle('open')">Physiotherapy <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
-                <div class="submenu-content">
-                  <a href="physiotherapy-bpt.html">Bachelor of Physiotherapy (BPT)</a>
-                </div>
-              </div>
+        <div class="hero-badges-wrap reveal">
+            <div class="hero-badge-item">
+                <img src="RGHUS-01.jpg" alt="RGUHS" class="hero-badge-img">
+                <span>Affiliated to RGUHS Bangalore</span>
             </div>
-          </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+            <div class="hero-badge-item">
+                <img src="KA-Govt-01.jpg" alt="KA GOVT" class="hero-badge-img">
+                <span>Approved by Karnataka Govt</span>
+            </div>
+        </div>
       <div style="display:flex;align-items:center;gap:12px">
         <div class="hamburger" id="hbg"><span></span><span></span><span></span></div>
       </div>
@@ -505,6 +505,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<script src="js/main.js"></script>
 </body>
 
 </html>

@@ -40,7 +40,7 @@
                 <a href="<?php echo esc_url(home_url('/course-category/physiotherapy')); ?>" class="hero-pill"><i class="fas fa-running"></i>Physiotherapy</a>
             </div>
             
-            <div class="hero-badges-wrap">
+            <div class="hero-badges-wrap reveal">
                 <?php
                 $logos = new WP_Query( array( 'post_type' => 'scgi_logo', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
                 if ( $logos->have_posts() ) : while ( $logos->have_posts() ) : $logos->the_post();
@@ -88,7 +88,7 @@
 </section>
 
 <!-- METRICS ROW -->
-<div class="metrics-row sec-bg-light">
+<div class="metrics-row sec-bg-light reveal">
     <div class="container">
         <div class="metrics-flex">
             <div class="metrics-title"><div>College</div><div>Metrics</div></div>
@@ -117,7 +117,7 @@
 </div>
 
 <!-- ABOUT SECTION -->
-<section class="about sec-bg-blue bg-pattern" id="about">
+<section class="about sec-bg-white reveal" id="about">
     <div class="container">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <div class="about-grid">
@@ -153,7 +153,7 @@
 </section>
 
 <!-- COURSES SECTION -->
-<section class="courses sec-bg-blue bg-pattern" id="courses">
+<section class="courses sec-bg-blue reveal" id="courses">
     <div class="container">
         <div class="tc">
             <div class="sec-label">Our Programmes</div>
