@@ -162,7 +162,7 @@ function scgi_auto_populate_content() {
             'description' => 'Ignite your healthcare passion with expert training. Your future starts now!',
             'btn' => 'Explore Courses',
             'link' => '#courses',
-            'img' => 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1800&q=80'
+            'img' => 'banner-nursing.png'
         ),
         array(
             'title' => 'Excellence in Clinical Practice',
@@ -170,7 +170,7 @@ function scgi_auto_populate_content() {
             'description' => 'State-of-the-art labs and our own multi-speciality hospital for hands-on training.',
             'btn' => 'View Accreditations',
             'link' => '#about',
-            'img' => 'https://images.unsplash.com/photo-1576091160550-217359f42f8c?w=1800&q=80'
+            'img' => 'banner-physiotherapy.png'
         ),
         array(
             'title' => 'Shaping Healthcare Leaders',
@@ -178,7 +178,7 @@ function scgi_auto_populate_content() {
             'description' => 'Join our vibrant campus established in 2006 with 5000+ alumni success stories.',
             'btn' => 'Enquire Today',
             'link' => '#enquire',
-            'img' => 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=1800&q=80'
+            'img' => 'banner-allied-health.png'
         )
     );
 
@@ -197,7 +197,7 @@ function scgi_auto_populate_content() {
             update_post_meta($sid, '_slider_btn_text', $s['btn']);
             update_post_meta($sid, '_slider_btn_link', $s['link']);
             
-            $attach_id = scgi_upload_url_image($s['img'], $s['title']);
+            $attach_id = scgi_upload_local_image($s['img']);
             if($attach_id) set_post_thumbnail($sid, $attach_id);
         }
     }
@@ -232,15 +232,15 @@ function scgi_auto_populate_content() {
     $ext_courses = get_posts(array('post_type'=>'scgi_course','post_status'=>'any','posts_per_page'=>1));
     if(empty($ext_courses)) {
         $courses = array(
-            array('title'=>'GNM', 'cat'=>'Nursing', 'excerpt'=>'General Nursing & Midwifery programme that trains students in emergency care, clinical nursing, anatomy, physiology and midwifery practice.', 'img'=>'https://images.unsplash.com/photo-1638202993928-7267aad84c31?w=600&q=80', 'duration'=>'3 Years'),
-            array('title'=>'B.Sc Nursing', 'cat'=>'Nursing', 'excerpt'=>'A comprehensive four-year undergraduate programme designed to prepare students for a professional career in nursing and midwifery.', 'img'=>'https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&q=80', 'duration'=>'4 Years'),
-            array('title'=>'P.B B.Sc Nursing', 'cat'=>'Nursing', 'excerpt'=>'Post-basic B.Sc Nursing programme designed for GNM graduates to upgrade their qualifications and broaden their career opportunities.', 'img'=>'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80', 'duration'=>'2 Years'),
-            array('title'=>'M.Sc Nursing', 'cat'=>'Nursing', 'excerpt'=>'An advanced postgraduate programme for nursing professionals seeking to specialise and take on leadership and academic roles in healthcare.', 'img'=>'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600&q=80', 'duration'=>'2 Years'),
-            array('title'=>'Bachelor of Physiotherapy (BPT)', 'cat'=>'Physiotherapy', 'excerpt'=>'A four-and-a-half year undergraduate programme building expertise in rehabilitation, physical therapy, and movement sciences.', 'img'=>'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80', 'duration'=>'4.5 Years'),
-            array('title'=>'B.Sc Medical Laboratory Technology (MLT)', 'cat'=>'Allied Health Science', 'excerpt'=>'Hands-on training in diagnostic labs — develop skills in clinical pathology, microbiology, biochemistry, and haematology.', 'img'=>'https://images.unsplash.com/photo-1530026405186-ed1f139313f3?w=600&q=80', 'duration'=>'3 Years'),
-            array('title'=>'B.Sc Anaesthesia & Operation Theatre Technology', 'cat'=>'Allied Health Science', 'excerpt'=>'Specialised programme preparing students for critical roles in operation theatre and anaesthesia management.', 'img'=>'https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&q=80', 'duration'=>'3 Years'),
-            array('title'=>'Diploma in Medical Laboratory Technology (MLT)', 'cat'=>'Allied Health Science', 'excerpt'=>'A focused diploma providing core laboratory skills in clinical pathology and diagnostic testing techniques.', 'img'=>'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&q=80', 'duration'=>'2 Years'),
-            array('title'=>'Diploma in OTT & Diploma in Health Inspector', 'cat'=>'Allied Health Science', 'excerpt'=>'Practical diploma programmes in Operation Theatre Technology and Health Inspection for a focused allied health career.', 'img'=>'https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=600&q=80', 'duration'=>'2 Years'),
+            array('title'=>'GNM', 'cat'=>'Nursing', 'excerpt'=>'General Nursing & Midwifery programme that trains students in emergency care, clinical nursing, anatomy, physiology and midwifery practice.', 'img'=>'student-nursing.png', 'duration'=>'3 Years'),
+            array('title'=>'B.Sc Nursing', 'cat'=>'Nursing', 'excerpt'=>'A comprehensive four-year undergraduate programme designed to prepare students for a professional career in nursing and midwifery.', 'img'=>'student-nursing.png', 'duration'=>'4 Years'),
+            array('title'=>'P.B B.Sc Nursing', 'cat'=>'Nursing', 'excerpt'=>'Post-basic B.Sc Nursing programme designed for GNM graduates to upgrade their qualifications and broaden their career opportunities.', 'img'=>'student-nursing.png', 'duration'=>'2 Years'),
+            array('title'=>'M.Sc Nursing', 'cat'=>'Nursing', 'excerpt'=>'An advanced postgraduate programme for nursing professionals seeking to specialise and take on leadership and academic roles in healthcare.', 'img'=>'student-nursing.png', 'duration'=>'2 Years'),
+            array('title'=>'Bachelor of Physiotherapy (BPT)', 'cat'=>'Physiotherapy', 'excerpt'=>'A four-and-a-half year undergraduate programme building expertise in rehabilitation, physical therapy, and movement sciences.', 'img'=>'student-physiotherapy.png', 'duration'=>'4.5 Years'),
+            array('title'=>'B.Sc Medical Laboratory Technology (MLT)', 'cat'=>'Allied Health Science', 'excerpt'=>'Hands-on training in diagnostic labs — develop skills in clinical pathology, microbiology, biochemistry, and haematology.', 'img'=>'student-allied-health.png', 'duration'=>'3 Years'),
+            array('title'=>'B.Sc Anaesthesia & Operation Theatre Technology', 'cat'=>'Allied Health Science', 'excerpt'=>'Specialised programme preparing students for critical roles in operation theatre and anaesthesia management.', 'img'=>'student-allied-health.png', 'duration'=>'3 Years'),
+            array('title'=>'Diploma in Medical Laboratory Technology (MLT)', 'cat'=>'Allied Health Science', 'excerpt'=>'A focused diploma providing core laboratory skills in clinical pathology and diagnostic testing techniques.', 'img'=>'student-allied-health.png', 'duration'=>'2 Years'),
+            array('title'=>'Diploma in OTT & Diploma in Health Inspector', 'cat'=>'Allied Health Science', 'excerpt'=>'Practical diploma programmes in Operation Theatre Technology and Health Inspection for a focused allied health career.', 'img'=>'student-allied-health.png', 'duration'=>'2 Years'),
         );
         
         foreach($courses as $idx => $c) {
@@ -248,7 +248,7 @@ function scgi_auto_populate_content() {
             wp_set_object_terms($cid, $c['cat'], 'course_category');
             update_post_meta($cid, '_course_duration', $c['duration']);
             
-            $aid = scgi_upload_url_image($c['img'], $c['title']);
+            $aid = scgi_upload_local_image($c['img']);
             if($aid) set_post_thumbnail($cid, $aid);
         }
     }

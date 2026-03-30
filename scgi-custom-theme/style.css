@@ -345,13 +345,8 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     .gallery-item { position: relative; border-radius: 8px; overflow: hidden; height: 260px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background: #000; }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; filter: brightness(0.9); }
     .gi-overlay { 
-      position: absolute; inset: 0; 
-      background: linear-gradient(to top, rgba(13, 36, 99, 0.85) 0%, rgba(13, 36, 99, 0.2) 50%, transparent 100%); 
-      display: flex; align-items: flex-end; padding: 20px; transition: all 0.3s; 
+      display: none !important;
     }
-    .gallery-item:hover img { transform: scale(1.08); }
-    .gallery-item:hover .gi-overlay { background: rgba(13, 36, 99, 0.3); }
-    .gi-title { color: #fff; font-size: 1.1rem; font-weight: 500; font-family: 'GT Super Ds', serif; letter-spacing: 0.5px; }
 
     @media (max-width: 991px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 640px) { .gallery-grid { grid-template-columns: 1fr; } }
@@ -1310,7 +1305,24 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   
   .hero-pills { gap: 10px; flex-wrap: wrap; margin-top: 15px; }
   .hero-pill { font-size: 0.72rem; padding: 8px 14px; flex: 1 1 calc(50% - 10px); justify-content: center; }
-  .hero-badges-wrap { justify-content: center !important; flex-direction: column !important; align-items: stretch !important; gap: 12px !important; width: 100% !important; animation: none !important; transform: none !important; margin-top: 30px !important; }
+  .hero-badges-wrap { 
+    display: flex !important;
+    flex-direction: row !important; 
+    align-items: center !important; 
+    gap: 15px !important; 
+    width: 100% !important; 
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding: 10px 0 20px !important;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start !important;
+    margin-top: 20px !important;
+  }
+  .hero-badge-item {
+    flex: 0 0 auto !important;
+    min-width: 180px;
+  }
+  .hero-badges-wrap::-webkit-scrollbar { display: none; }
   .hero-badge-item { width: 100% !important; max-width: none !important; margin: 0 !important; }
   
   /* Hero Logos Marquee (Mobile) */

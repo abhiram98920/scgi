@@ -30,9 +30,6 @@ get_header(); ?>
         if ( $gallery->have_posts() ) : while ( $gallery->have_posts() ) : $gallery->the_post(); ?>
             <div class="gallery-item" style="position: relative; border-radius: 12px; overflow: hidden; height: 300px;">
                 <?php if ( has_post_thumbnail() ) : the_post_thumbnail( 'large', array( 'style' => 'width:100%; height:100%; object-fit:cover;' ) ); endif; ?>
-                <div class="gi-overlay">
-                    <div class="gi-title"><?php the_title(); ?></div>
-                </div>
             </div>
         <?php endwhile; wp_reset_postdata(); else : ?>
             <p>No gallery items found. Please add them in the WordPress admin.</p>

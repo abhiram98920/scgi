@@ -3,8 +3,20 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <!-- INNER HERO -->
-<section class="inner-hero" style="background: linear-gradient(to top, rgba(13,36,99,0.85) 0%, transparent 50%), url('<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=80'; ?>') center / cover;">
+<section class="inner-hero" style="background: linear-gradient(to top, rgba(13,36,99,0.85) 0%, transparent 50%), url('<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/assets/images/banner-nursing.png'; ?>') center / cover;">
   <div class="container">
+    <div class="hero-badges-wrap">
+        <?php
+        $logos = new WP_Query( array( 'post_type' => 'scgi_logo', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
+        if ( $logos->have_posts() ) : while ( $logos->have_posts() ) : $logos->the_post();
+            if ( has_post_thumbnail() ) : ?>
+                <div class="hero-badge-item">
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>" class="hero-badge-img">
+                    <span><?php the_title(); ?></span>
+                </div>
+            <?php endif; ?>
+        <?php endwhile; wp_reset_postdata(); endif; ?>
+    </div>
     <h1><?php the_title(); ?></h1>
   </div>
 </section>
@@ -34,7 +46,7 @@
       </div>
       <div class="detail-img">
         <?php if ( has_post_thumbnail() ) : the_post_thumbnail( 'large' ); else : ?>
-            <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=800&q=80" alt="<?php the_title(); ?>" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/student-nursing.png" alt="<?php the_title(); ?>" />
         <?php endif; ?>
       </div>
     </div>

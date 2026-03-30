@@ -193,6 +193,29 @@
             </div>
         <?php endforeach; ?>
     </div>
+<!-- GALLERY SECTION -->
+<section class="gallery sec-bg-blue bg-pattern" id="gallery">
+    <div class="container">
+        <div class="tc">
+            <div class="sec-label">Glimpses of SCGI</div>
+            <h2 class="sec-title">Gallery</h2>
+            <p class="sec-sub">A glimpse into our academic excellence, clinical training, and vibrant campus life.</p>
+        </div>
+        <div class="gallery-grid">
+            <?php
+            $gallery = new WP_Query( array( 'post_type' => 'scgi_gallery', 'posts_per_page' => 6 ) );
+            if ( $gallery->have_posts() ) : while ( $gallery->have_posts() ) : $gallery->the_post(); ?>
+                <div class="gallery-item">
+                    <?php if ( has_post_thumbnail() ) : the_post_thumbnail( 'large' ); endif; ?>
+                </div>
+            <?php endwhile; wp_reset_postdata(); else : ?>
+                <p class="tc" style="color:rgba(255,255,255,0.6); margin-top:30px;">No gallery items found. Please add them in the WordPress admin.</p>
+            <?php endif; ?>
+        </div>
+        <div class="tc" style="margin-top: 40px;">
+            <a href="<?php echo esc_url(home_url('/gallery')); ?>" class="btn-ghost-white">View All Gallery <i class="fas fa-images" style="margin-left:8px;"></i></a>
+        </div>
+    </div>
 </section>
 
 <?php get_footer(); ?>
