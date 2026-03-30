@@ -1237,15 +1237,26 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 }
 .mv-highlights .sec-title { 
     margin-bottom: 40px;
-    padding-top: 20px;
+    padding-top: 10px;
+    text-align: center;
+    color: #fff !important;
 }
 .mv-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  margin-top: -80px; /* Pull cards up from below */
+  margin-top: 0;
   position: relative;
   z-index: 10;
+}
+/* When few cards (< 3) in a tab, center them and hide arrows */
+.courses-slider-container.cards-few .slider-arrow { display: none !important; }
+.courses-slider-container.cards-few .courses-grid {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.courses-slider-container.cards-few .courses-slider-track {
+  overflow: visible;
 }
 .facilities-grid { 
   display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px;

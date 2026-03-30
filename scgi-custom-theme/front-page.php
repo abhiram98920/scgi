@@ -65,7 +65,7 @@
         </div>
 
         <div class="hero-stats-panel hero-enquiry-form" id="heroFormPanel">
-            <div class="hsp-title" style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 20px; color: #fff; font-family: 'GT Super Ds', serif;">Begin Your <span style="color:var(--gold);">Success Story</span></div>
+            <div class="hsp-title" style="font-size: 1.9rem; line-height: 1.15; margin-bottom: 16px; color: #fff; font-family: 'GT Super Ds', serif; white-space: nowrap;">Enquire &amp; <span style="color:var(--gold);">Get Counselled</span></div>
             <p class="hsp-subtitle">Select your preferred course & get expert guidance</p>
             <form id="heroForm" class="hero-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
                 <input type="hidden" name="action" value="scgi_course_enquiry">

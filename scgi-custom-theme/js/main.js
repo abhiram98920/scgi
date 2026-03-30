@@ -58,6 +58,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }, revealOptions);
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── FEW-CARDS SLIDER: hide arrows + center when < 3 cards on desktop ──
+    function updateSliderArrows() {
+        if (window.innerWidth <= 768) return; // mobile handled separately
+        document.querySelectorAll('.courses-slider-container').forEach(container => {
+            const grid = container.querySelector('.courses-grid');
+            if (!grid) return;
+            const cardCount = grid.children.length;
+            if (cardCount < 3) {
+                container.classList.add('cards-few');
+            } else {
+                container.classList.remove('cards-few');
+            }
+        });
+    }
+    // Run on load and whenever tabs switch
+    updateSliderArrows();
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => setTimeout(updateSliderArrows, 50));
+    });
+    window.addEventListener('resize', updateSliderArrows);
+
     
     // COUNTER ANIMATION
     const counterObserver = new IntersectionObserver((entries) => {
