@@ -1,269 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Allied Health Science | SCGI – Sri Channegowda Group of Institutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css?v=15.0" />
-  
-</head>
-<body>
+import os
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  <div class="container wrap">
-    <div class="tb-left">
-      <a href="tel:+919947915916"><i class="fas fa-phone-alt"></i>+91 99479 15916 / 97690 02277</a>
-      <span class="tb-divider">|</span>
-      <a href="mailto:info@scgi.in"><i class="fas fa-envelope"></i>info@scgi.in</a>
-    </div>
-    <div class="tb-right">
-      <span><i class="fas fa-map-marker-alt"></i>Kolar, Karnataka – 563102</span>
-      <span class="tb-divider">|</span>
-      <a href="#"><i class="fas fa-award"></i>RGUHS Affiliated</a>
-      <span class="tb-divider">|</span>
-      <a href="#"><i class="fas fa-star"></i>Govt. Recognised</a>
-    <a href="#enquire" class="tb-gold-btn">Enquire Now</a></div>
-  </div>
-</div>
-
-<!-- HEADER -->
-<header id="hdr">
-  <div class="container">
-    <div class="nav-wrap">
-      <a href="index.html" class="logo-link">
-        <img src="SCGI-Logo.png" alt="SCGI – Sri Channegowda Group of Institutions Logo" />
-      </a>
-      <nav>
-        <ul id="navMenu">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li class="dropdown">
-            <a href="javascript:void(0)" onclick="this.parentElement.classList.toggle('open')">Courses <i class="fas fa-chevron-down" style="font-size:0.7em;margin-left:4px;"></i></a>
-            <div class="dropdown-content">
-              <div class="dropdown-submenu">
-                <a href="nursing.html">Nursing <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
-                <div class="submenu-content">
-                  <a href="nursing-gnm.html">General Nursing and Midwifery (GNM)</a>
-                  <a href="nursing-bsc.html">Basic B.Sc Nursing</a>
-                  <a href="nursing-pbbsc.html">Post Basic B.Sc Nursing (P.B B.Sc Nursing)</a>
-                  <a href="nursing-msc.html">Master of Science in Nursing (M.Sc Nursing)</a>
-                </div>
-              </div>
-              <div class="dropdown-submenu">
-                <a href="physiotherapy.html">Physiotherapy <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
-                <div class="submenu-content">
-                  <a href="physiotherapy-bpt.html">Bachelor of Physiotherapy (BPT)</a>
-                </div>
-              </div>
-              <div class="dropdown-submenu">
-                <a href="allied.html">Allied Health Science <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
-                <div class="submenu-content">
-                  <a href="allied-atott.html">Anaesthesia & Operation Theatre Technology (B.Sc AT & OTT)</a>
-                  <a href="allied-bmlt.html">Medical Laboratory Technology (B.Sc MLT)</a>
-                  <div class="dropdown-submenu">
-                    <a href="allied.html" class="paramed-menu-trigger">Paramedical Courses <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
-                    <div class="submenu-content">
-                      <a href="allied-dmlt.html">Medical Laboratory Technology (DMLT)</a>
-                      <a href="allied-dott.html">Operation Theatre Technology (DOTT)</a>
-                      <a href="allied-dhi.html">Health Inspector (DHI)</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div style="display:flex;align-items:center;gap:12px">
-        
-        <div class="hamburger" id="hbg"><span></span><span></span><span></span></div>
-      </div>
-    </div>
-  </div>
-</header>
-
-
-
-
-<!-- INNER HERO -->
-<section class="inner-hero">
-  <div class="container"><h1>Allied Health Science</h1></div>
-</section>
-
-<!-- BREADCRUMB BAR -->
-<div class="breadcrumb-bar" style="margin-bottom: 50px;">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a> <i class="fas fa-circle"></i> 
-      <span>Courses</span> <i class="fas fa-circle"></i> 
-      <span>Allied Health</span>
-    </div>
-  </div>
-</div>
-
-<!-- OVERVIEW & GRID -->
-<section style="padding: 0 0 100px;">
-  <div class="container">
-    
-    <div style="margin-bottom: 40px;" class="reveal">
-      <div class="sec-label">Our Academic Programmes</div>
-      <h2 class="sec-title">Allied Health Science Courses</h2>
-<div class="hero-badges-wrap reveal" style="margin-top:20px; justify-content: center;">
-        <div class="hero-badge-item">
-            <img src="INC-01.jpg" alt="INC-Approved" class="hero-badge-img">
-            <span>Approved by<br>Indian Nursing Council</span>
-        </div>
-        <div class="hero-badge-item">
-            <img src="KSNC-01.jpg" alt="KSNC-Approved" class="hero-badge-img">
-            <span>Approved by<br>Karnataka State Nursing Council</span>
-        </div>
-        <div class="hero-badge-item">
-            <img src="Karnataka state diploma in nursing examination board.png" alt="KSDNEB" class="hero-badge-img">
-            <span>KSDNEB</span>
-        </div>
-        <div class="hero-badge-item">
-            <img src="Logo of Karnataka paramedical board.webp" alt="Paramedical-Board" class="hero-badge-img">
-            <span>Karnataka Paramedical Board</span>
-        </div>
-        <div class="hero-badge-item">
-            <img src="KA-Govt-01.jpg" alt="Govt-Recognised" class="hero-badge-img">
-            <span>Recognised by Govt of Karnataka</span>
-        </div>
-    </div>
-      
-
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-      
-      <!-- Card 1 (AT & OTT) -->
-      <a href="allied-atott.html" class="kmct-card reveal">
-        <div class="kc-img"><img src="img/course-cards/allied-atott.png" alt="Anaesthesia & Operation Theatre Technology (B.Sc AT & OTT)" /></div>
-        <div class="kc-overlay"></div>
-        <div class="kc-content">
-          <div class="kc-badge">UG</div>
-          <div class="kc-title">Anaesthesia & Operation Theatre Technology (B.Sc AT & OTT)</div>
-          <div class="kc-hidden">
-            <div class="kc-hidden-inner">
-              <div class="kc-meta">
-                <div><p style="font-size:0.8rem; line-height:1.4; opacity:0.9;">Specialised programme preparing students for critical roles in operation theatre and anaesthesia management.</p></div>
-                <div><i class="fas fa-clock"></i> <strong>Duration:</strong> 3+1 year</div>
-              </div>
-              <div class="kc-actions"><div class="kc-btn primary">Know More</div><div class="kc-btn outline"><i class="fas fa-download"></i> Brochure</div></div>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 2 (MLT) -->
-      <a href="allied-bmlt.html" class="kmct-card reveal">
-        <div class="kc-img"><img src="img/course-cards/allied-bmlt.png" alt="Medical Laboratory Technology (B.Sc MLT)" /></div>
-        <div class="kc-overlay"></div>
-        <div class="kc-content">
-          <div class="kc-badge">UG</div>
-          <div class="kc-title">Medical Laboratory Technology (B.Sc MLT)</div>
-          <div class="kc-hidden">
-            <div class="kc-hidden-inner">
-              <div class="kc-meta">
-                <div><p style="font-size:0.8rem; line-height:1.4; opacity:0.9;">Hands-on training in diagnostic labs — develop skills in clinical pathology, microbiology, biochemistry, and haematology.</p></div>
-                <div><i class="fas fa-clock"></i> <strong>Duration:</strong> 3+1 year</div>
-              </div>
-              <div class="kc-actions"><div class="kc-btn primary">Know More</div><div class="kc-btn outline"><i class="fas fa-download"></i> Brochure</div></div>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 3 -->
-      <a href="allied-dmlt.html" class="kmct-card">
-        <div class="kc-img"><img src="img/course-cards/allied-bmlt.png" alt="Medical Laboratory Technology (DMLT)"></div>
-        <div class="kc-overlay"></div>
-        <div class="kc-content">
-          <div class="paramed-badge">Paramedical</div>
-          <div class="kc-badge">DIPLOMA</div>
-          <div class="kc-title">Medical Laboratory Technology (DMLT)</div>
-          <div class="kc-hidden">
-            <div class="kc-hidden-inner">
-              <div class="kc-meta">
-                <div><p style="font-size:0.8rem; line-height:1.4; opacity:0.9;">A focused diploma providing core laboratory skills in clinical pathology and diagnostic testing techniques.</p></div>
-                <div><i class="fas fa-clock"></i> <strong>Duration:</strong> 2 Years</div>
-              </div>
-              <div class="kc-actions"><div class="kc-btn primary">Know More</div><div class="kc-btn outline"><i class="fas fa-download"></i> Brochure</div></div>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 4 -->
-      <a href="allied-dott.html" class="kmct-card">
-        <div class="kc-img"><img src="img/course-cards/allied-atott.png" alt="Operation Theatre Technology (DOTT)"></div>
-        <div class="kc-overlay"></div>
-        <div class="kc-content">
-          <div class="paramed-badge">Paramedical</div>
-          <div class="kc-badge">DIPLOMA</div>
-          <div class="kc-title">Operation Theatre Technology (DOTT)</div>
-          <div class="kc-hidden">
-            <div class="kc-hidden-inner">
-              <div class="kc-meta">
-                <div><p style="font-size:0.8rem; line-height:1.4; opacity:0.9;">Specialised technical training for operation theatre assistants and paramedics.</p></div>
-                <div><i class="fas fa-clock"></i> <strong>Duration:</strong> 2 Years</div>
-              </div>
-              <div class="kc-actions"><div class="kc-btn primary">Know More</div><div class="kc-btn outline"><i class="fas fa-download"></i> Brochure</div></div>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 5 -->
-      <a href="allied-dhi.html" class="kmct-card reveal">
-        <div class="kc-img"><img src="img/course-cards/allied-atott.png" alt="Health Inspector (DHI)" /></div>
-        <div class="kc-overlay"></div>
-        <div class="kc-content">
-          <div class="paramed-badge">Paramedical</div>
-          <div class="kc-badge">DIPLOMA</div>
-          <div class="kc-title">Health Inspector (DHI)</div>
-          <div class="kc-hidden">
-            <div class="kc-hidden-inner">
-              <div class="kc-meta">
-                <div><p style="font-size:0.8rem; line-height:1.4; opacity:0.9;">Practical training in public health, sanitation, and community hygiene inspections.</p></div>
-                <div><i class="fas fa-clock"></i> <strong>Duration:</strong> 2 Years</div>
-              </div>
-              <div class="kc-actions"><div class="kc-btn primary">Know More</div><div class="kc-btn outline"><i class="fas fa-download"></i> Brochure</div></div>
-            </div>
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- BANNER CTA -->
-<section class="banner-cta reveal">
-  <div class="container flex-cta">
-    <div class="cta-text">
-      <h3>Guiding You Towards a Bright Career</h3>
-      <p>Reach Out for Admissions, Queries & More</p>
-    </div>
-    <a href="contact.html" class="btn-gold"><i class="fas fa-paper-plane"></i>Contact Us</a>
-  </div>
-</section>
-
-<!-- COUNSELLOR / CTA -->
-<section class="cta-band reveal" id="enquire">
-  <div class="container">
-    <div class="sec-label" style="justify-content: center;">Contact Our Counsellor</div>
-    <h2 class="sec-title" style="color: #fff; text-align: center; margin-bottom: 14px;">Clarify all you doubts about the course, fees, college and more</h2>
-    <div class="cta-actions" style="margin-top: 36px;">
-      <a href="contact.html#enquire" class="btn-gold"><i class="fas fa-paper-plane"></i> Enquire Now</a>
-    </div>
-  </div>
-</section>
-
-<footer id="contact">
+footer_content = """<footer id="contact">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -544,4 +281,40 @@
 </script>
 <script src="js/main.js"></script>
 </body>
-</html>
+</html>"""
+
+def fix_file(filepath):
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # Target markers to find the corruption
+    markers = [
+        "<!-- FOOTER -->",
+        '<footer id="contact">',
+        "slides[currentSlideIndex].classList.remove('active');"
+    ]
+    
+    found_idx = -1
+    for m in markers:
+        idx = content.find(m)
+        if idx != -1:
+            if found_idx == -1 or idx < found_idx:
+                found_idx = idx
+    
+    if found_idx != -1:
+        new_content = content[:found_idx] + footer_content
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+        print(f"Fixed: {filepath}")
+    else:
+        # If no markers, maybe it's just missing footer entirely or too broken
+        if '</body>' not in content:
+             new_content = content + "\\n" + footer_content
+             with open(filepath, 'w', encoding='utf-8') as f:
+                 f.write(new_content)
+             print(f"Appended footer to: {filepath}")
+
+for root, dirs, files in os.walk('.'):
+    for file in files:
+        if file.endswith('.html'):
+            fix_file(os.path.join(root, file))

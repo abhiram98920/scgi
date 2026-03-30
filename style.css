@@ -323,14 +323,14 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     
     .slider-arrow {
       position: absolute; top: 50%; transform: translateY(-50%);
-      width: 50px; height: 50px; border-radius: 50%; background: #fff;
-      color: var(--blue-dark); display: flex; align-items: center; justify-content: center;
-      cursor: pointer; z-index: 20; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s; border: 1px solid var(--border);
+      width: 44px; height: 44px; background: #fff; color: var(--blue-dark);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 20; border: 1.5px solid rgba(13,36,99,.12);
+      transition: all 0.4s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
     .slider-arrow:hover { background: var(--blue-dark); color: #fff; transform: translateY(-50%) scale(1.1); }
-    .slider-arrow.prev { left: -25px; }
-    .slider-arrow.next { right: -25px; }
+    .slider-arrow.prev { left: -10px; }
+    .slider-arrow.next { right: -10px; }
     
     @media (max-width: 1024px) {
       .courses-grid > * { flex: 0 0 45%; min-width: 0; }
@@ -631,6 +631,13 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   z-index: 1002;
   padding: 10px 0;
 }
+/* Ensure 3rd level submenus open to the left if they hit the edge */
+.submenu-content .dropdown-submenu .submenu-content {
+  left: auto;
+  right: 100%;
+  border-left: none;
+  border-right: 4px solid var(--gold);
+}
 .dropdown-submenu:hover .submenu-content {
   display: block;
 }
@@ -809,39 +816,38 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 .courses-slider-container {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Standard clipping */
+  overflow: visible; /* Allow arrows to pop out */
   padding: 0 10px;
 }
 .courses-slider-track {
-  overflow: hidden;
+  overflow: hidden; /* Handle the card clipping here */
   position: relative;
 }
 .slider-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   background: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   cursor: pointer;
-  z-index: 10;
+  z-index: 20;
   color: var(--blue-dark);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(13,36,99,0.05);
+  transition: all 0.4s;
+  border: 1.5px solid rgba(13,36,99,.12);
 }
 .slider-arrow:hover {
-  background: var(--gold);
+  background: var(--blue-dark);
   color: #fff;
-  box-shadow: 0 8px 25px rgba(197,160,89,0.3);
   transform: translateY(-50%) scale(1.1);
 }
-.slider-arrow.prev { left: -24px; }
-.slider-arrow.next { right: -24px; }
+.slider-arrow.prev { left: -10px; }
+.slider-arrow.next { right: -10px; }
 
 @media (max-width: 1100px) {
   .slider-arrow.prev { left: 5px; }
@@ -1401,11 +1407,13 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 .paramed-badge {
   background: var(--gold);
   color: #0d2463;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 3px 12px;
+  border-radius: 30px;
   font-size: 0.65rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: 8px;
+  width: fit-content;
+  white-space: nowrap;
 }

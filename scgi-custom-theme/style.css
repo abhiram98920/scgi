@@ -631,6 +631,13 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   z-index: 1002;
   padding: 10px 0;
 }
+/* Ensure 3rd level submenus open to the left if they hit the edge */
+.submenu-content .dropdown-submenu .submenu-content {
+  left: auto;
+  right: 100%;
+  border-left: none;
+  border-right: 4px solid var(--gold);
+}
 .dropdown-submenu:hover .submenu-content {
   display: block;
 }
@@ -801,6 +808,16 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 }
 @media (max-width: 900px) {
   .metrics-sep { display: none; }
+  .slider-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 44px; height: 44px; background: #fff; color: var(--blue-dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 20; border: 1.5px solid rgba(13,36,99,.12);
+    transition: all 0.4s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .slider-arrow:hover { background: var(--blue-dark); color: #fff; transform: translateY(-50%) scale(1.1); }
+  .slider-arrow.prev { left: -10px; }
+  .slider-arrow.next { right: -10px; }
   .metrics-flex { justify-content: space-evenly; gap: 30px; }
   .metrics-title { width: 100%; text-align: center; border-left: none; padding-left: 0; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
 }
@@ -809,11 +826,11 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 .courses-slider-container {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Standard clipping */
+  overflow: visible; /* Allow arrows to pop out */
   padding: 0 10px;
 }
 .courses-slider-track {
-  overflow: hidden;
+  overflow: hidden; /* Handle the card clipping here */
   position: relative;
 }
 .slider-arrow {
@@ -1400,11 +1417,13 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
 .paramed-badge {
   background: var(--gold);
   color: #0d2463;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 3px 12px;
+  border-radius: 30px;
   font-size: 0.65rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: 8px;
+  width: fit-content;
+  white-space: nowrap;
 }

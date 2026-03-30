@@ -433,7 +433,7 @@
             </div>
           </a>
             <a href="allied-dmlt.html" class="kmct-card">
-            <div class="kc-img"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&q=80" alt="Diploma MLT" /></div>
+            <div class="kc-img"><img src="img/course-cards/allied-bmlt.png" alt="Diploma MLT" /></div>
             <div class="kc-overlay"></div>
             <div class="kc-content">
               <div class="paramed-badge">Paramedical</div>
@@ -453,7 +453,7 @@
             </div>
           </a>
             <a href="allied-dott.html" class="kmct-card">
-            <div class="kc-img"><img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=600&q=80" alt="Diploma OTT" /></div>
+            <div class="kc-img"><img src="img/course-cards/allied-atott.png" alt="Diploma OTT" /></div>
             <div class="kc-overlay"></div>
             <div class="kc-content">
               <div class="paramed-badge">Paramedical</div>
@@ -473,7 +473,7 @@
             </div>
           </a>
             <a href="allied-dhi.html" class="kmct-card">
-            <div class="kc-img"><img src="https://images.unsplash.com/photo-1576091160550-217359f4ecf8?w=600&q=80" alt="Diploma Health Inspector" /></div>
+            <div class="kc-img"><img src="img/course-cards/allied-atott.png" alt="Diploma Health Inspector" /></div>
             <div class="kc-overlay"></div>
             <div class="kc-content">
               <div class="paramed-badge">Paramedical</div>
@@ -646,7 +646,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer id="contact">
   <div class="container">
     <div class="footer-grid">
@@ -713,12 +712,10 @@
 <button id="st" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
 
 <script>
-  // Mobile nav toggle
   document.getElementById('hbg').addEventListener('click', () => {
     document.getElementById('navMenu').classList.toggle('open');
   });
 
-  // Course tabs
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', function () {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -728,60 +725,25 @@
     });
   });
 
-  // Scroll-to-top
   const st = document.getElementById('st');
   window.addEventListener('scroll', () => {
-    st.classList.toggle('show', window.scrollY > 400);
-    document.getElementById('hdr').style.boxShadow =
-      window.scrollY > 50 ? '0 4px 28px rgba(26,58,140,.18)' : '0 2px 20px rgba(26,58,140,.1)';
-  });
-  st.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // Smooth anchor scroll for nav links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
-    });
-  });
-</script>
-
-<script>
-  window.addEventListener('scroll', function() {
+    if(st) st.classList.toggle('show', window.scrollY > 400);
     const hdr = document.getElementById('hdr');
-    if(window.scrollY > 40) {
-      hdr.classList.add('sticky');
-    } else {
-      hdr.classList.remove('sticky');
+    if(hdr) hdr.style.boxShadow = window.scrollY > 50 ? '0 4px 28px rgba(26,58,140,.18)' : '0 2px 20px rgba(26,58,140,.1)';
+    if(hdr) {
+        if(window.scrollY > 40) hdr.classList.add('sticky');
+        else hdr.classList.remove('sticky');
     }
   });
+  if(st) st.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.counter');
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const counter = entry.target;
-          const target = +counter.getAttribute('data-target');
-          let count = 0;
-          const speed = 140; // Adjust for smoothness/speed
-          const inc = target / speed;
-          
-          const updateCount = () => {
-            count += inc;
-            if (count < target) {
-              counter.innerText = Math.ceil(count);
-              requestAnimationFrame(updateCount);
-            } else {
-              counter.innerText = target;
-            }
-          };
-          updateCount();
-          obs.unobserve(counter);
-        }
-      });
-    }, { threshold: 0.15 });
-    counters.forEach(counter => observer.observe(counter));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if(href === '#') return;
+      const t = document.querySelector(href);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
   });
 </script>
 
@@ -832,7 +794,6 @@
     const enqButtons = document.querySelectorAll('a[href="#enquire"], .btn-enq, .btn-hero-enq');
     enqButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        // if index page and clicking header enquire now, don't popup if we want scroll. But we want popup everywhere.
         e.preventDefault();
         document.getElementById('enquiryModal').style.display = 'flex';
         autoPopulateModal();
@@ -847,6 +808,7 @@
 
     function populateCourses(catDropdown, courseDropdown, selectedCourse = "") {
       const cat = catDropdown.value;
+      if(!courseDropdown) return;
       courseDropdown.innerHTML = '<option value="">Select Course Details</option>';
       if(coursesMap[cat]) {
         coursesMap[cat].forEach(c => {
@@ -863,6 +825,7 @@
       const path = window.location.pathname;
       const modalCat = document.getElementById('modalCategory');
       const modalCourse = document.getElementById('modalCourse');
+      if(!modalCat || !modalCourse) return;
       
       let preCat = "";
       let preCourse = "";
@@ -900,7 +863,7 @@
         populateCourses(heroCat, document.getElementById('heroCourse'));
       });
     }
-    // Hero Slider Rotation (Enhanced)
+
     const slides = document.querySelectorAll('.hero-slider .slide');
     const dots = document.querySelectorAll('.hero-dot');
     let currentSlideIndex = 0;
@@ -918,7 +881,7 @@
     function startSlideTimer() {
       slideInterval = setInterval(() => {
         showHeroSlide(currentSlideIndex + 1);
-      }, 4000); // 4 seconds transition
+      }, 4000);
     }
 
     dots.forEach((dot, idx) => {
@@ -931,7 +894,6 @@
 
     if(slides.length > 0) startSlideTimer();
 
-    // Course Slider Logic - Robust Final Logic
     const sliderPos = { nursing: 0, allied: 0, physio: 0 };
     window.moveSlider = function(category, direction) {
       const grid = document.getElementById('grid-' + category);
@@ -944,27 +906,20 @@
       const cardWidth = card.offsetWidth + gap; 
       
       if (window.innerWidth <= 768) {
-        // Mobile: Sync based on current scroll position to avoid 'jumping'
         const currentScroll = track.scrollLeft;
         const maxScroll = track.scrollWidth - track.clientWidth;
         let newScroll = currentScroll + (direction * cardWidth);
-        
-        // Boundaries
         if (newScroll < 0) newScroll = 0;
         if (newScroll > maxScroll) newScroll = maxScroll;
-        
         track.scrollTo({ left: newScroll, behavior: 'smooth' });
       } else {
-        // Desktop: Index-based TranslateX
         const containerWidth = track.offsetWidth;
         const totalCards = grid.children.length;
         const visibleCount = Math.floor(containerWidth / cardWidth) || 1;
         const maxPos = Math.max(0, totalCards - visibleCount);
-        
         sliderPos[category] += direction;
         if (sliderPos[category] < 0) sliderPos[category] = 0;
         if (sliderPos[category] > maxPos) sliderPos[category] = maxPos;
-        
         grid.style.transform = `translateX(-${sliderPos[category] * cardWidth}px)`;
       }
     }
