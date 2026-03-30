@@ -25,6 +25,21 @@
     .tb-left, .tb-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
     .tb-divider { color: rgba(255,255,255,.25); }
 
+    /* ── Mobile topbar: stack phone & email ── */
+    @media (max-width: 991px) {
+      .top-bar { padding: 6px 0; }
+      .top-bar .wrap { justify-content: center; }
+      .tb-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      .tb-left .tb-divider { display: none; }
+      .top-bar a { font-size: 0.75rem; }
+      .tb-right { display: none; }
+    }
+
+
     /* ───── HEADER ───── */
     header { background: #fff; position: absolute; left: 0; right: 0; z-index: 1000; border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
 header.sticky { position: fixed; top: 0; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 32px rgba(26, 58, 140, 0.12); border-bottom-color: transparent; }
