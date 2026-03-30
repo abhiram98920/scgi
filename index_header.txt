@@ -1,3 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCGI – Sri Channegowda Group of Institutions | Nursing, Allied Health & Physiotherapy | Kolar</title>
+  <meta name="description" content="SCG Institution (SCGI), Kolar – Established 2006. Premier college for Nursing, Allied Health Science & Physiotherapy, affiliated to RGUHS and recognised by Govt. of Karnataka." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css?v=13.0" />
+</head>
+<body>
+
+<!-- FLOATING SIDEBAR -->
+<div class="sticky-float">
+  <a href="#enquire" class="sticky-admit highlight-admit">Admission open 2026, 2027</a>
+  <a href="tel:+919947915916" class="sfi ph"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/919769002277" class="sfi wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="mailto:info@scgi.in" class="sfi em"><i class="fas fa-envelope"></i></a>
+</div>
+
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="container wrap">
@@ -33,10 +56,10 @@
               <div class="dropdown-submenu">
                 <a href="nursing.html">Nursing <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
                 <div class="submenu-content">
-                  <a href="nursing-gnm.html">GNM</a>
-                  <a href="nursing-bsc.html">B.Sc Nursing</a>
-                  <a href="nursing-pbbsc.html">P.B B.Sc Nursing</a>
-                  <a href="nursing-msc.html">M.Sc Nursing</a>
+                  <a href="nursing-gnm.html">General Nursing and Midwifery (GNM)</a>
+                  <a href="nursing-bsc.html">Basic B.Sc Nursing</a>
+                  <a href="nursing-pbbsc.html">Post Basic B.Sc Nursing (P.B B.Sc Nursing)</a>
+                  <a href="nursing-msc.html">Master of Science in Nursing (M.Sc Nursing)</a>
                 </div>
               </div>
               <div class="dropdown-submenu">
@@ -48,12 +71,16 @@
               <div class="dropdown-submenu">
                 <a href="allied.html">Allied Health Science <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
                 <div class="submenu-content">
-                  <a href="allied-atott.html">B.Sc AT & OTT</a>
-                  <a href="allied-bmlt.html">B.Sc MLT</a>
-                  <div class="menu-category-label">Paramedical Courses</div>
-                  <a href="allied-dmlt.html">DMLT</a>
-                  <a href="allied-dott.html">DOTT</a>
-                  <a href="allied-dhi.html">DHI</a>
+                  <a href="allied-atott.html">Anaesthesia & Operation Theatre Technology (B.Sc AT & OTT)</a>
+                  <a href="allied-bmlt.html">Medical Laboratory Technology (B.Sc MLT)</a>
+                  <div class="dropdown-submenu">
+                    <a href="allied.html" class="paramed-menu-trigger">Paramedical Courses <i class="fas fa-chevron-right" style="float:right; margin-top:3px; font-size:0.7em; opacity: 0.7;"></i></a>
+                    <div class="submenu-content">
+                      <a href="allied-dmlt.html">Medical Laboratory Technology (DMLT)</a>
+                      <a href="allied-dott.html">Operation Theatre Technology (DOTT)</a>
+                      <a href="allied-dhi.html">Health Inspector (DHI)</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

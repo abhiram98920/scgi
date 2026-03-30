@@ -208,10 +208,10 @@ function scgi_auto_populate_content() {
         $logos = array(
             'Govt. of Karnataka' => 'KA-Govt-01.jpg',
             'RGUHS' => 'RGHUS-01.jpg',
-            'INC' => 'INC-01.jpg',
-            'KSNC' => 'KSNC-01.jpg',
-            'Karnataka Paramedical Board' => 'Logo of Karnataka paramedical board.webp',
-            'KSDNEB' => 'Karnataka state diploma in nursing examination board.png'
+            'Approved by Indian Nursing Council' => 'INC-01.jpg',
+            'Approved by Karnataka State Nursing Council' => 'KSNC-01.jpg',
+            'Approved by Karnataka Paramedical Board' => 'KPB-01.jpg',
+            'Karnataka State Diploma in Nursing Examination Board (KSDNEB)' => 'KSDNEB-01.jpg'
         );
         foreach($logos as $title => $file) {
             $lid = wp_insert_post(array('post_title' => $title, 'post_status' => 'publish', 'post_type' => 'scgi_logo'));
@@ -232,15 +232,16 @@ function scgi_auto_populate_content() {
     $ext_courses = get_posts(array('post_type'=>'scgi_course','post_status'=>'any','posts_per_page'=>1));
     if(empty($ext_courses)) {
         $courses = array(
-            array('title'=>'GNM', 'cat'=>'Nursing', 'excerpt'=>'General Nursing & Midwifery programme that trains students in emergency care, clinical nursing, anatomy, physiology and midwifery practice.', 'img'=>'student-nursing.png', 'duration'=>'3 Years'),
-            array('title'=>'B.Sc Nursing', 'cat'=>'Nursing', 'excerpt'=>'A comprehensive four-year undergraduate programme designed to prepare students for a professional career in nursing and midwifery.', 'img'=>'student-nursing.png', 'duration'=>'4 Years'),
-            array('title'=>'P.B B.Sc Nursing', 'cat'=>'Nursing', 'excerpt'=>'Post-basic B.Sc Nursing programme designed for GNM graduates to upgrade their qualifications and broaden their career opportunities.', 'img'=>'student-nursing.png', 'duration'=>'2 Years'),
-            array('title'=>'M.Sc Nursing', 'cat'=>'Nursing', 'excerpt'=>'An advanced postgraduate programme for nursing professionals seeking to specialise and take on leadership and academic roles in healthcare.', 'img'=>'student-nursing.png', 'duration'=>'2 Years'),
+            array('title'=>'General Nursing and Midwifery (GNM)', 'cat'=>'Nursing', 'excerpt'=>'General Nursing & Midwifery programme that trains students in emergency care, clinical nursing, anatomy, physiology and midwifery practice.', 'img'=>'student-nursing.png', 'duration'=>'3.5 Years'),
+            array('title'=>'Basic B.Sc Nursing', 'cat'=>'Nursing', 'excerpt'=>'A comprehensive four-year undergraduate programme designed to prepare students for a professional career in nursing and midwifery.', 'img'=>'student-nursing.png', 'duration'=>'4 Years'),
+            array('title'=>'Post Basic B.Sc Nursing (P.B B.Sc Nursing)', 'cat'=>'Nursing', 'excerpt'=>'Post-basic B.Sc Nursing programme designed for GNM graduates to upgrade their qualifications and broaden their career opportunities.', 'img'=>'student-nursing.png', 'duration'=>'2 Years'),
+            array('title'=>'Master of Science in Nursing (M.Sc Nursing)', 'cat'=>'Nursing', 'excerpt'=>'An advanced postgraduate programme for nursing professionals seeking to specialise and take on leadership and academic roles in healthcare.', 'img'=>'student-nursing.png', 'duration'=>'2 Years'),
             array('title'=>'Bachelor of Physiotherapy (BPT)', 'cat'=>'Physiotherapy', 'excerpt'=>'A four-and-a-half year undergraduate programme building expertise in rehabilitation, physical therapy, and movement sciences.', 'img'=>'student-physiotherapy.png', 'duration'=>'4.5 Years'),
-            array('title'=>'B.Sc Medical Laboratory Technology (MLT)', 'cat'=>'Allied Health Science', 'excerpt'=>'Hands-on training in diagnostic labs — develop skills in clinical pathology, microbiology, biochemistry, and haematology.', 'img'=>'student-allied-health.png', 'duration'=>'3 Years'),
-            array('title'=>'B.Sc Anaesthesia & Operation Theatre Technology', 'cat'=>'Allied Health Science', 'excerpt'=>'Specialised programme preparing students for critical roles in operation theatre and anaesthesia management.', 'img'=>'student-allied-health.png', 'duration'=>'3 Years'),
-            array('title'=>'Diploma in Medical Laboratory Technology (MLT)', 'cat'=>'Allied Health Science', 'excerpt'=>'A focused diploma providing core laboratory skills in clinical pathology and diagnostic testing techniques.', 'img'=>'student-allied-health.png', 'duration'=>'2 Years'),
-            array('title'=>'Diploma in OTT & Diploma in Health Inspector', 'cat'=>'Allied Health Science', 'excerpt'=>'Practical diploma programmes in Operation Theatre Technology and Health Inspection for a focused allied health career.', 'img'=>'student-allied-health.png', 'duration'=>'2 Years'),
+            array('title'=>'Medical Laboratory Technology (B.Sc MLT)', 'cat'=>'Allied Health Science', 'excerpt'=>'Hands-on training in diagnostic labs — develop skills in clinical pathology, microbiology, biochemistry, and haematology.', 'img'=>'student-allied-health.png', 'duration'=>'3 Years'),
+            array('title'=>'Anaesthesia & Operation Theatre Technology (B.Sc AT & OTT)', 'cat'=>'Allied Health Science', 'excerpt'=>'Specialised programme preparing students for critical roles in operation theatre and anaesthesia management.', 'img'=>'student-allied-health.png', 'duration'=>'3 Years'),
+            array('title'=>'Medical Laboratory Technology (DMLT)', 'cat'=>'Allied Health Science', 'excerpt'=>'A focused diploma providing core laboratory skills in clinical pathology and diagnostic testing techniques.', 'img'=>'student-allied-health.png', 'duration'=>'2 Years'),
+            array('title'=>'Operation Theatre Technology (DOTT)', 'cat'=>'Allied Health Science', 'excerpt'=>'Specialised technical training for operation theatre assistants and paramedics.', 'img'=>'student-allied-health.png', 'duration'=>'2 Years'),
+            array('title'=>'Health Inspector (DHI)', 'cat'=>'Allied Health Science', 'excerpt'=>'Practical training in public health, sanitation, and community hygiene inspections.', 'img'=>'student-allied-health.png', 'duration'=>'2 Years'),
         );
         
         foreach($courses as $idx => $c) {

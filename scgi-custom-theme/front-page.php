@@ -47,7 +47,16 @@
                     if ( has_post_thumbnail() ) : ?>
                         <div class="hero-badge-item">
                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>" class="hero-badge-img">
-                            <span><?php the_title(); ?></span>
+                            <span><?php 
+                                $t = get_the_title();
+                                $map = array(
+                                    'INC' => 'Approved by Indian Nursing Council',
+                                    'KSNC' => 'Approved by Karnataka State Nursing Council',
+                                    'KSDNEB' => 'Karnataka State Diploma in Nursing Examination Board (KSDNEB)',
+                                    'KPMB' => 'Approved by Karnataka Paramedical Board'
+                                );
+                                echo isset($map[$t]) ? $map[$t] : $t;
+                            ?></span>
                         </div>
                     <?php endif; ?>
                 <?php endwhile; wp_reset_postdata(); endif; ?>
@@ -55,7 +64,8 @@
         </div>
 
         <div class="hero-stats-panel hero-enquiry-form">
-            <div class="hsp-title">Course Enquiry</div>
+            <div class="hsp-title" style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 20px; color: var(--blue-dark); font-family: 'GT Super Ds', serif;">Begin Your <span style="color:var(--gold);">Success Story</span></div>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 20px; margin-top: -10px;">Select your preferred course & get expert guidance</p>
             <form id="heroForm" class="hero-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
                 <input type="hidden" name="action" value="scgi_course_enquiry">
                 <?php wp_nonce_field( 'scgi_form_submit', 'enquiry_nonce' ); ?>
@@ -179,11 +189,14 @@
                         'order'          => 'ASC'
                     ) );
                     if ( $courses->have_posts() ) : while ( $courses->have_posts() ) : $courses->the_post();
+                        $slug = $post->post_name;
+                        $is_paramed = in_array($slug, array('dmlt', 'dott', 'dhi', 'diploma-in-medical-laboratory-technology', 'diploma-in-operation-theatre-technology', 'diploma-in-health-inspector'));
                     ?>
                         <a href="<?php the_permalink(); ?>" class="kmct-card">
                             <div class="kc-img"><?php the_post_thumbnail('medium'); ?></div>
                             <div class="kc-overlay"></div>
                             <div class="kc-content">
+                                <?php if ($is_paramed) : ?><div class="paramed-badge">Paramedical</div><?php endif; ?>
                                 <h3><?php the_title(); ?></h3>
                                 <div class="kc-hidden"><div class="kc-hidden-inner"><div class="kc-btn primary">Know More</div></div></div>
                             </div>
