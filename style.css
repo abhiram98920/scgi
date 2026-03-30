@@ -616,32 +616,37 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
       
       /* Base Mobile Nav layout properties */
       nav ul { 
-        display: flex; 
+        display: none !important; 
         flex-direction: column; 
         position: absolute; 
         top: 100%; left: 0; right: 0; 
         background: #fff; 
-        box-shadow: 0 8px 24px rgba(0,0,0,.1); 
+        box-shadow: 0 12px 30px rgba(0,0,0,.15); 
         padding: 10px 0; 
-        z-index: 1000; 
-        /* Animation states */
-        visibility: hidden;
-        opacity: 0;
-        transform: translateY(-8px);
-        pointer-events: none;
-        transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), opacity 0.3s, visibility 0.3s;
+        z-index: 9999; 
       }
       nav ul.open { 
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
+        display: flex !important;
       }
-      nav ul li a { padding: 12px 24px; color: var(--blue-dark) !important; }
-      .hamburger { display: flex; }
+      nav ul li a { padding: 12px 24px; color: var(--blue-dark) !important; display: block; }
+      
+      .hamburger { 
+        display: flex; 
+        position: relative; 
+        z-index: 9999; 
+        padding: 10px; /* larger tap target */
+        margin-right: -10px;
+      }
+      /* Hamburger -> X animation */
+      .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .hamburger.active span:nth-child(2) { opacity: 0; }
+      .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+      .hamburger span { transition: all 0.3s ease; transform-origin: center; }
+
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 34px; }
       .footer-grid { grid-template-columns: 1fr; gap: 30px; }
       .footer-bottom { justify-content: center; text-align: center; }
+
       .estd-badge { display: none; }
       .hero { min-height: auto; padding: 120px 0 60px; }
       /* Center all text in the hero on mobile */

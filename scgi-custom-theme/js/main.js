@@ -5,9 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const st = document.getElementById('st');
 
     // Mobile nav toggle
-    if (hbg && navMenu) {
-        hbg.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
+    if (hbg) {
+        hbg.addEventListener('click', (e) => {
+            e.stopPropagation();
+            let nMenu = document.getElementById('navMenu') || document.querySelector('nav ul');
+            if(nMenu) nMenu.classList.toggle('open');
             hbg.classList.toggle('active');
         });
     }
