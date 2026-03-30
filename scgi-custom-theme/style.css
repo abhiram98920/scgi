@@ -138,9 +138,8 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
       letter-spacing: 0.1px;
     }
     
-    /* hero dots */
     .hero-dots {
-      position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);
+      position: absolute; left: 50%; bottom: 85px; transform: translateX(-50%);
       display: flex; gap: 12px; z-index: 10;
     }
     .hero-dot {
@@ -151,23 +150,34 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     
     /* floating stats panel */
     .hero-stats-panel {
-       background: rgba(13, 36, 99, 0.8); backdrop-filter: blur(20px);
-       border: 1px solid rgba(255,255,255,.2); border-radius: 24px; padding: 40px 30px;
-       display: flex; flex-direction: column; gap: 20px;
-       box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-       z-index: 10;
-     }
-     .hsp-title { 
-       color: #fff; font-size: 1.75rem; font-weight: 700; font-family: 'GT Super Ds', 'Playfair Display', serif; 
-       margin-bottom: 22px; text-align: center; position: relative; padding-bottom: 15px; 
-       letter-spacing: 0.5px;
-     }
+        background: rgba(13, 36, 99, 0.9); backdrop-filter: blur(25px);
+        border: 1px solid rgba(255,255,255,.2); border-radius: 24px; padding: 30px 24px;
+        display: flex; flex-direction: column; gap: 14px;
+        box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+        z-index: 10;
+      }
+      .hsp-subtitle {
+        color: rgba(255,255,255,0.92) !important;
+        font-size: 0.88rem;
+        text-align: center;
+        margin: -10px auto 14px;
+        line-height: 1.45;
+        max-width: 320px;
+        font-weight: 500;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      }
+      .hsp-title { 
+        color: #fff !important; font-size: 1.85rem; font-weight: 700; font-family: 'GT Super Ds', serif; 
+        margin-bottom: 12px; text-align: center; position: relative; padding-bottom: 12px; 
+        letter-spacing: 0.5px; text-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+      }
+      .hsp-title span { color: var(--gold-light) !important; }
      .hsp-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 3px; background: var(--gold); border-radius: 2px; }
      
      .hero-input { 
-        width: 100%; padding: 14px 18px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,.3); 
-        background: #fff; color: var(--blue-dark); outline: none; margin-bottom: 15px; 
-        font-family: inherit; font-size: 0.95rem; font-weight: 500; transition: all 0.3s; 
+        width: 100%; padding: 12px 18px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,.3); 
+        background: #fff; color: var(--blue-dark); outline: none; margin-bottom: 10px; 
+        font-family: inherit; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; 
         appearance: none; -webkit-appearance: none;
         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d2463' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
         background-repeat: no-repeat; background-position: right 1.2rem center; background-size: 1.1em;
@@ -1148,6 +1158,7 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   margin-top: 20px;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-start;
 }
 .hero-badge-img {
   height: 54px;
@@ -1463,4 +1474,61 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
     gap: 40px;
     padding: 40px 0;
   }
+}
+
+/* ───── MISSION & VISION CARDS ───── */
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.mv-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.mv-card:hover { transform: translateY(-50% 5px); }
+.mv-card h3 {
+  font-family: 'GT Super Ds', 'Lora', serif;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: var(--blue-dark) !important;
+}
+.mv-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text) !important;
+}
+@media (max-width: 768px) {
+  .mv-grid { grid-template-columns: 1fr; }
+  .mv-card { padding: 30px 20px; }
+}
+
+/* ───── IMAGE ACCENT / PLAY BUTTON ───── */
+.img-accent-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.4rem;
+  box-shadow: 0 0 0 10px rgba(234,185,55,0.25);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2;
+}
+.img-accent-box:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: var(--gold-light);
+  box-shadow: 0 0 0 15px rgba(234,185,55,0.35);
 }

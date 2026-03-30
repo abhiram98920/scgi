@@ -66,7 +66,7 @@
 
         <div class="hero-stats-panel hero-enquiry-form">
             <div class="hsp-title" style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 20px; color: var(--blue-dark); font-family: 'GT Super Ds', serif;">Begin Your <span style="color:var(--gold);">Success Story</span></div>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 20px; margin-top: -10px;">Select your preferred course & get expert guidance</p>
+            <p class="hsp-subtitle">Select your preferred course & get expert guidance</p>
             <form id="heroForm" class="hero-form" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
                 <input type="hidden" name="action" value="scgi_course_enquiry">
                 <?php wp_nonce_field( 'scgi_form_submit', 'enquiry_nonce' ); ?>
