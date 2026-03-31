@@ -54,7 +54,7 @@
 
     <div class="footer-bottom">
       <div>© <?php echo date('Y'); ?> Sri Channegowda Group of Institutions (SCGI), Kolar. All rights reserved.</div>
-      <div>RGUHS Affiliated &nbsp;|&nbsp; Govt. of Karnataka Recognised | Developed by <a href="https://www.bten.in" target="_blank" style="color:inherit;text-decoration:none">BTen</a></div>
+      <div class="footer-cred"><span>RGUHS Affiliated</span><span class="sep">|</span><span>Govt. of Karnataka Recognised</span><span class="sep">|</span><span>Developed by <a href="https://www.bten.in" target="_blank">BTen</a></span></div>
     </div>
   </div>
 </footer>
