@@ -54,7 +54,7 @@ Text Domain: scgi-custom
 
 
     /* ───── HEADER ───── */
-    header { background: #fff; position: relative; z-index: 1000; border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
+    header { background: #fff; position: absolute; left: 0; right: 0; z-index: 1000; border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
 header.sticky { position: fixed; top: 0; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 32px rgba(26, 58, 140, 0.12); border-bottom-color: transparent; }
 header.hdr-inner { position: relative; background: #fff; border-bottom: 1px solid var(--border); }
 header.sticky nav ul li a { color: var(--blue-dark) !important; }
@@ -1995,3 +1995,11 @@ footer#contact::after {
 .kmct-card.touch-active .kc-overlay { background: rgba(13, 36, 99, 0.7); }
 .kmct-card.touch-active .kc-hidden { grid-template-rows: 1fr; margin-top: 15px; }
 .kmct-card.touch-active .kc-link i { transform: translateX(5px); }
+
+/* ───── WORDPRESS ADMIN BAR COMPATIBILITY ───── */
+body.admin-bar .sticky-float { top: 32px; }
+body.admin-bar header.sticky { top: 32px; }
+@media screen and (max-width: 782px) {
+  body.admin-bar .sticky-float { top: 46px; }
+  body.admin-bar header.sticky { top: 46px; }
+}
