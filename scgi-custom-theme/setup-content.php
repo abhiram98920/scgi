@@ -157,28 +157,28 @@ function scgi_auto_populate_content() {
     // Create Sliders
     $sliders = array(
         array(
-            'title' => 'Choose Your Career at SCGI',
-            'subtitle' => 'Heal, Lead, Excel!',
-            'description' => 'Ignite your healthcare passion with expert training. Your future starts now!',
-            'btn' => 'Explore Courses',
-            'link' => '#courses',
-            'img' => 'banner-nursing.png'
+            'title'       => 'Choose Your Career at SCGI',
+            'highlight'   => 'Heal, Lead, Excel!',
+            'subtitle'    => 'Ignite your healthcare passion with expert training. Your future starts now!',
+            'btn'         => 'Explore Courses',
+            'link'        => '#courses',
+            'img'         => 'banner-nursing.png'
         ),
         array(
-            'title' => 'Excellence in Clinical Practice',
-            'subtitle' => 'Learn From the Best',
-            'description' => 'State-of-the-art labs and our own multi-speciality hospital for hands-on training.',
-            'btn' => 'View Accreditations',
-            'link' => '#about',
-            'img' => 'banner-physiotherapy.png'
+            'title'       => 'Excellence in Clinical Practice',
+            'highlight'   => 'Learn From the Best',
+            'subtitle'    => 'State-of-the-art labs and our own multi-speciality hospital for hands-on training.',
+            'btn'         => 'View Accreditations',
+            'link'        => '#about',
+            'img'         => 'banner-physiotherapy.png'
         ),
         array(
-            'title' => 'Shaping Healthcare Leaders',
-            'subtitle' => 'Approved & Recognised',
-            'description' => 'Join our vibrant campus established in 2006 with 5000+ alumni success stories.',
-            'btn' => 'Enquire Today',
-            'link' => '#enquire',
-            'img' => 'banner-allied-health.png'
+            'title'       => 'Shaping Healthcare Leaders',
+            'highlight'   => 'Approved & Recognised',
+            'subtitle'    => 'Join our vibrant campus established in 2006 with 5000+ alumni success stories.',
+            'btn'         => 'Enquire Today',
+            'link'        => '#enquire',
+            'img'         => 'banner-allied-health.png'
         )
     );
 
@@ -192,8 +192,8 @@ function scgi_auto_populate_content() {
                 'menu_order' => $index
             ));
             
+            update_post_meta($sid, '_slider_highlight', $s['highlight']);
             update_post_meta($sid, '_slider_subtitle', $s['subtitle']);
-            update_post_meta($sid, '_slider_description', $s['description']);
             update_post_meta($sid, '_slider_btn_text', $s['btn']);
             update_post_meta($sid, '_slider_btn_link', $s['link']);
             

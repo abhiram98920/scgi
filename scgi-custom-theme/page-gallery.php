@@ -2,53 +2,84 @@
 /**
  * Template Name: Gallery Page
  */
-get_header();
-the_post();
-$banner_img = get_the_post_thumbnail_url( null, 'full' )
-    ?: get_template_directory_uri() . '/assets/images/banner-gallery.jpg';
-?>
+get_header(); ?>
 
-<?php get_template_part( 'template-parts/inner-hero', null, array(
-    'title'      => get_the_title(),
-    'image_url'  => $banner_img,
-    'show_logos' => false,
-) ); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<?php get_template_part( 'template-parts/breadcrumb', null, array(
-    'items' => array(
-        array( 'label' => 'Home',    'url' => home_url( '/' ) ),
-        array( 'label' => get_the_title() ),
-    ),
-) ); ?>
-
-<section class="gallery sec-bg-blue bg-pattern" style="padding:80px 0;">
-    <div class="container">
-        <div class="tc" style="margin-bottom:50px;">
-            <div class="sec-label">Glimpses of SCGI</div>
-            <h2 class="sec-title">Our Gallery</h2>
-            <p class="sec-sub">A glimpse into our academic excellence, clinical training, and vibrant campus life.</p>
-        </div>
-        <div class="gallery-grid">
-            <?php
-            $gallery = new WP_Query( array(
-                'post_type'      => 'scgi_gallery',
-                'posts_per_page' => -1,
-                'orderby'        => 'menu_order',
-                'order'          => 'ASC',
-            ) );
-            if ( $gallery->have_posts() ) : while ( $gallery->have_posts() ) : $gallery->the_post(); ?>
-                <div class="gallery-item">
-                    <?php if ( has_post_thumbnail() ) :
-                        the_post_thumbnail( 'large', array( 'loading' => 'lazy' ) );
-                    endif; ?>
-                </div>
-            <?php endwhile; wp_reset_postdata();
-            else : ?>
-                <p class="tc" style="color:rgba(255,255,255,0.6);grid-column:1/-1;">No gallery items yet. Add them via WordPress admin → Gallery.</p>
-            <?php endif; ?>
-        </div>
-    </div>
+<!-- INNER HERO -->
+<section class="inner-hero" style="background: linear-gradient(to top, rgba(13,36,99,0.85) 0%, transparent 50%), url('<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=80'; ?>') center / cover;">
+  <div class="container">
+    <h1>Campus Glimpses</h1>
+  </div>
 </section>
 
-<?php get_template_part( 'template-parts/cta-band' ); ?>
+<!-- BREADCRUMB BAR -->
+<div class="breadcrumb-bar">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="<?php echo esc_url(home_url('/')); ?>">Home</a> 
+      <i class="fas fa-circle"></i> 
+      <span>Gallery</span>
+    </div>
+  </div>
+</div>
+
+<section style="padding: 100px 0;">
+  <div class="container">
+    <div class="sec-label" style="justify-content: center;"><?php echo esc_html( get_theme_mod('scgi_gallery_label', 'Campus Life') ); ?></div>
+    <h2 class="sec-title" style="text-align: center; margin-bottom: 50px;"><?php echo esc_html( get_theme_mod('scgi_gallery_title', 'Photo Gallery') ); ?></h2>
+    
+    <div class="hero-badges-wrap reveal" style="margin-top:20px; justify-content: center;">
+        <div class="hero-badge-item">
+            <img src="<?php echo get_template_directory_uri(); ?>/inc-cropped.png" alt="INC-Approved" class="hero-badge-img">
+            <span>Approved by<br>Indian Nursing Council</span>
+        </div>
+        <div class="hero-badge-item">
+            <img src="<?php echo get_template_directory_uri(); ?>/ksnc-cropped.png" alt="KSNC-Approved" class="hero-badge-img">
+            <span>Approved by<br>Karnataka State Nursing Council</span>
+        </div>
+        <div class="hero-badge-item">
+            <img src="<?php echo get_template_directory_uri(); ?>/Karnataka state diploma in nursing examination board.png" alt="KSDNEB" class="hero-badge-img">
+            <span>KSDNEB</span>
+        </div>
+        <div class="hero-badge-item">
+            <img src="<?php echo get_template_directory_uri(); ?>/Logo of Karnataka paramedical board.webp" alt="Paramedical-Board" class="hero-badge-img">
+            <span>Karnataka Paramedical Board</span>
+        </div>
+        <div class="hero-badge-item">
+            <img src="<?php echo get_template_directory_uri(); ?>/ka-govt-cropped.png" alt="Govt-Recognised" class="hero-badge-img">
+            <span>Recognised by Govt of Karnataka</span>
+        </div>
+    </div>
+    
+    <div class="gallery-grid reveal">
+      <?php 
+      // If there are gallery images attached to the page, display them.
+      // Otherwise, show the default placeholders from gallery.html.
+      $images = get_post_meta( get_the_ID(), '_gallery_images', true );
+      if ( $images && is_array( $images ) ) :
+          foreach ( $images as $img_id ) :
+              $img_url = wp_get_attachment_image_url( $img_id, 'large' );
+              ?>
+              <div class="gallery-item">
+                <img src="<?php echo esc_url( $img_url ); ?>" alt="SCGI Campus" />
+              </div>
+              <?php
+          endforeach;
+      else : ?>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1576091160550-217359f42f8c?w=800&q=80" alt="SCGI Lab" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80" alt="Smart Classroom" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Medical Training" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=800&q=80" alt="SCGI Students" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?w=800&q=80" alt="Computer Lab" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80" alt="Learning Center" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="SCGI Campus" /></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80" alt="Institutional Facility" /></div>
+      <?php endif; ?>
+    </div>
+  </div>
+</section>
+
+<?php endwhile; endif; ?>
+
 <?php get_footer(); ?>

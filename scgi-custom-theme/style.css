@@ -1,4 +1,16 @@
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+/*
+Theme Name: SCGI Custom Theme
+Theme URI: https://scgi.in/
+Author: Antigravity
+Author URI: https://scgi.in/
+Description: A custom, production-ready theme for Sri Channegowda Group of Institutions (SCGI).
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: scgi-custom
+*/
+
+* , *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --blue:       #1a3a8c;
       --blue-dark:  #0d2463;
@@ -42,7 +54,7 @@
 
 
     /* ───── HEADER ───── */
-    header { background: #fff; position: absolute; left: 0; right: 0; z-index: 1000; border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
+    header { background: #fff; position: relative; z-index: 1000; border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
 header.sticky { position: fixed; top: 0; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 32px rgba(26, 58, 140, 0.12); border-bottom-color: transparent; }
 header.hdr-inner { position: relative; background: #fff; border-bottom: 1px solid var(--border); }
 header.sticky nav ul li a { color: var(--blue-dark) !important; }

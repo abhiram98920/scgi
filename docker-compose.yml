@@ -9,6 +9,8 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress_password
       WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 
   db:
     image: mariadb:10.6

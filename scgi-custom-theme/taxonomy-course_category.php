@@ -1,139 +1,115 @@
 <?php
 /**
- * taxonomy-course_category.php
- * Template for course category archive pages (/course-category/nursing, etc.)
+ * Template Part: Course Category Archive
  */
-
-get_header();
-
-$term = get_queried_object();
-
-// Per-category banner image and title from Customizer
-$banner_map = array(
-    'nursing'               => array(
-        'img'   => get_theme_mod( 'scgi_banner_nursing', get_template_directory_uri() . '/assets/images/banner-nursing.jpg' ),
-        'title' => 'Nursing Department',
-        'desc'  => get_theme_mod( 'scgi_dept_desc_nursing', 'Comprehensive nursing programmes accredited by INC and Karnataka State Nursing Council, preparing compassionate healthcare professionals.' ),
-    ),
-    'physiotherapy'         => array(
-        'img'   => get_theme_mod( 'scgi_banner_physio', get_template_directory_uri() . '/assets/images/banner-physiotherapy.jpg' ),
-        'title' => 'Physiotherapy Department',
-        'desc'  => get_theme_mod( 'scgi_dept_desc_physio', 'RGUHS-affiliated physiotherapy programme with state-of-the-art rehabilitation labs and experienced clinical faculty.' ),
-    ),
-    'allied-health-science' => array(
-        'img'   => get_theme_mod( 'scgi_banner_allied', get_template_directory_uri() . '/assets/images/banner-allied.jpg' ),
-        'title' => 'Allied Health Sciences',
-        'desc'  => get_theme_mod( 'scgi_dept_desc_allied', 'Specialised Allied Health programmes covering laboratory technology, operation theatre tech, and more.' ),
-    ),
-);
-
-$dept = isset( $banner_map[ $term->slug ] ) ? $banner_map[ $term->slug ] : array(
-    'img'   => get_template_directory_uri() . '/assets/images/banner-default.jpg',
-    'title' => esc_html( $term->name ),
-    'desc'  => '',
-);
+get_header(); 
+$current_cat = get_queried_object();
 ?>
 
 <!-- INNER HERO -->
-<?php get_template_part( 'template-parts/inner-hero', null, array(
-    'title'     => $dept['title'],
-    'image_url' => $dept['img'],
-    'show_logos' => true,
-) ); ?>
-
-<!-- BREADCRUMB -->
-<?php get_template_part( 'template-parts/breadcrumb', null, array(
-    'items' => array(
-        array( 'label' => 'Home',    'url' => home_url( '/' ) ),
-        array( 'label' => 'Courses', 'url' => home_url( '/courses' ) ),
-        array( 'label' => $dept['title'] ),
-    ),
-) ); ?>
-
-<!-- DEPARTMENT INTRO -->
-<?php if ( $dept['desc'] ) : ?>
-<section class="dept-intro sec-bg-light">
-    <div class="container tc" style="max-width:800px;">
-        <div class="sec-label">About the Department</div>
-        <p class="sec-sub"><?php echo esc_html( $dept['desc'] ); ?></p>
-    </div>
+<section class="inner-hero" style="background: linear-gradient(to top, rgba(13,36,99,0.85) 0%, transparent 50%), url('<?php echo get_template_directory_uri(); ?>/img/course-hero-bg.jpg') center / cover;">
+  <div class="container">
+    <h1><?php echo esc_html( $current_cat->name ); ?> Courses</h1>
+  </div>
 </section>
-<?php endif; ?>
+
+<!-- BREADCRUMB BAR -->
+<div class="breadcrumb-bar">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="<?php echo esc_url(home_url('/')); ?>">Home</a> 
+      <i class="fas fa-circle"></i> 
+      <span>Courses</span>
+      <i class="fas fa-circle"></i> 
+      <span><?php echo esc_html( $current_cat->name ); ?></span>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section style="padding: 70px 0 50px;">
+  <div class="container tc" style="text-align: center;">
+    <div class="sec-label" style="justify-content: center;">Our Academic Programmes</div>
+    <h2 class="sec-title" style="margin-bottom: 20px;"><?php echo esc_html( $current_cat->name ); ?> Courses</h2>
+    
+    <div class="hero-badges-wrap reveal" style="margin:20px auto; justify-content: center;">
+        <div class="hero-badge-item">
+            <img src="<?php echo get_template_directory_uri(); ?>/inc-cropped.png" alt="INC-Approved" class="hero-badge-img">
+            <span>Approved by<br>Indian Nursing Council</span>
+        </div>
+        <div class="hero-badge-item">
+            <img src="<?php echo get_template_directory_uri(); ?>/ksnc-cropped.png" alt="KSNC-Approved" class="hero-badge-img">
+            <span>Approved by<br>Karnataka State Nursing Council</span>
+        </div>
+        <div class="hero-badge-item">
+            <img src="<?php echo get_template_directory_uri(); ?>/Karnataka state diploma in nursing examination board.png" alt="KSDNEB" class="hero-badge-img">
+            <span>KSDNEB</span>
+        </div>
+        <div class="hero-badge-item">
+            <img src="<?php echo get_template_directory_uri(); ?>/Logo of Karnataka paramedical board.webp" alt="Paramedical-Board" class="hero-badge-img">
+            <span>Karnataka Paramedical Board</span>
+        </div>
+        <div class="hero-badge-item">
+            <img src="<?php echo get_template_directory_uri(); ?>/ka-govt-cropped.png" alt="Govt-Recognised" class="hero-badge-img">
+            <span>Recognised by Govt of Karnataka</span>
+        </div>
+    </div>
+    
+    <p class="sec-sub" style="margin: 0 auto 30px; font-size: 1.05rem; max-width: 800px;">
+        <?php echo esc_html( $current_cat->description ?: 'Explore our comprehensive range of courses in ' . $current_cat->name . '.' ); ?>
+    </p>
+  </div>
+</section>
 
 <!-- COURSES GRID -->
-<section class="courses-archive sec-bg-blue bg-pattern" style="padding:80px 0;">
-    <div class="container">
-        <div class="tc" style="margin-bottom:50px;">
-            <div class="sec-label">Our Programmes</div>
-            <h2 class="sec-title">Courses We Offer</h2>
-        </div>
-
-        <div class="courses-grid" style="display:flex;flex-wrap:wrap;gap:30px;justify-content:center;">
-            <?php
-            $courses = new WP_Query( array(
-                'post_type'      => 'scgi_course',
-                'posts_per_page' => -1,
-                'orderby'        => 'menu_order',
-                'order'          => 'ASC',
-                'tax_query'      => array( array(
-                    'taxonomy' => 'course_category',
-                    'field'    => 'slug',
-                    'terms'    => $term->slug,
-                ) ),
-            ) );
-
-            if ( $courses->have_posts() ) : while ( $courses->have_posts() ) : $courses->the_post();
-                $level      = get_post_meta( get_the_ID(), '_course_level', true ) ?: 'UG';
-                $short_desc = get_post_meta( get_the_ID(), '_course_short_desc', true );
-                $is_paramed = (bool) get_post_meta( get_the_ID(), '_course_is_paramed', true );
-                $thumb      = get_the_post_thumbnail_url( get_the_ID(), 'medium_large' );
-            ?>
-                <a href="<?php the_permalink(); ?>" class="kmct-card reveal"
-                   style="flex:0 0 320px; max-width:320px;">
-                    <div class="kc-img">
-                        <?php if ( $thumb ) : ?>
-                            <img src="<?php echo esc_url( $thumb ); ?>"
-                                 alt="<?php the_title_attribute(); ?>" loading="lazy">
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/course-placeholder.jpg"
-                                 alt="<?php the_title_attribute(); ?>" loading="lazy">
-                        <?php endif; ?>
-                    </div>
-                    <div class="kc-overlay"></div>
-                    <div class="kc-content">
-                        <?php if ( $is_paramed ) : ?>
-                            <div class="paramed-badge">Paramedical</div>
-                        <?php endif; ?>
-                        <div class="kc-badge"><?php echo esc_html( $level ); ?></div>
-                        <h3><?php the_title(); ?></h3>
-                        <div class="kc-hidden">
-                            <div class="kc-hidden-inner">
-                                <?php if ( $short_desc ) : ?>
-                                    <div class="kc-meta">
-                                        <p style="font-size:0.8rem;line-height:1.4;opacity:0.9;">
-                                            <?php echo esc_html( $short_desc ); ?>
-                                        </p>
-                                    </div>
-                                <?php endif; ?>
-                                <div class="kc-actions">
-                                    <div class="kc-btn primary">Know More</div>
-                                    <div class="kc-btn outline"><i class="fas fa-download"></i> Brochure</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            <?php endwhile; wp_reset_postdata();
-            else : ?>
-                <p style="color:rgba(255,255,255,.6);text-align:center;padding:40px;">
-                    No courses found in this category.
-                </p>
-            <?php endif; ?>
-        </div>
+<section class="sec-bg-blue bg-pattern" style="padding: 60px 0 100px;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+          $level      = get_post_meta( get_the_ID(), '_course_level', true ) ?: 'UG';
+          $duration   = get_post_meta( get_the_ID(), '_course_duration', true ) ?: '3-4 Years';
+          $short_desc = get_post_meta( get_the_ID(), '_course_short_desc', true ) ?: get_the_excerpt();
+          $thumb      = get_the_post_thumbnail_url( get_the_ID(), 'medium_large' );
+      ?>
+          <a href="<?php the_permalink(); ?>" class="kmct-card reveal">
+            <div class="kc-img">
+                <img src="<?php echo $thumb ?: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600&q=80'; ?>" alt="<?php the_title_attribute(); ?>">
+            </div>
+            <div class="kc-overlay"></div>
+            <div class="kc-content">
+              <div class="kc-badge"><?php echo esc_html( $level ); ?></div>
+              <div class="kc-title"><?php the_title(); ?></div>
+              <div class="kc-hidden">
+                <div class="kc-hidden-inner">
+                  <div class="kc-meta">
+                    <div><p style="font-size:0.8rem; line-height:1.4; opacity:0.9;"><?php echo esc_html( $short_desc ); ?></p></div>
+                    <div><i class="fas fa-clock"></i> <strong>Duration:</strong> <?php echo esc_html($duration); ?></div>
+                  </div>
+                  <div class="kc-actions">
+                    <div class="kc-btn primary">Know More</div>
+                    <div class="kc-btn outline"><i class="fas fa-download"></i> Brochure</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+      <?php endwhile; endif; ?>
     </div>
+  </div>
 </section>
 
-<!-- CTA BAND -->
-<?php get_template_part( 'template-parts/cta-band' ); ?>
+<!-- BANNER CTA -->
+<?php get_template_part('template-parts/cta-band'); ?>
+
+<!-- COUNSELLOR / CTA -->
+<section class="cta-band" id="enquire" style="background: var(--blue-dark); padding: 80px 0;">
+  <div class="container">
+    <div class="sec-label" style="justify-content: center;"><?php echo esc_html( get_theme_mod('scgi_counsellor_label', 'Contact Our Counsellor') ); ?></div>
+    <h2 class="sec-title" style="color: #fff; text-align: center; margin-bottom: 14px;"><?php echo esc_html( get_theme_mod('scgi_counsellor_title', 'Clarify all you doubts about the course, fees, college and more') ); ?></h2>
+    <div class="cta-actions" style="margin-top: 36px; display: flex; justify-content: center; gap: 20px;">
+      <a href="<?php echo esc_url(home_url('/contact')); ?>#enquire" class="btn-gold"><i class="fas fa-paper-plane"></i> Enquire Now</a>
+    </div>
+  </div>
+</section>
 
 <?php get_footer(); ?>

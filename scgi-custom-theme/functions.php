@@ -143,11 +143,14 @@ add_action( 'add_meta_boxes', 'scgi_add_meta_boxes' );
 // ── SLIDER META ──
 function scgi_slider_meta_html( $post ) {
     $subtitle    = get_post_meta( $post->ID, '_slider_subtitle',    true );
+    $highlight   = get_post_meta( $post->ID, '_slider_highlight',   true );
     $btn_text    = get_post_meta( $post->ID, '_slider_btn_text',    true );
     $btn_link    = get_post_meta( $post->ID, '_slider_btn_link',    true );
     wp_nonce_field( 'scgi_slider_nonce', 'scgi_slider_nonce_field' );
     ?>
     <table class="form-table" style="width:100%">
+        <tr><th>Main Title</th><td><strong><?php the_title(); ?></strong> (Edit title above)</td></tr>
+        <tr><th>Headline Highlight</th><td><input type="text" name="slider_highlight" value="<?php echo esc_attr( $highlight ); ?>" style="width:100%;" placeholder="e.g. Heal, Lead, Excel!"></td></tr>
         <tr><th>Subtitle / Tagline</th><td><input type="text" name="slider_subtitle" value="<?php echo esc_attr( $subtitle ); ?>" style="width:100%;"></td></tr>
         <tr><th>Button Text</th><td><input type="text" name="slider_btn_text" value="<?php echo esc_attr( $btn_text ); ?>" style="width:100%;" placeholder="Explore Courses"></td></tr>
         <tr><th>Button Link</th><td><input type="text" name="slider_btn_link" value="<?php echo esc_attr( $btn_link ); ?>" style="width:100%;" placeholder="#courses"></td></tr>
@@ -160,6 +163,7 @@ function scgi_save_slider_meta( $post_id ) {
     if ( ! isset( $_POST['scgi_slider_nonce_field'] ) || ! wp_verify_nonce( $_POST['scgi_slider_nonce_field'], 'scgi_slider_nonce' ) ) return;
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
     update_post_meta( $post_id, '_slider_subtitle', sanitize_text_field( $_POST['slider_subtitle'] ?? '' ) );
+    update_post_meta( $post_id, '_slider_highlight', sanitize_text_field( $_POST['slider_highlight'] ?? '' ) );
     update_post_meta( $post_id, '_slider_btn_text', sanitize_text_field( $_POST['slider_btn_text'] ?? '' ) );
     update_post_meta( $post_id, '_slider_btn_link', sanitize_text_field( $_POST['slider_btn_link'] ?? '' ) );
 }

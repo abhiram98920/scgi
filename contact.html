@@ -148,12 +148,37 @@
         </div>
         <div class="form-row">
           <div class="form-group">
+            <label>Course Category</label>
+            <select id="contactCategory" required>
+              <option value="">Select Category</option>
+              <option value="Nursing">Nursing</option>
+              <option value="Physiotherapy">Physiotherapy</option>
+              <option value="Allied Health Science">Allied Health Science</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Select Course</label>
+            <select id="contactCourse" required>
+              <option value="">Select Course Details</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
             <label>State</label>
-            <input type="text" placeholder="State" required />
+            <select id="contactState" required>
+              <option value="">Select State</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
           <div class="form-group">
             <label>City</label>
-            <input type="text" placeholder="City" required />
+            <input type="text" placeholder="Enter City" required />
           </div>
         </div>
         <div class="form-group">
@@ -426,11 +451,13 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
       const path = window.location.pathname;
       const modalCat = document.getElementById('modalCategory');
       const modalCourse = document.getElementById('modalCourse');
-      if(!modalCat || !modalCourse) return;
+      const contactCat = document.getElementById('contactCategory');
+      const contactCourse = document.getElementById('contactCourse');
       
       let preCat = "";
       let preCourse = "";
-
+      
+      // Auto-logic
       if(path.includes('nursing-gnm')) { preCat = "Nursing"; preCourse = "General Nursing and Midwifery (GNM)"; }
       else if(path.includes('nursing-bsc')) { preCat = "Nursing"; preCourse = "Basic B.Sc Nursing"; }
       else if(path.includes('nursing-pbbsc')) { preCat = "Nursing"; preCourse = "Post Basic B.Sc Nursing (P.B B.Sc Nursing)"; }
@@ -445,18 +472,25 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
       else if(path.includes('allied-dhi')) { preCat = "Allied Health Science"; preCourse = "Health Inspector (DHI)"; }
       else if(path.includes('allied')) { preCat = "Allied Health Science"; }
 
-      if(preCat) {
-        modalCat.value = preCat;
-        populateCourses(modalCat, modalCourse, preCourse);
+      if(modalCat) {
+        if(preCat) {
+          modalCat.value = preCat;
+          populateCourses(modalCat, modalCourse, preCourse);
+        }
+        modalCat.addEventListener('change', () => populateCourses(modalCat, modalCourse));
+      }
+
+      if(contactCat) {
+        if(preCat) {
+          contactCat.value = preCat;
+          populateCourses(contactCat, contactCourse, preCourse);
+        }
+        contactCat.addEventListener('change', () => populateCourses(contactCat, contactCourse));
       }
     }
-
-    const modalCat = document.getElementById('modalCategory');
-    if(modalCat) {
-      modalCat.addEventListener('change', () => {
-        populateCourses(modalCat, document.getElementById('modalCourse'));
-      });
-    }
+    
+    // Call on load
+    autoPopulateModal();
 
     const heroCat = document.getElementById('heroCategory');
     if(heroCat) {
@@ -521,7 +555,6 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
         sliderPos[category] += direction;
         if (sliderPos[category] < 0) sliderPos[category] = 0;
         if (sliderPos[category] > maxPos) sliderPos[category] = maxPos;
-        grid.style.transform = `translateX(-${sliderPos[category] * cardWidth}px)`;
       }
     }
   });
