@@ -588,7 +588,7 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
     /* ───── STICKY FLOAT ───── */
     .sticky-float { position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 999; display: flex; flex-direction: column; }
     .sticky-admit { background: var(--gold); color: #1a1a1a; font-size: .75rem; font-weight: 500; writing-mode: vertical-rl; transform: rotate(180deg); padding: 18px 10px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background .3s; }
-    .sticky-admit:hover { background: var(--gold-light); }
+    .sticky-admit:hover { background: var(--gold-light); color: #1a1a1a; }
     .highlight-admit { background: var(--blue-dark); color: var(--gold-light); font-weight: 700; box-shadow: 0 0 15px rgba(13,36,99,0.6); border-left: 2px solid var(--gold); }
     .sfi { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.1rem; text-decoration: none; transition: opacity .2s; }
     .sfi:hover { opacity: .82; }
