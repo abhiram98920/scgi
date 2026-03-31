@@ -4,6 +4,17 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
+    <style>
+    /* === DROPDOWN NAV FIX === */
+    nav ul li{position:relative!important}
+    nav ul li ul.sub-menu{display:none!important;position:absolute!important;top:100%!important;left:0!important;min-width:220px;background:#fff;border-radius:10px;box-shadow:0 8px 32px rgba(13,36,99,.18);padding:8px 0;z-index:99999!important;list-style:none!important;margin:0!important;border-top:3px solid #c9a227;flex-direction:column!important}
+    nav ul li:hover>ul.sub-menu{display:block!important}
+    nav ul li ul.sub-menu li{width:100%!important;display:block!important;float:none!important}
+    nav ul li ul.sub-menu li a{display:block!important;padding:10px 20px!important;font-size:.85rem!important;font-weight:500!important;color:#0d2463!important;border-radius:0!important;white-space:nowrap!important;background:transparent!important}
+    nav ul li ul.sub-menu li a:hover{background:rgba(26,58,140,.06)!important;color:#c9a227!important}
+    nav ul li ul.sub-menu li a::after{display:none!important}
+    </style>
+
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
