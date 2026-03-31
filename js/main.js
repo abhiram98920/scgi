@@ -332,4 +332,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Mobile double-tap-to-go on Course Cards
+    document.querySelectorAll('.kmct-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (window.innerWidth <= 991) {
+                if (!this.classList.contains('touch-active')) {
+                    // Prevent normal redirection
+                    e.preventDefault();
+                    
+                    // Remove 'touch-active' from any other currently open card
+                    document.querySelectorAll('.kmct-card').forEach(c => c.classList.remove('touch-active'));
+                    
+                    // Open this card's details
+                    this.classList.add('touch-active');
+                }
+                // If the class IS already there (the card is expanded), the click falls through normally 
+                // and the browser redirects to the destination!
+            }
+        });
+    });
+
 });
