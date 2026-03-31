@@ -114,13 +114,13 @@ function scgi_register_cpts() {
         'show_in_rest' => true,
     ) );
 
-    // Gallery
+    // Gallery CPT — kept for backward compat but hidden from menu
     register_post_type( 'scgi_gallery', array(
-        'labels'      => array( 'name' => 'Gallery', 'singular_name' => 'Gallery Item' ),
-        'public'      => true,
-        'supports'    => array( 'title', 'thumbnail', 'page-attributes' ),
-        'menu_icon'   => 'dashicons-format-image',
-        'show_in_rest' => true,
+        'labels'        => array( 'name' => 'Gallery Items (Legacy)', 'singular_name' => 'Gallery Item' ),
+        'public'        => false,
+        'show_ui'       => false,
+        'show_in_menu'  => false,
+        'supports'      => array( 'title', 'thumbnail' ),
     ) );
 }
 add_action( 'init', 'scgi_register_cpts' );
@@ -137,8 +137,106 @@ function scgi_add_meta_boxes() {
     add_meta_box( 'scgi_course_details', 'Course Details',    'scgi_course_details_html',     'scgi_course', 'normal', 'high' );
     add_meta_box( 'scgi_course_why',     'Why This Course?',  'scgi_course_why_html',         'scgi_course', 'normal', 'default' );
     add_meta_box( 'scgi_course_elig',    'Eligibility Info',  'scgi_course_eligibility_html', 'scgi_course', 'normal', 'default' );
+
+    // Gallery Page — Multi-image picker
+    add_meta_box( 'scgi_gallery_images', '📷 Gallery Images (Click to Add / Remove)', 'scgi_gallery_images_html', 'page', 'normal', 'high' );
 }
 add_action( 'add_meta_boxes', 'scgi_add_meta_boxes' );
+
+// ── GALLERY IMAGE PICKER META BOX ──
+function scgi_gallery_images_html( $post ) {
+    wp_nonce_field( 'scgi_gallery_nonce', 'scgi_gallery_nonce_field' );
+    $image_ids = get_post_meta( $post->ID, '_gallery_images', true );
+    if ( ! is_array( $image_ids ) ) $image_ids = array();
+    ?>
+    <div style="margin-bottom:12px;">
+        <button type="button" id="scgi-add-gallery-images" class="button button-primary" style="margin-bottom:10px;">
+            ➕ Add / Select Images
+        </button>
+        <p class="description" style="margin-bottom:10px;">Hold <strong>Ctrl</strong> (Windows) or <strong>Cmd</strong> (Mac) to select multiple images at once.</p>
+        <div id="scgi-gallery-preview" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;">
+            <?php foreach ( $image_ids as $id ) :
+                $url = wp_get_attachment_image_url( $id, 'thumbnail' );
+                if ( ! $url ) continue;
+            ?>
+            <div class="scgi-gallery-thumb" style="position:relative;width:90px;height:90px;" data-id="<?php echo esc_attr($id); ?>">
+                <img src="<?php echo esc_url($url); ?>" style="width:90px;height:90px;object-fit:cover;border-radius:6px;border:2px solid #0d2463;" />
+                <span class="scgi-remove-img" title="Remove" style="position:absolute;top:-6px;right:-6px;background:#e00;color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;font-weight:bold;line-height:1;">✕</span>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <input type="hidden" name="scgi_gallery_image_ids" id="scgi-gallery-image-ids"
+               value="<?php echo esc_attr( implode( ',', $image_ids ) ); ?>" />
+    </div>
+
+    <script>
+    jQuery(function($){
+        var frame;
+        $('#scgi-add-gallery-images').on('click', function(e){
+            e.preventDefault();
+            if ( frame ) { frame.open(); return; }
+            frame = wp.media({
+                title: 'Select Gallery Images',
+                button: { text: 'Add to Gallery' },
+                multiple: true
+            });
+            frame.on('select', function(){
+                var selection = frame.state().get('selection');
+                var ids = $('#scgi-gallery-image-ids').val().split(',').filter(Boolean);
+                selection.each(function(attachment){
+                    var id = attachment.get('id');
+                    var url = attachment.get('sizes') && attachment.get('sizes').thumbnail
+                              ? attachment.get('sizes').thumbnail.url
+                              : attachment.get('url');
+                    if ( ids.indexOf(String(id)) === -1 ) {
+                        ids.push(id);
+                        var thumb = $('<div class="scgi-gallery-thumb" style="position:relative;width:90px;height:90px;" data-id="'+id+'"></div>');
+                        thumb.append('<img src="'+url+'" style="width:90px;height:90px;object-fit:cover;border-radius:6px;border:2px solid #0d2463;" />');
+                        thumb.append('<span class="scgi-remove-img" title="Remove" style="position:absolute;top:-6px;right:-6px;background:#e00;color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;font-weight:bold;line-height:1;">✕</span>');
+                        $('#scgi-gallery-preview').append(thumb);
+                    }
+                });
+                $('#scgi-gallery-image-ids').val(ids.join(','));
+            });
+            frame.open();
+        });
+
+        // Remove image on ✕ click (delegated for dynamically added elements)
+        $('#scgi-gallery-preview').on('click', '.scgi-remove-img', function(){
+            var thumb = $(this).closest('.scgi-gallery-thumb');
+            var id = String(thumb.data('id'));
+            var ids = $('#scgi-gallery-image-ids').val().split(',').filter(Boolean);
+            ids = ids.filter(function(i){ return i !== id; });
+            $('#scgi-gallery-image-ids').val(ids.join(','));
+            thumb.remove();
+        });
+    });
+    </script>
+    <?php
+}
+
+// Save gallery images
+function scgi_save_gallery_images( $post_id ) {
+    if ( ! isset( $_POST['scgi_gallery_nonce_field'] ) || ! wp_verify_nonce( $_POST['scgi_gallery_nonce_field'], 'scgi_gallery_nonce' ) ) return;
+    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return;
+    if ( ! current_user_can( 'edit_post', $post_id ) ) return;
+    if ( isset( $_POST['scgi_gallery_image_ids'] ) ) {
+        $raw = sanitize_text_field( $_POST['scgi_gallery_image_ids'] );
+        $ids = array_filter( array_map( 'intval', explode( ',', $raw ) ) );
+        update_post_meta( $post_id, '_gallery_images', $ids );
+    }
+}
+add_action( 'save_post_page', 'scgi_save_gallery_images' );
+
+// Enqueue media uploader on page edit screen
+function scgi_enqueue_gallery_media( $hook ) {
+    if ( ! in_array( $hook, array( 'post.php', 'post-new.php' ) ) ) return;
+    $screen = get_current_screen();
+    if ( $screen && $screen->post_type === 'page' ) {
+        wp_enqueue_media();
+    }
+}
+add_action( 'admin_enqueue_scripts', 'scgi_enqueue_gallery_media' );
 
 // ── SLIDER META ──
 function scgi_slider_meta_html( $post ) {
