@@ -42,11 +42,11 @@
             
             <div class="hero-badges-wrap reveal">
                 <div class="hero-badge-item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/INC-01.jpg" alt="INC-Approved" class="hero-badge-img">
+                    <img src="<?php echo get_template_directory_uri(); ?>/inc-cropped.png" alt="INC-Approved" class="hero-badge-img">
                     <span>Approved by<br>Indian Nursing Council</span>
                 </div>
                 <div class="hero-badge-item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/KSNC-01.jpg" alt="KSNC-Approved" class="hero-badge-img">
+                    <img src="<?php echo get_template_directory_uri(); ?>/ksnc-cropped.png" alt="KSNC-Approved" class="hero-badge-img">
                     <span>Approved by<br>Karnataka State Nursing Council</span>
                 </div>
                 <div class="hero-badge-item">
@@ -58,7 +58,7 @@
                     <span>Approved by<br>Karnataka Paramedical Board</span>
                 </div>
                 <div class="hero-badge-item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/KA-Govt-01.jpg" alt="Govt-Recognised" class="hero-badge-img">
+                    <img src="<?php echo get_template_directory_uri(); ?>/ka-govt-cropped.png" alt="Govt-Recognised" class="hero-badge-img">
                     <span>Recognised by<br>Govt of Karnataka</span>
                 </div>
             </div>

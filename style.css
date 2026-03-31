@@ -860,10 +860,11 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
     padding: 0 0 10px 15px;
     background: transparent;
   }
-  .dropdown-submenu:hover .submenu-content {
+  .dropdown-submenu.open > .submenu-content,
+  .dropdown-submenu:hover > .submenu-content {
     display: block;
   }
-  .submenu-content a {
+  .submenu-content > a {
     color: var(--blue-dark) !important;
   }
   .submenu-content a:hover {
@@ -1596,8 +1597,8 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   .metrics-title div { font-size: 1.3rem !important; font-weight: 700; color: var(--blue-dark); }
   .m-num { font-size: 1.7rem; }
   .courses-tabs { gap: 6px; justify-content: space-around; margin: 20px 0 30px !important; }
-  .courses-slider-track { overflow-x: auto; padding: 0 15px 15px; display: flex; scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; gap: 12px; }
-  .courses-grid { display: flex; gap: 12px; margin: 0; }
+  .courses-slider-track { overflow-x: auto; padding: 0 15px 15px; display: flex; scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; gap: 15px; padding-right: 40px; }
+  .courses-grid { display: flex; gap: 15px; margin: 0; }
   .kmct-card { flex: 0 0 calc(85vw) !important; background: #0a1a4a; height: 360px; scroll-snap-align: center; }
   .kc-content { padding: 20px; }
   .courses-slider-track::-webkit-scrollbar { display: none; }

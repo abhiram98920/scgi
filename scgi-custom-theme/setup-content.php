@@ -206,10 +206,10 @@ function scgi_auto_populate_content() {
     $ext_logos = get_posts(array('post_type'=>'scgi_logo','post_status'=>'any','posts_per_page'=>1));
     if(empty($ext_logos)) {
         $logos = array(
-            'Govt. of Karnataka' => 'KA-Govt-01.jpg',
-            'RGUHS' => 'RGHUS-01.jpg',
-            'Approved by Indian Nursing Council' => 'INC-01.jpg',
-            'Approved by Karnataka State Nursing Council' => 'KSNC-01.jpg',
+            'Govt. of Karnataka' => 'ka-govt-cropped.png',
+            'RGUHS' => 'rguhs-cropped.png',
+            'Approved by Indian Nursing Council' => 'inc-cropped.png',
+            'Approved by Karnataka State Nursing Council' => 'ksnc-cropped.png',
             'Approved by Karnataka Paramedical Board' => 'Logo of Karnataka paramedical board.webp',
             'Karnataka State Diploma in Nursing Examination Board (KSDNEB)' => 'Karnataka state diploma in nursing examination board.png'
         );
