@@ -1587,11 +1587,16 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   .metrics-title div { font-size: 1.3rem !important; font-weight: 700; color: var(--blue-dark); }
   .m-num { font-size: 1.7rem; }
   .courses-tabs { gap: 6px; justify-content: space-around; margin: 20px 0 30px !important; }
-  .courses-slider-track { overflow-x: auto; padding: 0 15px 15px; display: flex; scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; gap: 15px; padding-right: 40px; }
+  .courses-slider-track { overflow-x: auto; padding: 0 15px 15px; scrollbar-width: thin; scrollbar-color: var(--gold) rgba(13,36,99,0.05); -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
   .courses-grid { display: flex; gap: 15px; margin: 0; }
+  .courses-grid::after { content: ""; flex: 0 0 1px; } /* Ensures right padding isn't collapsed */
   .kmct-card { flex: 0 0 calc(85vw) !important; background: #0a1a4a; height: 360px; scroll-snap-align: center; }
   .kc-content { padding: 20px; }
-  .courses-slider-track::-webkit-scrollbar { display: none; }
+  
+  /* Touch indicator scrollbar */
+  .courses-slider-track::-webkit-scrollbar { display: block; height: 4px; }
+  .courses-slider-track::-webkit-scrollbar-track { background: rgba(13,36,99,0.05); border-radius: 4px; margin: 0 15px; }
+  .courses-slider-track::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
   
   /* Touch target optimizations */
   .tab-btn { padding: 12px; font-size: 0.8rem; flex: 1; text-align: center; }

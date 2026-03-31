@@ -312,10 +312,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Toggle sub-submenus on mobile
+    // Toggle sub-submenus on mobile (only if clicking the chevron icon)
     document.querySelectorAll('.dropdown-submenu > a').forEach(link => {
         link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 991) {
+            if (window.innerWidth <= 991 && e.target.tagName.toLowerCase() === 'i') {
                 e.preventDefault();
                 e.stopPropagation();
                 link.parentElement.classList.toggle('open');
