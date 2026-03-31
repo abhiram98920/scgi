@@ -446,6 +446,7 @@ function scgi_customize_register( $wp_customize ) {
         'scgi_email'         => array( 'label' => 'Email',            'default' => 'info@scgi.in' ),
         'scgi_whatsapp'      => array( 'label' => 'WhatsApp (no +)',  'default' => '919769002277' ),
         'scgi_address'       => array( 'label' => 'Address',          'default' => 'NH4 Bypass, Near Railway Gate, Kogilahally Village, Kolar, Karnataka – 563102', 'type' => 'textarea' ),
+        'scgi_short_address' => array( 'label' => 'Short Address',    'default' => 'Kolar, Karnataka – 563102' ),
         'scgi_maps_embed'    => array( 'label' => 'Google Maps Embed URL', 'default' => '' ),
     );
     foreach ( $contact_settings as $id => $cfg ) {

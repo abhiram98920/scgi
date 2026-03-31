@@ -25,7 +25,7 @@
       <a href="mailto:<?php echo esc_attr(get_theme_mod('scgi_email', 'info@scgi.in')); ?>"><i class="fas fa-envelope"></i><?php echo esc_html(get_theme_mod('scgi_email', 'info@scgi.in')); ?></a>
     </div>
     <div class="tb-right">
-      <span><i class="fas fa-map-marker-alt"></i><?php echo esc_html(get_theme_mod('scgi_address', 'NH4 Bypass, Near Railway Gate, Kogilahally Village, Dodda Hasala Gram Panchayath, Kolar, Karnataka – 563102')); ?></span>
+      <span><i class="fas fa-map-marker-alt"></i><?php echo esc_html(get_theme_mod('scgi_short_address', 'Kolar, Karnataka – 563102')); ?></span>
       <span class="tb-divider">|</span>
       <a href="#"><i class="fas fa-award"></i>RGUHS Affiliated</a>
       <span class="tb-divider">|</span>

@@ -15,6 +15,7 @@ function scgi_auto_populate_content() {
     set_theme_mod( 'scgi_email', 'info@scgi.in' );
     set_theme_mod( 'scgi_whatsapp', '919769002277' );
     set_theme_mod( 'scgi_address', 'NH4 Bypass, Near Railway Gate, Kogilahally Village, Dodda Hasala Gram Panchayath, Kolar, Karnataka – 563102' );
+    set_theme_mod( 'scgi_short_address', 'Kolar, Karnataka – 563102' );
     set_theme_mod( 'scgi_estd', '2006' );
 
     // Helper function to sideload images from our own theme folder
