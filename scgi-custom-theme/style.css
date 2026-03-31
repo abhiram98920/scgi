@@ -667,7 +667,9 @@ header.sticky nav ul li a:hover, header.sticky nav ul li a.active { color: var(-
       .kmct-card { flex: 0 0 calc(85vw) !important; height: 350px; }
       .courses-slider-track { padding: 0 15px 15px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
       #st { bottom: 85px; right: 15px; } /* Push up above iOS home bar and browser toolbars */
-      .slider-arrow { display: none !important; }
+      .slider-arrow { display: flex !important; transform: translateY(-50%) scale(0.8) !important; width: 40px !important; height: 40px !important; }
+      .slider-arrow.prev { left: -5px; }
+      .slider-arrow.next { right: -5px; }
       
       /* Footer text alignment */
       .footer-cred { display: block; line-height: 1.6; }
@@ -1587,7 +1589,7 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   .metrics-title div { font-size: 1.3rem !important; font-weight: 700; color: var(--blue-dark); }
   .m-num { font-size: 1.7rem; }
   .courses-tabs { gap: 6px; justify-content: space-around; margin: 20px 0 30px !important; }
-  .courses-slider-track { overflow-x: auto; padding: 0 15px 15px; scrollbar-width: thin; scrollbar-color: var(--gold) rgba(13,36,99,0.05); -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
+  .courses-slider-track { overflow-x: auto; padding: 0 7.5vw 15px; scrollbar-width: thin; scrollbar-color: var(--gold) rgba(13,36,99,0.05); -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
   .courses-grid { display: flex; gap: 15px; margin: 0; }
   .courses-grid::after { content: ""; flex: 0 0 1px; } /* Ensures right padding isn't collapsed */
   .kmct-card { flex: 0 0 calc(85vw) !important; background: #0a1a4a; height: 360px; scroll-snap-align: center; }
@@ -1600,7 +1602,10 @@ h1, h2, h3, h4, h5, h6, .sec-title, .pc-body h3 {
   
   /* Touch target optimizations */
   .tab-btn { padding: 12px; font-size: 0.8rem; flex: 1; text-align: center; }
-  #st { bottom: 80px; } /* Push above mobile footers */
+  .hero-input, .modal-input, .csd-trigger { min-height: 48px !important; font-size: 1rem !important; }
+  .dropdown-content a { padding: 15px 20px !important; font-size: 0.95rem; }
+  .btn-gold, .btn-primary, .hero-submit { min-height: 50px; display: flex; align-items: center; justify-content: center; }
+  #st { bottom: 85px; } /* Push above mobile footers */
 }
 
 /* ───── REVEAL ANIMATIONS ───── */

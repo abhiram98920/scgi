@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const gap = window.innerWidth <= 768 ? 15 : 30;
         const cardWidth = card.offsetWidth + gap; 
         
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 991) {
             const currentScroll = track.scrollLeft;
             const maxScroll = track.scrollWidth - track.clientWidth;
             let newScroll = currentScroll + (direction * cardWidth);
