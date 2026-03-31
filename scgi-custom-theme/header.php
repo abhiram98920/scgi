@@ -9,10 +9,19 @@
     nav ul li{position:relative!important}
     nav ul li ul.sub-menu{display:none!important;position:absolute!important;top:100%!important;left:0!important;min-width:220px;background:#fff;border-radius:10px;box-shadow:0 8px 32px rgba(13,36,99,.18);padding:8px 0;z-index:99999!important;list-style:none!important;margin:0!important;border-top:3px solid #c9a227;flex-direction:column!important}
     nav ul li:hover>ul.sub-menu{display:block!important}
-    nav ul li ul.sub-menu li{width:100%!important;display:block!important;float:none!important}
+    nav ul li ul.sub-menu li{width:100%!important;display:block!important;float:none!important;position:relative!important}
     nav ul li ul.sub-menu li a{display:block!important;padding:10px 20px!important;font-size:.85rem!important;font-weight:500!important;color:#0d2463!important;border-radius:0!important;white-space:nowrap!important;background:transparent!important}
     nav ul li ul.sub-menu li a:hover{background:rgba(26,58,140,.06)!important;color:#c9a227!important}
     nav ul li ul.sub-menu li a::after{display:none!important}
+
+    /* Chevron arrow on top-level parent items */
+    nav ul li.menu-item-has-children>a::after{content:' ▾'!important;font-size:.75em!important;opacity:.7!important;display:inline!important;position:static!important;width:auto!important;height:auto!important;background:none!important;border:none!important;transform:none!important;transition:none!important}
+
+    /* Nested (2nd level) sub-menu appears to the right */
+    nav ul li ul.sub-menu li ul.sub-menu{top:0!important;left:100%!important;border-top:none!important;border-left:3px solid #c9a227!important;border-radius:0 10px 10px 10px!important;margin-top:-8px!important}
+
+    /* Right arrow on nested parent items */
+    nav ul li ul.sub-menu li.menu-item-has-children>a::after{content:' ›'!important;float:right!important;font-size:1em!important;opacity:.7!important}
     </style>
 
 </head>
