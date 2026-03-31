@@ -64,6 +64,18 @@
           <img src="<?php echo get_template_directory_uri(); ?>/Karnataka state diploma in nursing examination board.png" alt="KSDNEB" class="hero-badge-img">
           <span>Karnataka State Diploma in Nursing Examination Board (KSDNEB)</span>
         </div>
+        <div class="hero-badge-item">
+          <img src="<?php echo get_template_directory_uri(); ?>/Logo of Karnataka paramedical board.webp" alt="Paramedical-Board" class="hero-badge-img">
+          <span>Approved by<br>Karnataka Paramedical Board</span>
+        </div>
+        <div class="hero-badge-item">
+          <img src="<?php echo get_template_directory_uri(); ?>/ka-govt-cropped.png" alt="Govt-Recognised" class="hero-badge-img">
+          <span>Recognised by<br>Govt of Karnataka</span>
+        </div>
+        <div class="hero-badge-item">
+          <img src="<?php echo get_template_directory_uri(); ?>/rguhs-cropped.png" alt="RGUHS-Affiliated" class="hero-badge-img">
+          <span>Affiliated to<br>RGUHS</span>
+        </div>
       </div>
     </div>
 
