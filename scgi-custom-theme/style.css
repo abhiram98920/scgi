@@ -1889,3 +1889,73 @@ section[id], div[id] { scroll-margin-top: 90px; }
   .hero-btns { flex-direction: column; align-items: center; width: 100%; }
   .hero-btns a, .hero-btns button { width: 100%; max-width: 280px; justify-content: center; }
 }
+
+
+/* ====================================================================
+   SCGI Phase 2 Premium UI Enhancements
+==================================================================== */
+
+/* 1. Glassmorphic Sticky Header override */
+header.sticky {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 2. Sweeping Shine on Primary Buttons */
+.btn-gold, .hero-submit, .primary, .tb-gold-btn {
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold::before, .hero-submit::before, .primary::before, .tb-gold-btn::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-20deg);
+  transition: all 0.6s ease;
+  z-index: 1;
+}
+.btn-gold:hover::before, .hero-submit:hover::before, .primary:hover::before, .tb-gold-btn:hover::before {
+  left: 150%;
+  transition: all 0.6s ease;
+}
+
+/* 3. Modern Pill Interaction for Slider Dots */
+.hero-dot {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hero-dot.active {
+  width: 32px;
+  border-radius: 10px;
+}
+
+/* 6. Interactive Magnetic Hover on Social Media Icons */
+.soc-btn {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.soc-btn:hover {
+  transform: translateY(-4px) rotate(5deg) scale(1.1);
+  color: #fff !important;
+  border-color: var(--blue) !important;
+  background: var(--blue) !important;
+}
+
+/* 7. Footer Depth and Background Watermark */
+footer#contact {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+footer#contact::after {
+  content: "";
+  position: absolute;
+  top: -20%; right: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
