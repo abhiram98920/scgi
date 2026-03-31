@@ -1,7 +1,7 @@
 /*
 Theme Name: SCGI Custom Theme
 Theme URI: https://scgi.in/
-Author: Antigravity
+Author: Abhiram
 Author URI: https://scgi.in/
 Description: A custom, production-ready theme for Sri Channegowda Group of Institutions (SCGI).
 Version: 1.0.0
@@ -1997,9 +1997,7 @@ footer#contact::after {
 .kmct-card.touch-active .kc-link i { transform: translateX(5px); }
 
 /* ───── WORDPRESS ADMIN BAR COMPATIBILITY ───── */
-body.admin-bar .sticky-float { top: 32px; }
 body.admin-bar header.sticky { top: 32px; }
 @media screen and (max-width: 782px) {
-  body.admin-bar .sticky-float { top: 46px; }
   body.admin-bar header.sticky { top: 46px; }
 }

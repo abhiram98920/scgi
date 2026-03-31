@@ -40,4 +40,4 @@ Everything generated automatically is fully editable via the WordPress Dashboard
 - This is where you centrally update the Phone Number, WhatsApp, Email, and Map Address location. Changes apply everywhere instantly.
 
 ---
-*Developed by Antigravity AI for SCGI.*
+*Developed by Abhiram for SCGI.*
