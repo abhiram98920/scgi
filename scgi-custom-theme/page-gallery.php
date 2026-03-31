@@ -1,52 +1,54 @@
-<?php 
+<?php
 /**
  * Template Name: Gallery Page
  */
-get_header(); ?>
+get_header();
+the_post();
+$banner_img = get_the_post_thumbnail_url( null, 'full' )
+    ?: get_template_directory_uri() . '/assets/images/banner-gallery.jpg';
+?>
 
-<!-- INNER HERO -->
-<section class="inner-hero" style="background: linear-gradient(to top, rgba(13,36,99,0.85) 0%, transparent 50%), url('<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?w=1600&q=80'; ?>') center / cover;">
-  <div class="container">
-    <h1><?php the_title(); ?></h1>
-  </div>
+<?php get_template_part( 'template-parts/inner-hero', null, array(
+    'title'      => get_the_title(),
+    'image_url'  => $banner_img,
+    'show_logos' => false,
+) ); ?>
+
+<?php get_template_part( 'template-parts/breadcrumb', null, array(
+    'items' => array(
+        array( 'label' => 'Home',    'url' => home_url( '/' ) ),
+        array( 'label' => get_the_title() ),
+    ),
+) ); ?>
+
+<section class="gallery sec-bg-blue bg-pattern" style="padding:80px 0;">
+    <div class="container">
+        <div class="tc" style="margin-bottom:50px;">
+            <div class="sec-label">Glimpses of SCGI</div>
+            <h2 class="sec-title">Our Gallery</h2>
+            <p class="sec-sub">A glimpse into our academic excellence, clinical training, and vibrant campus life.</p>
+        </div>
+        <div class="gallery-grid">
+            <?php
+            $gallery = new WP_Query( array(
+                'post_type'      => 'scgi_gallery',
+                'posts_per_page' => -1,
+                'orderby'        => 'menu_order',
+                'order'          => 'ASC',
+            ) );
+            if ( $gallery->have_posts() ) : while ( $gallery->have_posts() ) : $gallery->the_post(); ?>
+                <div class="gallery-item">
+                    <?php if ( has_post_thumbnail() ) :
+                        the_post_thumbnail( 'large', array( 'loading' => 'lazy' ) );
+                    endif; ?>
+                </div>
+            <?php endwhile; wp_reset_postdata();
+            else : ?>
+                <p class="tc" style="color:rgba(255,255,255,0.6);grid-column:1/-1;">No gallery items yet. Add them via WordPress admin → Gallery.</p>
+            <?php endif; ?>
+        </div>
+    </div>
 </section>
 
-<!-- BREADCRUMB BAR -->
-<div class="breadcrumb-bar">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="<?php echo esc_url(home_url('/')); ?>">Home</a> 
-      <i class="fas fa-circle"></i> 
-      <span><?php the_title(); ?></span>
-    </div>
-  </div>
-</div>
-
-<section class="gallery-section" style="padding: 80px 0;">
-  <div class="container">
-    <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
-        <?php
-        $gallery = new WP_Query( array( 'post_type' => 'scgi_gallery', 'posts_per_page' => -1 ) );
-        if ( $gallery->have_posts() ) : while ( $gallery->have_posts() ) : $gallery->the_post(); ?>
-            <div class="gallery-item" style="position: relative; border-radius: 12px; overflow: hidden; height: 300px;">
-                <?php if ( has_post_thumbnail() ) : the_post_thumbnail( 'large', array( 'style' => 'width:100%; height:100%; object-fit:cover;' ) ); endif; ?>
-            </div>
-        <?php endwhile; wp_reset_postdata(); else : ?>
-            <p>No gallery items found. Please add them in the WordPress admin.</p>
-        <?php endif; ?>
-    </div>
-  </div>
-</section>
-
-<!-- BANNER CTA -->
-<section class="banner-cta">
-  <div class="container flex-cta">
-    <div class="cta-text">
-      <h3>Guiding You Towards a Bright Career</h3>
-      <p>Reach Out for Admissions, Queries & More</p>
-    </div>
-    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn-gold"><i class="fas fa-paper-plane"></i>Contact Us</a>
-  </div>
-</section>
-
+<?php get_template_part( 'template-parts/cta-band' ); ?>
 <?php get_footer(); ?>

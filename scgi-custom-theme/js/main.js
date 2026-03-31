@@ -282,18 +282,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Course Slider Logic
-    const sliderPos = { nursing: 0, allied: 0, physio: 0 };
+    // sliderPos keys must match the 'data-slider-id' / 'id' attributes in both static HTML & WP theme
+    const sliderPos = { nursing: 0, allied: 0, physio: 0, physiotherapy: 0, 'allied-health-science': 0 };
     window.moveSlider = function(category, direction) {
         const grid = document.getElementById('grid-' + category);
         if (!grid) return;
         const track = grid.parentElement;
         const card = grid.children[0];
         if (!card) return;
-        
-        const gap = window.innerWidth <= 768 ? 15 : 30;
-        const cardWidth = card.offsetWidth + gap; 
-        
+
+        const gap = window.innerWidth <= 991 ? 15 : 30;
+        const cardWidth = card.offsetWidth + gap;
+
         if (window.innerWidth <= 991) {
+            // Native scroll on mobile
             const currentScroll = track.scrollLeft;
             const maxScroll = track.scrollWidth - track.clientWidth;
             let newScroll = currentScroll + (direction * cardWidth);
@@ -301,10 +303,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (newScroll > maxScroll) newScroll = maxScroll;
             track.scrollTo({ left: newScroll, behavior: 'smooth' });
         } else {
+            // Transform-based on desktop
             const containerWidth = track.offsetWidth;
             const totalCards = grid.children.length;
             const visibleCount = Math.floor(containerWidth / cardWidth) || 1;
             const maxPos = Math.max(0, totalCards - visibleCount);
+            if (!(category in sliderPos)) sliderPos[category] = 0;
             sliderPos[category] += direction;
             if (sliderPos[category] < 0) sliderPos[category] = 0;
             if (sliderPos[category] > maxPos) sliderPos[category] = maxPos;
