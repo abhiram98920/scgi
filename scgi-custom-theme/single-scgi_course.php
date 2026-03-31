@@ -15,8 +15,8 @@ get_header(); ?>
     $full_desc = get_the_content();
     
     $why_title = get_post_meta(get_the_ID(), '_course_why_title', true) ?: 'Answer for Why ' . get_the_title();
-    $why_text = get_post_meta(get_the_ID(), '_course_why_text', true);
-    $why_list = get_post_meta(get_the_ID(), '_course_why_list', true);
+    $why_text = get_post_meta(get_the_ID(), '_course_why_text', true) ?: 'After completing a General Nursing and Midwifery (GNM) course, there are a variety of paths a graduate can take in order to pursue a career in Nursing. Recruiting organisations include hospitals, nursing homes, NGOs, dispensaries, first-aid clinics, nurse teaching companies, etc..';
+    $why_list = get_post_meta(get_the_ID(), '_course_why_list', true) ?: "Rewarding Career\nJob Stability and Security\nGlobal Opportunities\nEverlasting Career";
     
     $eligibility_full = get_post_meta(get_the_ID(), '_course_eligibility_full', true);
     $exam_eligibility = get_post_meta(get_the_ID(), '_course_exam_eligibility', true);
